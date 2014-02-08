@@ -158,7 +158,7 @@
             </connections>
         </customObject>
         <window title="Folder Compare" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="1604" userLabel="Main Window">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="217" y="278" width="1000" height="600"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="1000" height="498"/>
