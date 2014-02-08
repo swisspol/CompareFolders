@@ -20,22 +20,27 @@ static NSColor* _rowColors[6];
 
 @implementation TableView
 
-- (void)drawRow:(NSInteger)row clipRect:(NSRect)clipRect {
-  if (row != [self selectedRow]) {
+- (void)drawRow:(NSInteger)index clipRect:(NSRect)clipRect {
+  if (![self isRowSelected:index]) {
     NSArrayController* controller = [(AppDelegate*)[NSApp delegate] arrayController];
-    ComparisonResult result = [(Row*)[controller.arrangedObjects objectAtIndex:row] result];
+    Row* row = [controller.arrangedObjects objectAtIndex:index];
+    ComparisonResult result = row.result;
     NSColor* color;
-    if (result & (kComparisonResult_Removed | kComparisonResult_Added | kComparisonResult_Replaced | kComparisonResult_Modified_FileContent)) {
-      color = row % 2 ? _rowColors[2] : _rowColors[3];
+    if (result & (kComparisonResult_Removed | kComparisonResult_Added | kComparisonResult_Replaced)) {
+      color = index % 2 ? _rowColors[2] : _rowColors[3];
     } else if (result & kComparisonResult_ModifiedMask) {
-      color = row % 2 ? _rowColors[0] : _rowColors[1];
+      if (!row.leftItem.isDirectory && (result & (kComparisonResult_Modified_FileContent | kComparisonResult_Modified_FileSize | kComparisonResult_Modified_ModificationDate))) {
+        color = index % 2 ? _rowColors[2] : _rowColors[3];
+      } else {
+        color = index % 2 ? _rowColors[0] : _rowColors[1];
+      }
     } else {
-      color = row % 2 ? _rowColors[4] : _rowColors[5];
+      color = index % 2 ? _rowColors[4] : _rowColors[5];
     }
     [color setFill];
-    NSRectFill([self rectOfRow:row]);
+    NSRectFill([self rectOfRow:index]);
   }
-  [super drawRow:row clipRect:clipRect];
+  [super drawRow:index clipRect:clipRect];
 }
 
 @end
@@ -62,8 +67,8 @@ static NSColor* _rowColors[6];
   return _result & kComparisonResult_Modified_ModificationDate ? YES : NO;
 }
 
-- (BOOL)differentFileContents {
-  return _result & kComparisonResult_Modified_FileContent ? YES : NO;
+- (BOOL)differentFileSizes {
+  return _result & kComparisonResult_Modified_FileSize ? YES : NO;
 }
 
 @end
@@ -72,14 +77,15 @@ static NSColor* _rowColors[6];
 
 + (void)initialize {
   NSDictionary* defaults = @{
+                             kUserDefaultKey_ChecksumFiles: @NO,
                              kUserDefaultKey_FilterIdentical: @NO,
                              kUserDefaultKey_FilterHidden: @NO,
                              kUserDefaultKey_FilterFiles: @NO,
                              kUserDefaultKey_FilterFolders: @NO,
                              kUserDefaultKey_FilterLinks: @NO,
-                             kUserDefaultKey_SkipDate: @NO,
-                             kUserDefaultKey_SkipPermission: @NO,
-                             kUserDefaultKey_SkipContent: @NO
+                             kUserDefaultKey_FilterPermissions: @NO,
+                             kUserDefaultKey_FilterCreations: @NO,
+                             kUserDefaultKey_FilterModifications: @NO
                              };
   [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
   
@@ -109,13 +115,7 @@ static NSColor* _rowColors[6];
   }
   if (_leftPath && _rightPath) {
     ComparisonOptions options = 0;
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_SkipDate]) {
-      options |= kComparisonOption_Dates;
-    }
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_SkipPermission]) {
-      options |= kComparisonOption_Ownership;
-    }
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_SkipContent]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]) {
       options |= kComparisonOption_FileContent;
     }
     if (force) {
@@ -139,15 +139,19 @@ static NSColor* _rowColors[6];
       BOOL filterFiles = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFiles];
       BOOL filterFolders = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFolders];
       BOOL filterLinks = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterLinks];
-      if (filterHidden || filterIdentical || filterFiles || filterFolders || filterLinks) {
+      BOOL filterPermissions = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterPermissions];
+      BOOL filterCreations = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterCreations];
+      BOOL filterModifications = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterModifications];
+      if (filterHidden || filterIdentical || filterFiles || filterFolders || filterLinks || filterPermissions || filterCreations || filterModifications) {
         NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:_rows.count];
         for (Row* row in _rows) {
+          ComparisonResult result = row.result;
           Item* leftItem = row.leftItem;
           Item* rightItem = row.rightItem;
           if (filterHidden && ([leftItem.name hasPrefix:@"."] || [rightItem.name hasPrefix:@"."])) {
             continue;
           }
-          if (filterIdentical && !row.result) {
+          if (filterIdentical && !result) {
             continue;
           }
           if (filterFiles && (leftItem.isFile || rightItem.isFile)) {
@@ -159,6 +163,21 @@ static NSColor* _rowColors[6];
           if (filterLinks && (leftItem.isSymLink || rightItem.isSymLink)) {
             continue;
           }
+          if (result & kComparisonResult_ModifiedMask) {
+            ComparisonResult mask = 0;
+            if (filterPermissions) {
+              mask |= kComparisonResult_Modified_Permissions | kComparisonResult_Modified_GroupID | kComparisonResult_Modified_UserID;
+            }
+            if (filterCreations) {
+              mask |= kComparisonResult_Modified_CreationDate;
+            }
+            if (filterModifications && (leftItem.isDirectory || rightItem.isDirectory)) {
+              mask |= kComparisonResult_Modified_ModificationDate;
+            }
+            if (mask && (result & mask) && !(result & ~mask)) {
+              continue;
+            }
+          }
           [array addObject:row];
         }
         [_arrayController setContent:array];
@@ -168,6 +187,8 @@ static NSColor* _rowColors[6];
     }
   }
 }
+
+#ifndef NDEBUG
 
 - (BOOL)_saveBookmark:(NSString*)defaultKey withURL:(NSURL*)url {
   NSError* error = nil;
@@ -206,11 +227,15 @@ static NSColor* _rowColors[6];
   return nil;
 }
 
+#endif
+
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
   [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
   
+#ifndef NDEBUG
   _leftPath = [self _loadBookmark:kUserDefaultKey_LeftBookmark];
   _rightPath = [self _loadBookmark:kUserDefaultKey_RightBookmark];
+#endif
   [self _compareFolders:YES];
   
   [_mainWindow makeKeyAndOrderFront:nil];
@@ -232,7 +257,9 @@ static NSColor* _rowColors[6];
       _leftPath = url.path;
     }
     [self _compareFolders:YES];
+#ifndef NDEBUG
     [self _saveBookmark:(isRight ? kUserDefaultKey_RightBookmark : kUserDefaultKey_LeftBookmark) withURL:url];
+#endif
   }
 }
 

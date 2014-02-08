@@ -161,7 +161,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="217" y="278" width="1000" height="600"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <value key="minSize" type="size" width="1000" height="498"/>
+            <value key="minSize" type="size" width="1000" height="500"/>
             <view key="contentView" id="1605">
                 <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -170,14 +170,14 @@
                 </userGuides>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
-                        <rect key="frame" x="-1" y="204" width="1002" height="274"/>
+                        <rect key="frame" x="-1" y="204" width="1002" height="238"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="dNO-vd-uOL">
-                            <rect key="frame" x="1" y="17" width="1000" height="256"/>
+                            <rect key="frame" x="1" y="17" width="1000" height="220"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" autosaveName="" rowHeight="16" headerView="Acs-yI-k5f" id="o3s-wI-Uws" customClass="TableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="256"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="220"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="4" height="6"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,14 +280,14 @@
                         </tableHeaderView>
                     </scrollView>
                     <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="cYD-0N-EbG">
-                        <rect key="frame" x="9" y="486" width="484" height="104"/>
+                        <rect key="frame" x="9" y="452" width="380" height="138"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="482" height="102"/>
+                            <rect key="frame" x="1" y="1" width="378" height="136"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button verticalHuggingPriority="750" id="RuH-HJ-ro6">
-                                    <rect key="frame" x="12" y="35" width="180" height="32"/>
+                                    <rect key="frame" x="12" y="69" width="180" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Select Right Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2p6-Rx-Riq">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -297,65 +297,8 @@
                                         <action selector="selectRight:" target="494" id="DQz-m6-RIf"/>
                                     </connections>
                                 </button>
-                                <button id="q7n-nc-vPy">
-                                    <rect key="frame" x="216" y="17" width="250" height="16"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Ignore File Content Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4pk-A9-jMy">
-                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="updateComparison:" target="494" id="qPM-Jf-okE"/>
-                                        <binding destination="494" name="enabled" keyPath="ready" id="gGJ-53-UD1"/>
-                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipContent" id="tGf-OS-gTC">
-                                            <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </button>
-                                <button id="m5M-Vg-6du">
-                                    <rect key="frame" x="216" y="44" width="250" height="16"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Ignore Permission Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="E4T-mI-HJQ">
-                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="updateComparison:" target="494" id="LNw-0M-rxr"/>
-                                        <binding destination="494" name="enabled" keyPath="ready" id="s9L-UX-v8C"/>
-                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipPermission" id="tfX-FZ-pAh">
-                                            <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </button>
-                                <button id="tbY-8J-6vw">
-                                    <rect key="frame" x="216" y="71" width="250" height="16"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Ignore Date Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JLo-N5-SHh">
-                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="updateComparison:" target="494" id="oFU-4r-erb"/>
-                                        <binding destination="494" name="enabled" keyPath="ready" id="hj5-MQ-zP3"/>
-                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipDate" id="5y4-T2-vpp">
-                                            <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </button>
                                 <button verticalHuggingPriority="750" id="Id3-SS-UYr">
-                                    <rect key="frame" x="12" y="62" width="180" height="32"/>
+                                    <rect key="frame" x="12" y="96" width="180" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Select Left Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kFC-Ca-N28">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -366,7 +309,7 @@
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" id="6Ir-Qy-D4U">
-                                    <rect key="frame" x="12" y="8" width="180" height="32"/>
+                                    <rect key="frame" x="12" y="7" width="180" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Compare Again" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a6b-RJ-Pc8">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -377,22 +320,58 @@
                                         <binding destination="494" name="enabled" keyPath="ready" id="ywu-T6-35a"/>
                                     </connections>
                                 </button>
+                                <button id="QFy-SP-QLP">
+                                    <rect key="frame" x="202" y="105" width="170" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Compare file contents" bezelStyle="regularSquare" imagePosition="left" inset="2" id="dHH-eN-UNC">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateComparison:" target="494" id="jSV-0r-hZk"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.checksumFiles" id="p6a-GU-ta6">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="DcM-XO-Bsj">
+                                    <rect key="frame" x="220" y="13" width="150" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Using checksums is guaranteed to detect changed files but is quite slower than using file size and modification date" id="9hA-Wt-bpG">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="TRx-hT-FbV">
+                                    <rect key="frame" x="220" y="89" width="105" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="using checksum" id="smA-Ae-ntM">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="z46-am-oQt">
-                        <rect key="frame" x="507" y="486" width="484" height="104"/>
+                        <rect key="frame" x="391.00000008032276" y="452" width="600" height="138"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="482" height="102"/>
+                            <rect key="frame" x="1" y="1" width="598" height="136"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button id="YO6-sl-Zcb">
-                                    <rect key="frame" x="16" y="41" width="167" height="18"/>
+                                    <rect key="frame" x="16" y="72" width="370" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Exclude Identical Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LVR-Wr-0js">
+                                    <buttonCell key="cell" type="check" title="Exclude identical items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LVR-Wr-0js">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -409,9 +388,9 @@
                                     </connections>
                                 </button>
                                 <button id="UDi-O1-Ksp">
-                                    <rect key="frame" x="16" y="12" width="160" height="18"/>
+                                    <rect key="frame" x="422" y="12" width="160" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Exclude Hidden Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xG3-eT-fNr">
+                                    <buttonCell key="cell" type="check" title="Exclude hidden items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xG3-eT-fNr">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -427,10 +406,67 @@
                                         </binding>
                                     </connections>
                                 </button>
+                                <button id="DWS-8K-vMN">
+                                    <rect key="frame" x="16" y="52" width="370" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude items with only permission differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="atG-n2-zLR">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="JDX-2y-V7x"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="j7A-e6-4eL"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterPermissions" id="Hql-ER-KLq">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button id="SfI-qI-dx2">
+                                    <rect key="frame" x="16" y="32" width="370" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude items with only creation date differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="nOL-6c-fJp">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="zbu-Nb-doO"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="MSo-ws-UnK"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterCreations" id="JDU-Vd-7Xe">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button id="K6Y-XU-X2s">
+                                    <rect key="frame" x="16" y="12" width="370" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude folders with only modification date differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="99n-YV-JS6">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="p0J-pH-Lzl"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="5ga-kE-Yyv"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterModifications" id="uJb-gR-KH4">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
                                 <button id="dXz-UF-IFa">
-                                    <rect key="frame" x="288" y="12" width="140" height="18"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Exclude SymLinks" bezelStyle="regularSquare" imagePosition="left" inset="2" id="KH6-e6-a2u">
+                                    <rect key="frame" x="422" y="32" width="160" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude symLinks" bezelStyle="regularSquare" imagePosition="left" inset="2" id="KH6-e6-a2u">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -447,9 +483,9 @@
                                     </connections>
                                 </button>
                                 <searchField verticalHuggingPriority="750" id="thI-J1-aSx">
-                                    <rect key="frame" x="18" y="68" width="240" height="22"/>
+                                    <rect key="frame" x="18" y="102" width="562" height="22"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Filter by Item Name" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="imS-Bo-AgN">
+                                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Filter item names" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="imS-Bo-AgN">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -465,9 +501,9 @@
                                     </connections>
                                 </searchField>
                                 <button id="NAn-UF-olm">
-                                    <rect key="frame" x="288" y="70" width="140" height="18"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Exclude Files" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TNO-EU-cqQ">
+                                    <rect key="frame" x="422" y="72" width="160" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude files" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TNO-EU-cqQ">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -484,9 +520,9 @@
                                     </connections>
                                 </button>
                                 <button id="1yD-My-Y4C">
-                                    <rect key="frame" x="288" y="41" width="140" height="18"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Exclude Folders" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Vd2-cp-bjl">
+                                    <rect key="frame" x="422" y="52" width="160" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude folders" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Vd2-cp-bjl">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -533,7 +569,7 @@
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VW2-e5-mq7">
                                     <rect key="frame" x="170" y="18" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Content:" id="cgu-Sd-Su9">
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Size:" id="cgu-Sd-Su9">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -699,24 +735,24 @@
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zwl-Ep-U5k">
                                     <rect key="frame" x="252" y="18" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CONTENT>" usesSingleLineMode="YES" id="yg4-eP-q3o">
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;SIZE>" usesSingleLineMode="YES" id="yg4-eP-q3o">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileContents" id="Fxw-vD-AFJ">
-                                            <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSValueTransformerName">DifferenceTransformer</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.size" id="PZK-S6-3Za">
                                             <dictionary key="options">
                                                 <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileSizes" id="LQX-qP-xce">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSValueTransformerName">DifferenceTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -795,7 +831,7 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="8c8-KB-oLn">
-                        <rect key="frame" x="507" y="10" width="484" height="184"/>
+                        <rect key="frame" x="507.00000008032282" y="10" width="484" height="184"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                         <view key="contentView">
                             <rect key="frame" x="1" y="1" width="482" height="182"/>
@@ -854,7 +890,7 @@
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="chi-dF-13P">
                                     <rect key="frame" x="170" y="18" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Content:" id="bhC-04-rdl">
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Size:" id="bhC-04-rdl">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -952,24 +988,24 @@
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gte-Ez-2Lq">
                                     <rect key="frame" x="252" y="18" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CONTENT>" usesSingleLineMode="YES" id="xl4-mX-g9U">
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;SIZE>" usesSingleLineMode="YES" id="xl4-mX-g9U">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileContents" id="x22-NI-fSt">
-                                            <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSValueTransformerName">DifferenceTransformer</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.size" id="msz-1M-USy">
                                             <dictionary key="options">
                                                 <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileSizes" id="ItQ-ns-Iki">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSValueTransformerName">DifferenceTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>

@@ -19,16 +19,21 @@
 
 #import "DirectoryScanner.h"
 
+#define kUserDefaultKey_ChecksumFiles @"checksumFiles"
+
 #define kUserDefaultKey_FilterIdentical @"filterIdentical"
 #define kUserDefaultKey_FilterHidden @"filterHidden"
 #define kUserDefaultKey_FilterFiles @"filterFiles"
 #define kUserDefaultKey_FilterFolders @"filterFolders"
 #define kUserDefaultKey_FilterLinks @"filterLinks"
-#define kUserDefaultKey_SkipDate @"skipDate"
-#define kUserDefaultKey_SkipPermission @"skipPermission"
-#define kUserDefaultKey_SkipContent @"skipContent"
+#define kUserDefaultKey_FilterPermissions @"filterPermissions"
+#define kUserDefaultKey_FilterCreations @"filterCreations"
+#define kUserDefaultKey_FilterModifications @"filterModifications"
+
+#ifndef NDEBUG
 #define kUserDefaultKey_LeftBookmark @"leftBookmark"
 #define kUserDefaultKey_RightBookmark @"rightBookmark"
+#endif
 
 #define kStoreKitProductIdentifier @"unlimited"
 
@@ -44,7 +49,7 @@
 @property(nonatomic, readonly) BOOL differentUserID;
 @property(nonatomic, readonly) BOOL differentCreationDates;
 @property(nonatomic, readonly) BOOL differentModificationsDates;
-@property(nonatomic, readonly) BOOL differentFileContents;
+@property(nonatomic, readonly) BOOL differentFileSizes;
 @end
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
