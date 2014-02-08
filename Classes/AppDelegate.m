@@ -66,6 +66,13 @@ static NSColor* _rowColors[6];
   _rowColors[5] = [NSColor colorWithDeviceHue:0.3 saturation:0.3 brightness:1.0 alpha:1.0];  // Dark green
 }
 
+- (void)awakeFromNib {
+  NSTableHeaderCell* leftCell = [[[_tableView tableColumns] objectAtIndex:0] headerCell];
+  leftCell.lineBreakMode = NSLineBreakByTruncatingMiddle;  // Can't be set in IB?
+  NSTableHeaderCell* rightCell = [[[_tableView tableColumns] objectAtIndex:1] headerCell];
+  rightCell.lineBreakMode = NSLineBreakByTruncatingMiddle;  // Can't be set in IB?
+}
+
 - (void)_compareFolders:(BOOL)force {
   if (_leftPath) {
     [(NSTableHeaderCell*)[[[_tableView tableColumns] objectAtIndex:0] headerCell] setStringValue:_leftPath];
@@ -121,13 +128,6 @@ static NSColor* _rowColors[6];
       }
     }
   }
-}
-
-- (void)awakeFromNib {
-  NSTableHeaderCell* leftCell = [[[_tableView tableColumns] objectAtIndex:0] headerCell];
-  leftCell.lineBreakMode = NSLineBreakByTruncatingMiddle;  // Can't be set in IB?
-  NSTableHeaderCell* rightCell = [[[_tableView tableColumns] objectAtIndex:1] headerCell];
-  rightCell.lineBreakMode = NSLineBreakByTruncatingMiddle;  // Can't be set in IB?
 }
 
 - (void)_saveBookmark:(NSString*)defaultKey withURL:(NSURL*)url {
