@@ -60,6 +60,17 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="File" id="CPz-dN-fcS">
                         <items>
+                            <menuItem title="Select Left Folder…" keyEquivalent="l" id="jub-QI-u8R">
+                                <connections>
+                                    <action selector="selectLeft:" target="494" id="gdZ-dS-Nbd"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select Right Folder…" keyEquivalent="r" id="dS4-NC-Coc">
+                                <connections>
+                                    <action selector="selectRight:" target="494" id="60j-gT-ZSr"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="IWV-ap-sTD"/>
                             <menuItem title="Close" keyEquivalent="w" id="Wyx-3q-Myr">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="gPT-mO-Z8p"/>
