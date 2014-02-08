@@ -19,6 +19,8 @@
 #import <pwd.h>
 #import <grp.h>
 
+#import "DirectoryScanner.h"
+
 @implementation PathIconTransformer
 
 + (Class)transformedValueClass {
@@ -159,6 +161,31 @@
 
 - (id)transformedValue:(id)value {
   return [value boolValue] ? [NSColor redColor] : [NSColor darkGrayColor];
+}
+
+@end
+
+@implementation ItemIconTransformer
+
++ (Class)transformedValueClass {
+  return [NSImage class];
+}
+
++ (BOOL)allowsReverseTransformation {
+  return NO;
+}
+
+- (id)transformedValue:(id)value {
+  if ([value isFile]) {
+    return [NSImage imageNamed:@"File"];
+  }
+  if ([value isDirectory]) {
+    return [NSImage imageNamed:@"Folder"];
+  }
+  if ([value isSymLink]) {
+    return [NSImage imageNamed:@"Link"];
+  }
+  return nil;
 }
 
 @end

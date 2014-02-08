@@ -36,3 +36,6 @@
 
 @interface DifferenceTransformer : NSValueTransformer
 @end
+
+@interface ItemIconTransformer : NSValueTransformer
+@end

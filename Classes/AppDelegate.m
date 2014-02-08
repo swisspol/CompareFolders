@@ -18,6 +18,28 @@
 
 static NSColor* _rowColors[6];
 
+@implementation TableView
+
+- (void)drawRow:(NSInteger)row clipRect:(NSRect)clipRect {
+  if (row != [self selectedRow]) {
+    NSArrayController* controller = [(AppDelegate*)[NSApp delegate] arrayController];
+    ComparisonResult result = [(Row*)[controller.arrangedObjects objectAtIndex:row] result];
+    NSColor* color;
+    if (result & (kComparisonResult_Removed | kComparisonResult_Added | kComparisonResult_Replaced | kComparisonResult_Modified_FileContent)) {
+      color = row % 2 ? _rowColors[2] : _rowColors[3];
+    } else if (result & kComparisonResult_ModifiedMask) {
+      color = row % 2 ? _rowColors[0] : _rowColors[1];
+    } else {
+      color = row % 2 ? _rowColors[4] : _rowColors[5];
+    }
+    [color setFill];
+    NSRectFill([self rectOfRow:row]);
+  }
+  [super drawRow:row clipRect:clipRect];
+}
+
+@end
+
 @implementation Row
 
 - (BOOL)differentPermissions {
@@ -67,19 +89,19 @@ static NSColor* _rowColors[6];
 }
 
 - (void)awakeFromNib {
-  NSTableHeaderCell* leftCell = [[[_tableView tableColumns] objectAtIndex:0] headerCell];
+  NSTableHeaderCell* leftCell = [[_tableView tableColumnWithIdentifier:@"leftPath"] headerCell];
   leftCell.lineBreakMode = NSLineBreakByTruncatingMiddle;  // Can't be set in IB?
-  NSTableHeaderCell* rightCell = [[[_tableView tableColumns] objectAtIndex:1] headerCell];
+  NSTableHeaderCell* rightCell = [[_tableView tableColumnWithIdentifier:@"rightPath"] headerCell];
   rightCell.lineBreakMode = NSLineBreakByTruncatingMiddle;  // Can't be set in IB?
 }
 
 - (void)_compareFolders:(BOOL)force {
   if (_leftPath) {
-    [(NSTableHeaderCell*)[[[_tableView tableColumns] objectAtIndex:0] headerCell] setStringValue:_leftPath];
+    [(NSTableHeaderCell*)[[_tableView tableColumnWithIdentifier:@"leftPath"] headerCell] setStringValue:_leftPath];
     [_tableView.headerView setNeedsDisplay:YES];
   }
   if (_rightPath) {
-    [(NSTableHeaderCell*)[[[_tableView tableColumns] objectAtIndex:1] headerCell] setStringValue:_rightPath];
+    [(NSTableHeaderCell*)[[_tableView tableColumnWithIdentifier:@"rightPath"] headerCell] setStringValue:_rightPath];
     [_tableView.headerView setNeedsDisplay:YES];
   }
   if (_leftPath && _rightPath) {
@@ -218,23 +240,6 @@ static NSColor* _rowColors[6];
 
 - (IBAction)revealRight:(id)sender {
   [self _revealItem:YES];
-}
-
-@end
-
-@implementation AppDelegate (TableView)
-
-- (void)tableView:(NSTableView*)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn*)tableColumn row:(NSInteger)row {
-  ComparisonResult result = [(Row*)[[_arrayController arrangedObjects] objectAtIndex:row] result];
-  NSColor* color;
-  if (result & (kComparisonResult_Removed | kComparisonResult_Added | kComparisonResult_Replaced | kComparisonResult_Modified_FileContent)) {
-    color = row % 2 ? _rowColors[2] : _rowColors[3];
-  } else if (result & kComparisonResult_ModifiedMask) {
-    color = row % 2 ? _rowColors[0] : _rowColors[1];
-  } else {
-    color = row % 2 ? _rowColors[4] : _rowColors[5];
-  }
-  [(NSTextFieldCell*)cell setBackgroundColor:color];
 }
 
 @end

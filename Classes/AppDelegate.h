@@ -29,6 +29,9 @@
 
 #define kStoreKitProductIdentifier @"unlimited"
 
+@interface TableView : NSTableView
+@end
+
 @interface Row : NSObject
 @property(nonatomic) ComparisonResult result;
 @property(nonatomic, retain) Item* leftItem;
@@ -58,9 +61,6 @@
 - (IBAction)updateComparison:(id)sender;
 - (IBAction)revealLeft:(id)sender;
 - (IBAction)revealRight:(id)sender;
-@end
-
-@interface AppDelegate (TableView) <NSTableViewDelegate>
 @end
 
 @interface AppDelegate (StoreKit) <SKPaymentTransactionObserver, SKProductsRequestDelegate>

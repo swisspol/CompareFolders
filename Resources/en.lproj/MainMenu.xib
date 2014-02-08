@@ -159,57 +159,88 @@
                     <userLayoutGuide location="159" affinity="minY"/>
                 </userGuides>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="15" horizontalPageScroll="10" verticalLineScroll="15" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
                         <rect key="frame" x="-1" y="170" width="1002" height="325"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="dNO-vd-uOL">
                             <rect key="frame" x="1" y="17" width="1000" height="307"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" autosaveName="" rowHeight="15" headerView="Acs-yI-k5f" id="o3s-wI-Uws">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" autosaveName="" rowHeight="16" headerView="Acs-yI-k5f" id="o3s-wI-Uws" customClass="TableView">
                                     <rect key="frame" x="0.0" y="0.0" width="1000" height="307"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <size key="intercellSpacing" width="4" height="6"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <tableViewGridLines key="gridStyleMask" vertical="YES"/>
                                     <color key="gridColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <tableColumns>
-                                        <tableColumn editable="NO" width="500" minWidth="100" maxWidth="10000" id="T2R-JR-qgQ">
+                                        <tableColumn identifier="leftIcon" editable="NO" width="20" minWidth="10" maxWidth="100" id="Yk4-Pf-Qqc">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            </tableHeaderCell>
+                                            <imageCell key="dataCell" controlSize="small" refusesFirstResponder="YES" alignment="left" id="CSx-ew-Cpf"/>
+                                            <connections>
+                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.leftItem" id="QVF-C7-F2H">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                        <string key="NSValueTransformerName">ItemIconTransformer</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                        <tableColumn identifier="leftPath" editable="NO" width="472" minWidth="100" maxWidth="10000" id="T2R-JR-qgQ">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Please select a left folder">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
-                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Text" drawsBackground="YES" id="qkQ-pO-TqG">
+                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Text" id="qkQ-pO-TqG">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.leftItem.relativePath" id="qvn-gN-VHG">
+                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.leftItem.relativePath" id="Ovp-HH-1Y8">
                                                     <dictionary key="options">
-                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
                                                         <bool key="NSCreatesSortDescriptor" value="NO"/>
                                                     </dictionary>
                                                 </binding>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn editable="NO" width="500" minWidth="100" maxWidth="10000" id="m3L-jq-Bpi">
+                                        <tableColumn identifier="rightIcon" editable="NO" width="20" minWidth="10" maxWidth="100" id="dKf-5i-pUC">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            </tableHeaderCell>
+                                            <imageCell key="dataCell" controlSize="small" refusesFirstResponder="YES" alignment="left" id="tAF-Z2-Ddf"/>
+                                            <connections>
+                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.rightItem" id="Uwz-Xu-Jd2">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                        <string key="NSValueTransformerName">ItemIconTransformer</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                        <tableColumn identifier="rightPath" editable="NO" width="472" minWidth="100" maxWidth="10000" id="m3L-jq-Bpi">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Please select a right folder">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
-                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Text" drawsBackground="YES" id="FSw-h8-JNe">
+                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Text" id="FSw-h8-JNe">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.rightItem.relativePath" id="rzz-HH-aB7">
+                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.rightItem.relativePath" id="17C-ra-2mD">
                                                     <dictionary key="options">
-                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
                                                         <bool key="NSCreatesSortDescriptor" value="NO"/>
                                                     </dictionary>
                                                 </binding>
@@ -220,14 +251,13 @@
                                         <binding destination="eGP-p6-98x" name="content" keyPath="arrangedObjects" id="5zV-m4-NNs"/>
                                         <binding destination="eGP-p6-98x" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="5zV-m4-NNs" id="zBY-rj-IcB"/>
                                         <binding destination="eGP-p6-98x" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="zBY-rj-IcB" id="nn7-Xo-Ri3"/>
-                                        <outlet property="delegate" destination="494" id="yXf-vS-s5q"/>
                                     </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hPn-eT-4bZ">
-                            <rect key="frame" x="1" y="413" width="800" height="16"/>
+                            <rect key="frame" x="1" y="308" width="1000" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="OGw-lL-6xK">
@@ -248,13 +278,13 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </searchFieldCell>
                         <connections>
-                            <binding destination="494" name="enabled" keyPath="ready" id="dtD-2p-RDA"/>
                             <binding destination="eGP-p6-98x" name="predicate" keyPath="filterPredicate" id="65W-a4-sQY">
                                 <dictionary key="options">
                                     <string key="NSDisplayName">predicate</string>
                                     <string key="NSPredicateFormat">(leftItem.relativePath contains[cd] $value) OR (rightItem.relativePath contains[cd] $value)</string>
                                 </dictionary>
                             </binding>
+                            <binding destination="494" name="enabled" keyPath="ready" id="dtD-2p-RDA"/>
                         </connections>
                     </searchField>
                     <button id="UDi-O1-Ksp">
@@ -403,9 +433,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                 <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSValueTransformerName">PermissionsTransformer</string>
                                 </dictionary>
                             </binding>
@@ -437,9 +467,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                 <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSValueTransformerName">UserIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -462,9 +492,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                 <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSValueTransformerName">GroupIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -497,18 +527,18 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.size" id="PZK-S6-3Za">
-                                <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSValueTransformerName">FileSizeTransformer</string>
-                                </dictionary>
-                            </binding>
                             <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileContents" id="Fxw-vD-AFJ">
                                 <dictionary key="options">
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.size" id="PZK-S6-3Za">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSValueTransformerName">FileSizeTransformer</string>
                                 </dictionary>
                             </binding>
                         </connections>
@@ -561,17 +591,17 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentCreationDates" id="wXr-Fc-aiw">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.creationDate" id="ZNm-VS-WdA">
                                 <dictionary key="options">
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSNotApplicablePlaceholder">N/A</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentCreationDates" id="wXr-Fc-aiw">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
                                 </dictionary>
                             </binding>
                         </connections>
@@ -630,17 +660,17 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentModificationsDates" id="xZx-lJ-Lqw">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.modificationDate" id="GcW-ZB-jFT">
                                 <dictionary key="options">
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSNotApplicablePlaceholder">N/A</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentModificationsDates" id="xZx-lJ-Lqw">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
                                 </dictionary>
                             </binding>
                         </connections>
@@ -696,9 +726,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                 <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSValueTransformerName">UserIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -755,9 +785,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                 <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSValueTransformerName">GroupIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -851,9 +881,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.size" id="msz-1M-USy">
                                 <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSValueTransformerName">FileSizeTransformer</string>
                                 </dictionary>
                             </binding>
@@ -928,9 +958,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                 <dictionary key="options">
-                                    <string key="NSNullPlaceholder">N/A</string>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <string key="NSNullPlaceholder">N/A</string>
                                     <string key="NSValueTransformerName">PermissionsTransformer</string>
                                 </dictionary>
                             </binding>

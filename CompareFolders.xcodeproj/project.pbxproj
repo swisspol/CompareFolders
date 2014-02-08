@@ -13,6 +13,12 @@
 		E296D7E518A56F890091AAF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E296D7E118A56F890091AAF3 /* Localizable.strings */; };
 		E296D7E618A56F890091AAF3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E296D7E318A56F890091AAF3 /* MainMenu.xib */; };
 		E296D7E918A591C00091AAF3 /* ValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = E296D7E818A591C00091AAF3 /* ValueTransformers.m */; };
+		E2A4A88418A5EFA20068C98E /* File.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88218A5EFA20068C98E /* File.png */; };
+		E2A4A88518A5EFA20068C98E /* File@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88318A5EFA20068C98E /* File@2x.png */; };
+		E2A4A88818A5F2580068C98E /* Folder.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88618A5F2580068C98E /* Folder.png */; };
+		E2A4A88918A5F2580068C98E /* Folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88718A5F2580068C98E /* Folder@2x.png */; };
+		E2A4A88C18A5F8130068C98E /* Link.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88A18A5F8130068C98E /* Link.png */; };
+		E2A4A88D18A5F8130068C98E /* Link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88B18A5F8130068C98E /* Link@2x.png */; };
 		E2E12C731343C96000B48700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E12C721343C96000B48700 /* AppDelegate.m */; };
 		E2E12CC61343CBB100B48700 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D09A521343C4D90096A4CC /* main.m */; };
 		E2FE559D1836FD3C00617532 /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = E2FE559C1836FD3C00617532 /* Icon.iconset */; };
@@ -29,6 +35,12 @@
 		E296D7E418A56F890091AAF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E296D7E718A591C00091AAF3 /* ValueTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueTransformers.h; sourceTree = "<group>"; };
 		E296D7E818A591C00091AAF3 /* ValueTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueTransformers.m; sourceTree = "<group>"; };
+		E2A4A88218A5EFA20068C98E /* File.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = File.png; sourceTree = "<group>"; };
+		E2A4A88318A5EFA20068C98E /* File@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "File@2x.png"; sourceTree = "<group>"; };
+		E2A4A88618A5F2580068C98E /* Folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Folder.png; sourceTree = "<group>"; };
+		E2A4A88718A5F2580068C98E /* Folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder@2x.png"; sourceTree = "<group>"; };
+		E2A4A88A18A5F8130068C98E /* Link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Link.png; sourceTree = "<group>"; };
+		E2A4A88B18A5F8130068C98E /* Link@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Link@2x.png"; sourceTree = "<group>"; };
 		E2D09A4E1343C4B60096A4CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2D09A521343C4D90096A4CC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2D09A531343C4D90096A4CC /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -107,9 +119,15 @@
 		E2E12D011343CDCD00B48700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E2A4A88218A5EFA20068C98E /* File.png */,
+				E2A4A88318A5EFA20068C98E /* File@2x.png */,
+				E2A4A88618A5F2580068C98E /* Folder.png */,
+				E2A4A88718A5F2580068C98E /* Folder@2x.png */,
+				E2FE559C1836FD3C00617532 /* Icon.iconset */,
+				E2A4A88A18A5F8130068C98E /* Link.png */,
+				E2A4A88B18A5F8130068C98E /* Link@2x.png */,
 				E296D7E118A56F890091AAF3 /* Localizable.strings */,
 				E296D7E318A56F890091AAF3 /* MainMenu.xib */,
-				E2FE559C1836FD3C00617532 /* Icon.iconset */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -181,9 +199,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A4A88D18A5F8130068C98E /* Link@2x.png in Resources */,
 				E2FE559D1836FD3C00617532 /* Icon.iconset in Resources */,
+				E2A4A88C18A5F8130068C98E /* Link.png in Resources */,
+				E2A4A88918A5F2580068C98E /* Folder@2x.png in Resources */,
 				E296D7E518A56F890091AAF3 /* Localizable.strings in Resources */,
+				E2A4A88518A5EFA20068C98E /* File@2x.png in Resources */,
 				E296D7E618A56F890091AAF3 /* MainMenu.xib in Resources */,
+				E2A4A88418A5EFA20068C98E /* File.png in Resources */,
+				E2A4A88818A5F2580068C98E /* Folder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +252,6 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
@@ -241,8 +264,6 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
@@ -256,6 +277,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -271,6 +293,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
