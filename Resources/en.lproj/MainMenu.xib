@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="Main Menu" systemMenu="main" id="1418" userLabel="Main Menu">
+            <items>
+                <menuItem title="Compare Folders" id="1424">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Compare Folders" systemMenu="apple" id="1431">
+                        <items>
+                            <menuItem title="About Compare Folders" id="1442">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="1578"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1435"/>
+                            <menuItem title="Services" id="1434">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Services" systemMenu="services" id="1443"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1438"/>
+                            <menuItem title="Hide Compare Folders" keyEquivalent="h" id="1441">
+                                <connections>
+                                    <action selector="hide:" target="-3" id="1575"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="1432">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-3" id="1576"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="1440">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="1579"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1433"/>
+                            <menuItem title="Quit Compare Folders" keyEquivalent="q" id="1439">
+                                <connections>
+                                    <action selector="terminate:" target="-2" id="1577"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="823-v9-6FB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="CPz-dN-fcS">
+                        <items>
+                            <menuItem title="Close" keyEquivalent="w" id="Wyx-3q-Myr">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="gPT-mO-Z8p"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="1419">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="1519">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="1534">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="1567"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="1533">
+                                <connections>
+                                    <action selector="redo:" target="-1" id="1568"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1532"/>
+                            <menuItem title="Cut" keyEquivalent="x" id="1531">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="1569"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="1530">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="1570"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="1529">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="1571"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" id="1527">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="delete:" target="-1" id="1572"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="1526">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="1573"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="1425">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Window" systemMenu="window" id="1426">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="1427">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="1564"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="1428">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="1565"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="UVP-dY-bst"/>
+                            <menuItem title="Bring All to Front" id="1429">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="1566"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="494" userLabel="AppDelegate" customClass="AppDelegate">
+            <connections>
+                <outlet property="arrayController" destination="eGP-p6-98x" id="XNz-Xm-4V5"/>
+                <outlet property="mainWindow" destination="1604" id="1606"/>
+                <outlet property="tableView" destination="o3s-wI-Uws" id="buI-Uf-SCa"/>
+            </connections>
+        </customObject>
+        <window title="Folder Compare" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="1604" userLabel="Main Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+            <rect key="contentRect" x="217" y="278" width="1000" height="600"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="1000" height="500"/>
+            <view key="contentView" id="1605">
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <userGuides>
+                    <userLayoutGuide location="500" affinity="minX"/>
+                    <userLayoutGuide location="159" affinity="minY"/>
+                </userGuides>
+                <subviews>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="15" horizontalPageScroll="10" verticalLineScroll="15" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
+                        <rect key="frame" x="-1" y="170" width="1002" height="325"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="dNO-vd-uOL">
+                            <rect key="frame" x="1" y="17" width="1000" height="307"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" autosaveName="" rowHeight="15" headerView="Acs-yI-k5f" id="o3s-wI-Uws">
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="307"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <tableViewGridLines key="gridStyleMask" vertical="YES"/>
+                                    <color key="gridColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <tableColumns>
+                                        <tableColumn editable="NO" width="500" minWidth="100" maxWidth="10000" id="T2R-JR-qgQ">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Please select a left folder">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Text" drawsBackground="YES" id="qkQ-pO-TqG">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <connections>
+                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.leftItem.relativePath" id="qvn-gN-VHG">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                        <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                        <tableColumn editable="NO" width="500" minWidth="100" maxWidth="10000" id="m3L-jq-Bpi">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Please select a right folder">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Text" drawsBackground="YES" id="FSw-h8-JNe">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <connections>
+                                                <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.rightItem.relativePath" id="rzz-HH-aB7">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                        <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                    </tableColumns>
+                                    <connections>
+                                        <binding destination="eGP-p6-98x" name="content" keyPath="arrangedObjects" id="5zV-m4-NNs"/>
+                                        <binding destination="eGP-p6-98x" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="5zV-m4-NNs" id="zBY-rj-IcB"/>
+                                        <binding destination="eGP-p6-98x" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="zBY-rj-IcB" id="nn7-Xo-Ri3"/>
+                                        <outlet property="delegate" destination="494" id="yXf-vS-s5q"/>
+                                    </connections>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hPn-eT-4bZ">
+                            <rect key="frame" x="1" y="413" width="800" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="OGw-lL-6xK">
+                            <rect key="frame" x="224" y="17" width="15" height="102"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <tableHeaderView key="headerView" id="Acs-yI-k5f">
+                            <rect key="frame" x="0.0" y="0.0" width="1000" height="17"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </tableHeaderView>
+                    </scrollView>
+                    <searchField verticalHuggingPriority="750" id="thI-J1-aSx">
+                        <rect key="frame" x="735" y="564" width="250" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Filter Item Names" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="imS-Bo-AgN">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </searchFieldCell>
+                        <connections>
+                            <binding destination="494" name="enabled" keyPath="ready" id="dtD-2p-RDA"/>
+                            <binding destination="eGP-p6-98x" name="predicate" keyPath="filterPredicate" id="65W-a4-sQY">
+                                <dictionary key="options">
+                                    <string key="NSDisplayName">predicate</string>
+                                    <string key="NSPredicateFormat">(leftItem.relativePath contains[cd] $value) OR (rightItem.relativePath contains[cd] $value)</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </searchField>
+                    <button id="UDi-O1-Ksp">
+                        <rect key="frame" x="733" y="539" width="200" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Filter Hidden Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xG3-eT-fNr">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateFilters:" target="494" id="pVc-lN-ZcZ"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="wf4-WC-Dmw"/>
+                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterHidden" id="PBX-16-Rqp">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button id="YO6-sl-Zcb">
+                        <rect key="frame" x="733" y="512" width="200" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Filter Identical Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LVR-Wr-0js">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateFilters:" target="494" id="JD0-Ce-wL3"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="5HN-ji-iZN"/>
+                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterIdentical" id="KdL-wl-LBg">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button id="m5M-Vg-6du">
+                        <rect key="frame" x="384" y="539" width="250" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Ignore Permission Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="E4T-mI-HJQ">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateComparison:" target="494" id="LNw-0M-rxr"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="s9L-UX-v8C"/>
+                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipPermission" id="tfX-FZ-pAh">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button id="q7n-nc-vPy">
+                        <rect key="frame" x="384" y="512" width="250" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Ignore File Content Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4pk-A9-jMy">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateComparison:" target="494" id="qPM-Jf-okE"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="gGJ-53-UD1"/>
+                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipContent" id="tGf-OS-gTC">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button id="tbY-8J-6vw">
+                        <rect key="frame" x="384" y="566" width="250" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Ignore Date Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JLo-N5-SHh">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateComparison:" target="494" id="oFU-4r-erb"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="hj5-MQ-zP3"/>
+                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipDate" id="5y4-T2-vpp">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="Id3-SS-UYr">
+                        <rect key="frame" x="9" y="557" width="180" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Select Left Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kFC-Ca-N28">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="selectLeft:" target="494" id="bdA-Cs-5m0"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="RuH-HJ-ro6">
+                        <rect key="frame" x="9" y="530" width="180" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Select Right Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2p6-Rx-Riq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="selectRight:" target="494" id="DQz-m6-RIf"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="6Ir-Qy-D4U">
+                        <rect key="frame" x="9" y="503" width="180" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Refresh Comparison" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a6b-RJ-Pc8">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateComparison:" target="494" id="Lw2-Rr-gJd"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="ywu-T6-35a"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3oA-ru-86R">
+                        <rect key="frame" x="246" y="71" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;ACCESS>" usesSingleLineMode="YES" id="m1q-1Z-cHj">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentPermissions" id="dbU-RJ-yJZ">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">PermissionsTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="l3W-BG-c2O">
+                        <rect key="frame" x="166" y="31" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Modified:" id="m6a-X9-TyO">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OTS-fG-hT8">
+                        <rect key="frame" x="246" y="111" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;USER>" usesSingleLineMode="YES" id="Ywi-Cv-1Zw">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentUserID" id="x2R-bN-oMZ">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">UserIDTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="r9x-A1-Su0">
+                        <rect key="frame" x="246" y="91" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;GROUP>" usesSingleLineMode="YES" id="7nR-am-Lpa">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentGroupID" id="gnW-1Q-quJ">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">GroupIDTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="B5a-4k-auv">
+                        <rect key="frame" x="166" y="71" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Access:" id="hy3-sd-Vyo">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="LOb-JG-GpP">
+                        <rect key="frame" x="166" y="91" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Group:" id="sny-40-nnT">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zwl-Ep-U5k">
+                        <rect key="frame" x="246" y="11" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CONTENT>" usesSingleLineMode="YES" id="yg4-eP-q3o">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.size" id="PZK-S6-3Za">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">FileSizeTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileContents" id="Fxw-vD-AFJ">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="R6w-0b-INk">
+                        <rect key="frame" x="246" y="131" width="240" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" truncatesLastVisibleLine="YES" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" id="6iJ-ab-967">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">&lt;LOCATION&gt;
+&lt;LOCATION&gt;</string>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.absolutePath" id="3O1-Us-u20">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UWL-YQ-ZR2">
+                        <rect key="frame" x="166" y="51" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Created:" id="dFN-Up-zAi">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VW2-e5-mq7">
+                        <rect key="frame" x="166" y="11" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Content:" id="cgu-Sd-Su9">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="X90-fk-qRg">
+                        <rect key="frame" x="246" y="51" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CREATED>" usesSingleLineMode="YES" id="Ip6-HJ-Ruh">
+                            <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="WWk-kd-Tr7"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.creationDate" id="ZNm-VS-WdA">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentCreationDates" id="wXr-Fc-aiw">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6wB-8d-duY">
+                        <rect key="frame" x="166" y="111" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="User:" id="EK9-bA-iaf">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="Fli-O5-QHY">
+                        <rect key="frame" x="7" y="6" width="156" height="156"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="154" height="154"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dyf-qt-6NU">
+                                    <rect key="frame" x="13" y="14" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="bLL-D3-3cj"/>
+                                    <connections>
+                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.absolutePath" id="6qn-bs-3KB">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <string key="NSValueTransformerName">PathIconTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </imageView>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="xgB-bb-eSQ">
+                        <rect key="frame" x="191" y="145" width="55" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Location:" id="bkT-Bx-YGd">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="onX-v0-yys">
+                        <rect key="frame" x="246" y="31" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;MODIFIED>" usesSingleLineMode="YES" id="wI5-vo-mxq">
+                            <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="XLH-YC-LdI"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.modificationDate" id="GcW-ZB-jFT">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentModificationsDates" id="xZx-lJ-Lqw">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <button id="yIZ-5D-kRI">
+                        <rect key="frame" x="175" y="145" width="14" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="YlH-kH-Zuv">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="revealLeft:" target="494" id="Vm1-dp-owG"/>
+                            <binding destination="eGP-p6-98x" name="enabled" keyPath="selection.leftItem" id="gq7-lU-pmA">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="tXE-LM-rFx">
+                        <rect key="frame" x="666" y="111" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="User:" id="Rsy-O2-3Gw">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="aeY-Gp-3uc">
+                        <rect key="frame" x="666" y="91" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Group:" id="h3o-2V-B2h">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="cGk-P8-B8P">
+                        <rect key="frame" x="748" y="111" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;USER>" usesSingleLineMode="YES" id="uxd-pI-bdx">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentUserID" id="muR-2V-bIm">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">UserIDTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uO6-3k-LF7">
+                        <rect key="frame" x="666" y="31" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Modified:" id="HVJ-ca-ezK">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8L9-Zi-PkE">
+                        <rect key="frame" x="748" y="31" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;MODIFIED>" usesSingleLineMode="YES" id="0wX-zF-t9X">
+                            <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="agP-nr-Upc"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentModificationsDates" id="yeO-Tt-hhE">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.modificationDate" id="iGU-Sy-Mpi">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="L7S-FV-Kkd">
+                        <rect key="frame" x="748" y="91" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;GROUP>" usesSingleLineMode="YES" id="ENS-gJ-bcq">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentGroupID" id="RC6-8D-cuW">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">GroupIDTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Ghr-lT-rNH">
+                        <rect key="frame" x="748" y="51" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CREATED>" usesSingleLineMode="YES" id="JY6-pZ-GGN">
+                            <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="Xi4-1l-9Kf"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentCreationDates" id="Abp-u0-KNe">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.creationDate" id="9Qf-4m-M66">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="1Co-YA-z7B">
+                        <rect key="frame" x="507" y="6" width="156" height="156"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="154" height="154"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="n99-6f-bNL">
+                                    <rect key="frame" x="13" y="14" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xju-PS-DUZ"/>
+                                    <connections>
+                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.absolutePath" id="uOJ-ir-Jfr">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <string key="NSValueTransformerName">PathIconTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </imageView>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Fis-R4-iZJ">
+                        <rect key="frame" x="748" y="131" width="240" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" truncatesLastVisibleLine="YES" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" id="06B-2P-xFC">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">&lt;LOCATION&gt;
+&lt;LOCATION&gt;</string>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.absolutePath" id="1SN-0S-dWw">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gte-Ez-2Lq">
+                        <rect key="frame" x="748" y="11" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CONTENT>" usesSingleLineMode="YES" id="xl4-mX-g9U">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileContents" id="x22-NI-fSt">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.size" id="msz-1M-USy">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">FileSizeTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="chi-dF-13P">
+                        <rect key="frame" x="666" y="11" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Content:" id="bhC-04-rdl">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="QDF-un-xZO">
+                        <rect key="frame" x="691" y="145" width="55" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Location:" id="8dN-s2-MEP">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jsA-Hf-x1K">
+                        <rect key="frame" x="666" y="51" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Created:" id="TKy-ce-KJ9">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="B0O-GS-ypx">
+                        <rect key="frame" x="666" y="71" width="80" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Access:" id="MVd-dt-8Vb">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button id="kpZ-EH-t9I">
+                        <rect key="frame" x="675" y="145" width="14" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="sAH-ep-4Fm">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="revealRight:" target="494" id="b8D-ox-Kgf"/>
+                            <binding destination="eGP-p6-98x" name="enabled" keyPath="selection.rightItem" id="c4P-dz-8WU">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FP6-N3-TEz">
+                        <rect key="frame" x="748" y="71" width="240" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;ACCESS>" usesSingleLineMode="YES" id="gqS-9C-trk">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentPermissions" id="6pM-8Q-zpw">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
+                                <dictionary key="options">
+                                    <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <string key="NSValueTransformerName">PermissionsTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
+                </subviews>
+            </view>
+        </window>
+        <arrayController objectClassName="Row" editable="NO" avoidsEmptySelection="NO" id="eGP-p6-98x"/>
+        <userDefaultsController representsSharedInstance="YES" id="EJU-cJ-Le9"/>
+    </objects>
+    <resources>
+        <image name="NSFollowLinkFreestandingTemplate" width="10" height="10"/>
+    </resources>
+</document>

@@ -1,0 +1,4 @@
+"FILE_SIZE_B" = "%@ bytes";
+"FILE_SIZE_KB" = "%@ bytes (%@ KB)";
+"FILE_SIZE_MB" = "%@ bytes (%@ MB)";
+"FILE_SIZE_GB" = "%@ bytes (%@ GB)";
