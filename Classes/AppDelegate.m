@@ -152,14 +152,15 @@ static NSColor* _rowColors[6];
   }
 }
 
-- (void)_saveBookmark:(NSString*)defaultKey withURL:(NSURL*)url {
+- (BOOL)_saveBookmark:(NSString*)defaultKey withURL:(NSURL*)url {
   NSError* error = nil;
   NSData* data = [url bookmarkDataWithOptions:(NSURLBookmarkCreationWithSecurityScope | NSURLBookmarkCreationSecurityScopeAllowOnlyReadAccess) includingResourceValuesForKeys:nil relativeToURL:nil error:&error];
   if (data) {
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:defaultKey];
-  } else {
-    NSLog(@"Failed saving bookmark: %@", error);
+    return YES;
   }
+  NSLog(@"Failed saving bookmark: %@", error);
+  return NO;
 }
 
 - (NSString*)_loadBookmark:(NSString*)defaultKey {
@@ -169,13 +170,21 @@ static NSColor* _rowColors[6];
     NSError* error = nil;
     NSURL* url = [NSURL URLByResolvingBookmarkData:data options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil bookmarkDataIsStale:&isStale error:&error];
     if (url) {
-      if (isStale) {
-        [self _saveBookmark:defaultKey withURL:url];
-      }
       if ([url startAccessingSecurityScopedResource]) {
+#if 0  // TODO: This doesn't work on 10.9.1: re-saving a staled bookmark will be prevent it to be saved again if becoming staled again
+        if (!isStale || [self _saveBookmark:defaultKey withURL:url]) {
+          return url.path;
+        }
+#else
         return url.path;
+#endif
+      } else {
+        NSLog(@"Failed accessing bookmark");
       }
+    } else {
+      NSLog(@"Failed resolving bookmark: %@", error);
     }
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:defaultKey];
   }
   return nil;
 }
