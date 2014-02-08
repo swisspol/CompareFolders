@@ -166,19 +166,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <userGuides>
-                    <userLayoutGuide location="500" affinity="minX"/>
                     <userLayoutGuide location="159" affinity="minY"/>
+                    <userLayoutGuide location="500" affinity="minX"/>
+                    <userLayoutGuide location="550" affinity="minY"/>
                 </userGuides>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
-                        <rect key="frame" x="-1" y="170" width="1002" height="325"/>
+                        <rect key="frame" x="-1" y="170" width="1002" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="dNO-vd-uOL">
-                            <rect key="frame" x="1" y="17" width="1000" height="307"/>
+                            <rect key="frame" x="1" y="17" width="1000" height="282"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" autosaveName="" rowHeight="16" headerView="Acs-yI-k5f" id="o3s-wI-Uws" customClass="TableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="307"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="282"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="4" height="6"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,191 +281,6 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <searchField verticalHuggingPriority="750" id="thI-J1-aSx">
-                        <rect key="frame" x="635" y="564" width="350" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Filter by Item Name" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="imS-Bo-AgN">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </searchFieldCell>
-                        <connections>
-                            <binding destination="eGP-p6-98x" name="predicate" keyPath="filterPredicate" id="65W-a4-sQY">
-                                <dictionary key="options">
-                                    <string key="NSDisplayName">predicate</string>
-                                    <string key="NSPredicateFormat">(leftItem.relativePath contains[cd] $value) OR (rightItem.relativePath contains[cd] $value)</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="494" name="enabled" keyPath="ready" id="dtD-2p-RDA"/>
-                        </connections>
-                    </searchField>
-                    <button id="UDi-O1-Ksp">
-                        <rect key="frame" x="633" y="510" width="160" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Exclude Hidden Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xG3-eT-fNr">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateFilters:" target="494" id="pVc-lN-ZcZ"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="wf4-WC-Dmw"/>
-                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterHidden" id="PBX-16-Rqp">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <button id="YO6-sl-Zcb">
-                        <rect key="frame" x="633" y="537" width="167" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Exclude Identical Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LVR-Wr-0js">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateFilters:" target="494" id="JD0-Ce-wL3"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="5HN-ji-iZN"/>
-                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterIdentical" id="KdL-wl-LBg">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <button id="NAn-UF-olm">
-                        <rect key="frame" x="837" y="537" width="140" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Exclude Files" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TNO-EU-cqQ">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateFilters:" target="494" id="HdH-rX-mhb"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="eB3-YO-Opc"/>
-                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFile" id="Ayu-qZ-h06">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <button id="1yD-My-Y4C">
-                        <rect key="frame" x="837" y="510" width="140" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Exclude Folders" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Vd2-cp-bjl">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateFilters:" target="494" id="jhm-i9-wFt"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="vrr-an-gWP"/>
-                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFolder" id="wkK-ed-GJ9">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <button id="m5M-Vg-6du">
-                        <rect key="frame" x="293" y="539" width="250" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Ignore Permission Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="E4T-mI-HJQ">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateComparison:" target="494" id="LNw-0M-rxr"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="s9L-UX-v8C"/>
-                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipPermission" id="tfX-FZ-pAh">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <button id="q7n-nc-vPy">
-                        <rect key="frame" x="293" y="512" width="250" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Ignore File Content Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4pk-A9-jMy">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateComparison:" target="494" id="qPM-Jf-okE"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="gGJ-53-UD1"/>
-                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipContent" id="tGf-OS-gTC">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <button id="tbY-8J-6vw">
-                        <rect key="frame" x="293" y="566" width="250" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Ignore Date Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JLo-N5-SHh">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateComparison:" target="494" id="oFU-4r-erb"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="hj5-MQ-zP3"/>
-                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipDate" id="5y4-T2-vpp">
-                                <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" id="Id3-SS-UYr">
-                        <rect key="frame" x="9" y="557" width="180" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Select Left Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kFC-Ca-N28">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="selectLeft:" target="494" id="bdA-Cs-5m0"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" id="RuH-HJ-ro6">
-                        <rect key="frame" x="9" y="530" width="180" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Select Right Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2p6-Rx-Riq">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="selectRight:" target="494" id="DQz-m6-RIf"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" id="6Ir-Qy-D4U">
-                        <rect key="frame" x="9" y="503" width="180" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Refresh Comparison" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a6b-RJ-Pc8">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="updateComparison:" target="494" id="Lw2-Rr-gJd"/>
-                            <binding destination="494" name="enabled" keyPath="ready" id="ywu-T6-35a"/>
-                        </connections>
-                    </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3oA-ru-86R">
                         <rect key="frame" x="246" y="71" width="240" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1015,6 +831,234 @@
                             </binding>
                         </connections>
                     </textField>
+                    <box autoresizesSubviews="NO" title="Comparison Settings" borderType="line" id="cYD-0N-EbG">
+                        <rect key="frame" x="9" y="476" width="484" height="116"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="482" height="100"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button verticalHuggingPriority="750" id="RuH-HJ-ro6">
+                                    <rect key="frame" x="12" y="35" width="180" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="push" title="Select Right Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2p6-Rx-Riq">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="selectRight:" target="494" id="DQz-m6-RIf"/>
+                                    </connections>
+                                </button>
+                                <button id="q7n-nc-vPy">
+                                    <rect key="frame" x="216" y="17" width="250" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Ignore File Content Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4pk-A9-jMy">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateComparison:" target="494" id="qPM-Jf-okE"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="gGJ-53-UD1"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipContent" id="tGf-OS-gTC">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button id="m5M-Vg-6du">
+                                    <rect key="frame" x="216" y="44" width="250" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Ignore Permission Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="E4T-mI-HJQ">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateComparison:" target="494" id="LNw-0M-rxr"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="s9L-UX-v8C"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipPermission" id="tfX-FZ-pAh">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button id="tbY-8J-6vw">
+                                    <rect key="frame" x="216" y="71" width="250" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Ignore Date Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JLo-N5-SHh">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateComparison:" target="494" id="oFU-4r-erb"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="hj5-MQ-zP3"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.skipDate" id="5y4-T2-vpp">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" id="Id3-SS-UYr">
+                                    <rect key="frame" x="12" y="62" width="180" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="push" title="Select Left Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kFC-Ca-N28">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="selectLeft:" target="494" id="bdA-Cs-5m0"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" id="6Ir-Qy-D4U">
+                                    <rect key="frame" x="12" y="8" width="180" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="push" title="Compare Again" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a6b-RJ-Pc8">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateComparison:" target="494" id="Lw2-Rr-gJd"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="ywu-T6-35a"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
+                    <box autoresizesSubviews="NO" title="Display Settings" borderType="line" id="z46-am-oQt">
+                        <rect key="frame" x="507" y="476" width="484" height="116"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="482" height="100"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button id="YO6-sl-Zcb">
+                                    <rect key="frame" x="16" y="41" width="167" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude Identical Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LVR-Wr-0js">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="JD0-Ce-wL3"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="5HN-ji-iZN"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterIdentical" id="KdL-wl-LBg">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button id="UDi-O1-Ksp">
+                                    <rect key="frame" x="16" y="12" width="160" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude Hidden Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xG3-eT-fNr">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="pVc-lN-ZcZ"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="wf4-WC-Dmw"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterHidden" id="PBX-16-Rqp">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button id="dXz-UF-IFa">
+                                    <rect key="frame" x="288" y="12" width="140" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude SymLinks" bezelStyle="regularSquare" imagePosition="left" inset="2" id="KH6-e6-a2u">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="Bt1-gm-vzo"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="hHR-EQ-TCb"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterLinks" id="KxF-fc-nPY">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <searchField verticalHuggingPriority="750" id="thI-J1-aSx">
+                                    <rect key="frame" x="18" y="68" width="240" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Filter by Item Name" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="imS-Bo-AgN">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </searchFieldCell>
+                                    <connections>
+                                        <binding destination="eGP-p6-98x" name="predicate" keyPath="filterPredicate" id="65W-a4-sQY">
+                                            <dictionary key="options">
+                                                <string key="NSDisplayName">predicate</string>
+                                                <string key="NSPredicateFormat">(leftItem.relativePath contains[cd] $value) OR (rightItem.relativePath contains[cd] $value)</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="dtD-2p-RDA"/>
+                                    </connections>
+                                </searchField>
+                                <button id="NAn-UF-olm">
+                                    <rect key="frame" x="288" y="70" width="140" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude Files" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TNO-EU-cqQ">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="HdH-rX-mhb"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="eB3-YO-Opc"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFiles" id="Fyc-GP-Vrx">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                                <button id="1yD-My-Y4C">
+                                    <rect key="frame" x="288" y="41" width="140" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Exclude Folders" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Vd2-cp-bjl">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="updateFilters:" target="494" id="jhm-i9-wFt"/>
+                                        <binding destination="494" name="enabled" keyPath="ready" id="vrr-an-gWP"/>
+                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFolders" id="KRL-0A-6NY">
+                                            <dictionary key="options">
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
                 </subviews>
             </view>
         </window>

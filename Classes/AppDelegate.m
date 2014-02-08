@@ -74,8 +74,9 @@ static NSColor* _rowColors[6];
   NSDictionary* defaults = @{
                              kUserDefaultKey_FilterIdentical: @NO,
                              kUserDefaultKey_FilterHidden: @NO,
-                             kUserDefaultKey_FilterFile: @NO,
-                             kUserDefaultKey_FilterFolder: @NO,
+                             kUserDefaultKey_FilterFiles: @NO,
+                             kUserDefaultKey_FilterFolders: @NO,
+                             kUserDefaultKey_FilterLinks: @NO,
                              kUserDefaultKey_SkipDate: @NO,
                              kUserDefaultKey_SkipPermission: @NO,
                              kUserDefaultKey_SkipContent: @NO
@@ -135,21 +136,27 @@ static NSColor* _rowColors[6];
     if (_rows) {
       BOOL filterIdentical = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterIdentical];
       BOOL filterHidden = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterHidden];
-      BOOL filterFile = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFile];
-      BOOL filterFolder = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFolder];
-      if (filterHidden || filterIdentical || filterFile || filterFolder) {
+      BOOL filterFiles = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFiles];
+      BOOL filterFolders = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFolders];
+      BOOL filterLinks = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterLinks];
+      if (filterHidden || filterIdentical || filterFiles || filterFolders || filterLinks) {
         NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:_rows.count];
         for (Row* row in _rows) {
-          if (filterHidden && ([row.leftItem.name hasPrefix:@"."] || [row.rightItem.name hasPrefix:@"."])) {
+          Item* leftItem = row.leftItem;
+          Item* rightItem = row.rightItem;
+          if (filterHidden && ([leftItem.name hasPrefix:@"."] || [rightItem.name hasPrefix:@"."])) {
             continue;
           }
           if (filterIdentical && !row.result) {
             continue;
           }
-          if (filterFile && (row.leftItem.isFile || row.rightItem.isFile)) {
+          if (filterFiles && (leftItem.isFile || rightItem.isFile)) {
             continue;
           }
-          if (filterFolder && (row.leftItem.isDirectory || row.rightItem.isDirectory)) {
+          if (filterFolders && (leftItem.isDirectory || rightItem.isDirectory)) {
+            continue;
+          }
+          if (filterLinks && (leftItem.isSymLink || rightItem.isSymLink)) {
             continue;
           }
           [array addObject:row];
