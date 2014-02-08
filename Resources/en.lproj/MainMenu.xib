@@ -281,9 +281,9 @@
                         </tableHeaderView>
                     </scrollView>
                     <searchField verticalHuggingPriority="750" id="thI-J1-aSx">
-                        <rect key="frame" x="735" y="564" width="250" height="22"/>
+                        <rect key="frame" x="635" y="564" width="350" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Filter Item Names" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="imS-Bo-AgN">
+                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Filter by Item Name" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="imS-Bo-AgN">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -299,9 +299,9 @@
                         </connections>
                     </searchField>
                     <button id="UDi-O1-Ksp">
-                        <rect key="frame" x="733" y="539" width="200" height="16"/>
+                        <rect key="frame" x="633" y="510" width="160" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Filter Hidden Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xG3-eT-fNr">
+                        <buttonCell key="cell" type="check" title="Exclude Hidden Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xG3-eT-fNr">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -318,9 +318,9 @@
                         </connections>
                     </button>
                     <button id="YO6-sl-Zcb">
-                        <rect key="frame" x="733" y="512" width="200" height="16"/>
+                        <rect key="frame" x="633" y="537" width="167" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Filter Identical Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LVR-Wr-0js">
+                        <buttonCell key="cell" type="check" title="Exclude Identical Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LVR-Wr-0js">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -336,8 +336,46 @@
                             </binding>
                         </connections>
                     </button>
+                    <button id="NAn-UF-olm">
+                        <rect key="frame" x="837" y="537" width="140" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Exclude Files" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TNO-EU-cqQ">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateFilters:" target="494" id="HdH-rX-mhb"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="eB3-YO-Opc"/>
+                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFile" id="Ayu-qZ-h06">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button id="1yD-My-Y4C">
+                        <rect key="frame" x="837" y="510" width="140" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Exclude Folders" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Vd2-cp-bjl">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateFilters:" target="494" id="jhm-i9-wFt"/>
+                            <binding destination="494" name="enabled" keyPath="ready" id="vrr-an-gWP"/>
+                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFolder" id="wkK-ed-GJ9">
+                                <dictionary key="options">
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
                     <button id="m5M-Vg-6du">
-                        <rect key="frame" x="384" y="539" width="250" height="16"/>
+                        <rect key="frame" x="293" y="539" width="250" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Ignore Permission Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="E4T-mI-HJQ">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -356,7 +394,7 @@
                         </connections>
                     </button>
                     <button id="q7n-nc-vPy">
-                        <rect key="frame" x="384" y="512" width="250" height="16"/>
+                        <rect key="frame" x="293" y="512" width="250" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Ignore File Content Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4pk-A9-jMy">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -375,7 +413,7 @@
                         </connections>
                     </button>
                     <button id="tbY-8J-6vw">
-                        <rect key="frame" x="384" y="566" width="250" height="16"/>
+                        <rect key="frame" x="293" y="566" width="250" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Ignore Date Differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JLo-N5-SHh">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

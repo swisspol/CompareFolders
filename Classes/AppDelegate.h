@@ -21,6 +21,8 @@
 
 #define kUserDefaultKey_FilterIdentical @"filterIdentical"
 #define kUserDefaultKey_FilterHidden @"filterHidden"
+#define kUserDefaultKey_FilterFile @"filterFile"
+#define kUserDefaultKey_FilterFolder @"filterFolder"
 #define kUserDefaultKey_SkipDate @"skipDate"
 #define kUserDefaultKey_SkipPermission @"skipPermission"
 #define kUserDefaultKey_SkipContent @"skipContent"

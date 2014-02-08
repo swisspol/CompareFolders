@@ -74,6 +74,8 @@ static NSColor* _rowColors[6];
   NSDictionary* defaults = @{
                              kUserDefaultKey_FilterIdentical: @NO,
                              kUserDefaultKey_FilterHidden: @NO,
+                             kUserDefaultKey_FilterFile: @NO,
+                             kUserDefaultKey_FilterFolder: @NO,
                              kUserDefaultKey_SkipDate: @NO,
                              kUserDefaultKey_SkipPermission: @NO,
                              kUserDefaultKey_SkipContent: @NO
@@ -105,8 +107,6 @@ static NSColor* _rowColors[6];
     [_tableView.headerView setNeedsDisplay:YES];
   }
   if (_leftPath && _rightPath) {
-    BOOL filterIdentical = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterIdentical];
-    BOOL filterHidden = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterHidden];
     ComparisonOptions options = 0;
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_SkipDate]) {
       options |= kComparisonOption_Dates;
@@ -133,13 +133,23 @@ static NSColor* _rowColors[6];
       }
     }
     if (_rows) {
-      if (filterHidden || filterIdentical) {
+      BOOL filterIdentical = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterIdentical];
+      BOOL filterHidden = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterHidden];
+      BOOL filterFile = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFile];
+      BOOL filterFolder = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFolder];
+      if (filterHidden || filterIdentical || filterFile || filterFolder) {
         NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:_rows.count];
         for (Row* row in _rows) {
           if (filterHidden && ([row.leftItem.name hasPrefix:@"."] || [row.rightItem.name hasPrefix:@"."])) {
             continue;
           }
           if (filterIdentical && !row.result) {
+            continue;
+          }
+          if (filterFile && (row.leftItem.isFile || row.rightItem.isFile)) {
+            continue;
+          }
+          if (filterFolder && (row.leftItem.isDirectory || row.rightItem.isDirectory)) {
             continue;
           }
           [array addObject:row];
