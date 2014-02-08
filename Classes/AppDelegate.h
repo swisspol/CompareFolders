@@ -15,7 +15,6 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #import <AppKit/AppKit.h>
-#import <StoreKit/StoreKit.h>
 
 #import "DirectoryScanner.h"
 
@@ -34,8 +33,6 @@
 #define kUserDefaultKey_LeftBookmark @"leftBookmark"
 #define kUserDefaultKey_RightBookmark @"rightBookmark"
 #endif
-
-#define kStoreKitProductIdentifier @"unlimited"
 
 @interface TableView : NSTableView
 @end
@@ -69,9 +66,4 @@
 - (IBAction)updateComparison:(id)sender;
 - (IBAction)revealLeft:(id)sender;
 - (IBAction)revealRight:(id)sender;
-@end
-
-@interface AppDelegate (StoreKit) <SKPaymentTransactionObserver, SKProductsRequestDelegate>
-- (void)purchase;
-- (void)restore;
 @end
