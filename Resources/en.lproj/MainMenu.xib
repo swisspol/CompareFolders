@@ -168,18 +168,17 @@
                 <userGuides>
                     <userLayoutGuide location="159" affinity="minY"/>
                     <userLayoutGuide location="500" affinity="minX"/>
-                    <userLayoutGuide location="550" affinity="minY"/>
                 </userGuides>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
-                        <rect key="frame" x="-1" y="170" width="1002" height="300"/>
+                        <rect key="frame" x="-1" y="170" width="1002" height="308"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="dNO-vd-uOL">
-                            <rect key="frame" x="1" y="17" width="1000" height="282"/>
+                            <rect key="frame" x="1" y="17" width="1000" height="290"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" autosaveName="" rowHeight="16" headerView="Acs-yI-k5f" id="o3s-wI-Uws" customClass="TableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="282"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="290"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="4" height="6"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -298,9 +297,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">PermissionsTransformer</string>
                                 </dictionary>
                             </binding>
@@ -332,9 +331,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">UserIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -357,9 +356,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">GroupIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -400,9 +399,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.size" id="PZK-S6-3Za">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">FileSizeTransformer</string>
                                 </dictionary>
                             </binding>
@@ -591,9 +590,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">UserIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -650,9 +649,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">GroupIDTransformer</string>
                                 </dictionary>
                             </binding>
@@ -746,9 +745,9 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.size" id="msz-1M-USy">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">FileSizeTransformer</string>
                                 </dictionary>
                             </binding>
@@ -823,19 +822,19 @@
                             </binding>
                             <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                 <dictionary key="options">
-                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                    <string key="NSNotApplicablePlaceholder">N/A</string>
                                     <string key="NSNullPlaceholder">N/A</string>
+                                    <string key="NSNotApplicablePlaceholder">N/A</string>
+                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                     <string key="NSValueTransformerName">PermissionsTransformer</string>
                                 </dictionary>
                             </binding>
                         </connections>
                     </textField>
-                    <box autoresizesSubviews="NO" title="Comparison Settings" borderType="line" id="cYD-0N-EbG">
-                        <rect key="frame" x="9" y="476" width="484" height="116"/>
+                    <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="cYD-0N-EbG">
+                        <rect key="frame" x="9" y="486" width="484" height="104"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="482" height="100"/>
+                            <rect key="frame" x="1" y="1" width="482" height="102"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button verticalHuggingPriority="750" id="RuH-HJ-ro6">
@@ -934,11 +933,11 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
-                    <box autoresizesSubviews="NO" title="Display Settings" borderType="line" id="z46-am-oQt">
-                        <rect key="frame" x="507" y="476" width="484" height="116"/>
+                    <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="z46-am-oQt">
+                        <rect key="frame" x="507" y="486" width="484" height="104"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="482" height="100"/>
+                            <rect key="frame" x="1" y="1" width="482" height="102"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button id="YO6-sl-Zcb">
