@@ -247,10 +247,16 @@ static NSColor* _rowColors[6];
   return YES;
 }
 
+- (BOOL)panel:(id)sender shouldEnableURL:(NSURL*)url {
+  BOOL isDirectory;
+  return [[NSFileManager defaultManager] fileExistsAtPath:[url path] isDirectory:&isDirectory] && isDirectory;
+}
+
 - (void)_selectFolder:(BOOL)isRight {
   NSOpenPanel* openPanel = [NSOpenPanel openPanel];
-  [openPanel setCanChooseFiles:NO];
-  [openPanel setCanChooseDirectories:YES];
+  openPanel.delegate = self;
+  openPanel.canChooseFiles = YES;
+  openPanel.canChooseDirectories = YES;
   if ([openPanel runModal] == NSFileHandlingPanelOKButton) {
     NSURL* url = [openPanel URL];
     if (isRight) {

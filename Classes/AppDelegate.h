@@ -50,7 +50,7 @@
 @property(nonatomic, readonly) BOOL differentFileResourceSizes;
 @end
 
-@interface AppDelegate : NSObject <NSApplicationDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSOpenSavePanelDelegate> {
 @private
   NSString* _leftPath;
   NSString* _rightPath;
