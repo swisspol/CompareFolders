@@ -29,7 +29,7 @@ static NSColor* _rowColors[6];
     if (result & (kComparisonResult_Removed | kComparisonResult_Added | kComparisonResult_Replaced)) {
       color = index % 2 ? _rowColors[2] : _rowColors[3];
     } else if (result & kComparisonResult_ModifiedMask) {
-      if (!row.leftItem.isDirectory && (result & (kComparisonResult_Modified_FileContent | kComparisonResult_Modified_FileSize | kComparisonResult_Modified_ModificationDate))) {
+      if (!row.leftItem.isDirectory && (result & (kComparisonResult_Modified_FileDataContent | kComparisonResult_Modified_FileResourceContent | kComparisonResult_Modified_FileDataSize | kComparisonResult_Modified_FileResourceSize | kComparisonResult_Modified_ModificationDate))) {
         color = index % 2 ? _rowColors[2] : _rowColors[3];
       } else {
         color = index % 2 ? _rowColors[0] : _rowColors[1];
@@ -67,8 +67,12 @@ static NSColor* _rowColors[6];
   return _result & kComparisonResult_Modified_ModificationDate ? YES : NO;
 }
 
-- (BOOL)differentFileSizes {
-  return _result & kComparisonResult_Modified_FileSize ? YES : NO;
+- (BOOL)differentFileDataSizes {
+  return _result & kComparisonResult_Modified_FileDataSize ? YES : NO;
+}
+
+- (BOOL)differentFileResourceSizes {
+  return _result & kComparisonResult_Modified_FileResourceSize ? YES : NO;
 }
 
 @end

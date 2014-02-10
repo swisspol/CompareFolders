@@ -170,14 +170,14 @@
                 </userGuides>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
-                        <rect key="frame" x="-1" y="204" width="1002" height="238"/>
+                        <rect key="frame" x="-1" y="207" width="1002" height="235"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="dNO-vd-uOL">
-                            <rect key="frame" x="1" y="17" width="1000" height="220"/>
+                            <rect key="frame" x="1" y="17" width="1000" height="217"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" autosaveName="" rowHeight="16" headerView="Acs-yI-k5f" id="o3s-wI-Uws" customClass="TableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="220"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="217"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="4" height="6"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -544,14 +544,14 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="NXT-3U-MUf">
-                        <rect key="frame" x="9" y="10" width="484" height="184"/>
+                        <rect key="frame" x="9" y="10" width="484" height="187"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="482" height="182"/>
+                            <rect key="frame" x="1" y="1" width="482" height="185"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button id="yIZ-5D-kRI">
-                                    <rect key="frame" x="180" y="152" width="14" height="14"/>
+                                    <rect key="frame" x="182" y="155" width="14" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="YlH-kH-Zuv">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -567,16 +567,16 @@
                                     </connections>
                                 </button>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VW2-e5-mq7">
-                                    <rect key="frame" x="170" y="18" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="33" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Size:" id="cgu-Sd-Su9">
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Data Size:" id="cgu-Sd-Su9">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3oA-ru-86R">
-                                    <rect key="frame" x="252" y="78" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="87" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;ACCESS>" usesSingleLineMode="YES" id="m1q-1Z-cHj">
                                         <font key="font" metaFont="smallSystem"/>
@@ -592,9 +592,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -627,7 +627,7 @@
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="r9x-A1-Su0">
-                                    <rect key="frame" x="252" y="98" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="105" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;GROUP>" usesSingleLineMode="YES" id="7nR-am-Lpa">
                                         <font key="font" metaFont="smallSystem"/>
@@ -643,16 +643,16 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="l3W-BG-c2O">
-                                    <rect key="frame" x="170" y="38" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="51" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Modified:" id="m6a-X9-TyO">
                                         <font key="font" metaFont="smallSystem"/>
@@ -661,7 +661,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OTS-fG-hT8">
-                                    <rect key="frame" x="252" y="118" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="123" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;USER>" usesSingleLineMode="YES" id="Ywi-Cv-1Zw">
                                         <font key="font" metaFont="smallSystem"/>
@@ -677,16 +677,16 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="LOb-JG-GpP">
-                                    <rect key="frame" x="170" y="98" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="105" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Group:" id="sny-40-nnT">
                                         <font key="font" metaFont="smallSystem"/>
@@ -695,7 +695,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="R6w-0b-INk">
-                                    <rect key="frame" x="252" y="138" width="220" height="28"/>
+                                    <rect key="frame" x="254" y="141" width="220" height="28"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" truncatesLastVisibleLine="YES" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" id="6iJ-ab-967">
                                         <font key="font" metaFont="smallSystem"/>
@@ -715,7 +715,7 @@
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="B5a-4k-auv">
-                                    <rect key="frame" x="170" y="78" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="87" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Access:" id="hy3-sd-Vyo">
                                         <font key="font" metaFont="smallSystem"/>
@@ -724,7 +724,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="xgB-bb-eSQ">
-                                    <rect key="frame" x="195" y="152" width="55" height="14"/>
+                                    <rect key="frame" x="197" y="155" width="55" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Location:" id="bkT-Bx-YGd">
                                         <font key="font" metaFont="smallSystem"/>
@@ -733,7 +733,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zwl-Ep-U5k">
-                                    <rect key="frame" x="252" y="18" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="33" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;SIZE>" usesSingleLineMode="YES" id="yg4-eP-q3o">
                                         <font key="font" metaFont="smallSystem"/>
@@ -741,24 +741,58 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileSizes" id="LQX-qP-xce">
+                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileDataSizes" id="xWv-nc-T75">
                                             <dictionary key="options">
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">DifferenceTransformer</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.size" id="PZK-S6-3Za">
+                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.dataSize" id="VcG-n3-PIm">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSValueTransformerName">FileSizeTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8hx-pW-p2O">
+                                    <rect key="frame" x="171" y="15" width="81" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Resource Size:" id="8QX-O6-Ecg">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Cpo-JI-egc">
+                                    <rect key="frame" x="254" y="15" width="220" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;SIZE>" usesSingleLineMode="YES" id="VMc-U5-PGe">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileResourceSizes" id="VlK-wt-zar">
                                             <dictionary key="options">
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.resourceSize" id="ML7-Bo-j5s">
+                                            <dictionary key="options">
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="X90-fk-qRg">
-                                    <rect key="frame" x="252" y="58" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="69" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CREATED>" usesSingleLineMode="YES" id="Ip6-HJ-Ruh">
                                         <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="WWk-kd-Tr7"/>
@@ -783,7 +817,7 @@
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="onX-v0-yys">
-                                    <rect key="frame" x="252" y="38" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="51" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;MODIFIED>" usesSingleLineMode="YES" id="wI5-vo-mxq">
                                         <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="XLH-YC-LdI"/>
@@ -808,7 +842,7 @@
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UWL-YQ-ZR2">
-                                    <rect key="frame" x="170" y="58" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="69" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Created:" id="dFN-Up-zAi">
                                         <font key="font" metaFont="smallSystem"/>
@@ -817,7 +851,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="6wB-8d-duY">
-                                    <rect key="frame" x="170" y="118" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="123" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="User:" id="EK9-bA-iaf">
                                         <font key="font" metaFont="smallSystem"/>
@@ -831,14 +865,14 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="8c8-KB-oLn">
-                        <rect key="frame" x="507.00000008032282" y="10" width="484" height="184"/>
+                        <rect key="frame" x="507" y="10" width="484" height="187"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="482" height="182"/>
+                            <rect key="frame" x="1" y="1" width="482" height="185"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="B0O-GS-ypx">
-                                    <rect key="frame" x="170" y="78" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="87" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Access:" id="MVd-dt-8Vb">
                                         <font key="font" metaFont="smallSystem"/>
@@ -847,7 +881,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="cGk-P8-B8P">
-                                    <rect key="frame" x="252" y="118" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="123" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;USER>" usesSingleLineMode="YES" id="uxd-pI-bdx">
                                         <font key="font" metaFont="smallSystem"/>
@@ -863,16 +897,16 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </textField>
                                 <button id="kpZ-EH-t9I">
-                                    <rect key="frame" x="180" y="152" width="14" height="14"/>
+                                    <rect key="frame" x="182" y="155" width="14" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSFollowLinkFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="sAH-ep-4Fm">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -888,16 +922,16 @@
                                     </connections>
                                 </button>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="chi-dF-13P">
-                                    <rect key="frame" x="170" y="18" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="33" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="File Size:" id="bhC-04-rdl">
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Data Size:" id="bhC-04-rdl">
                                         <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uO6-3k-LF7">
-                                    <rect key="frame" x="170" y="38" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="51" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Modified:" id="HVJ-ca-ezK">
                                         <font key="font" metaFont="smallSystem"/>
@@ -906,7 +940,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Fis-R4-iZJ">
-                                    <rect key="frame" x="252" y="138" width="220" height="28"/>
+                                    <rect key="frame" x="254" y="141" width="220" height="28"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" truncatesLastVisibleLine="YES" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" id="06B-2P-xFC">
                                         <font key="font" metaFont="smallSystem"/>
@@ -926,7 +960,7 @@
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="QDF-un-xZO">
-                                    <rect key="frame" x="195" y="152" width="55" height="14"/>
+                                    <rect key="frame" x="197" y="155" width="55" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Location:" id="8dN-s2-MEP">
                                         <font key="font" metaFont="smallSystem"/>
@@ -961,7 +995,7 @@
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FP6-N3-TEz">
-                                    <rect key="frame" x="252" y="78" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="87" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;ACCESS>" usesSingleLineMode="YES" id="gqS-9C-trk">
                                         <font key="font" metaFont="smallSystem"/>
@@ -977,16 +1011,16 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gte-Ez-2Lq">
-                                    <rect key="frame" x="252" y="18" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="33" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;SIZE>" usesSingleLineMode="YES" id="xl4-mX-g9U">
                                         <font key="font" metaFont="smallSystem"/>
@@ -994,24 +1028,58 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileSizes" id="ItQ-ns-Iki">
+                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileDataSizes" id="CgE-jY-XKW">
                                             <dictionary key="options">
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">DifferenceTransformer</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.size" id="msz-1M-USy">
+                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.dataSize" id="9Zv-rO-vHv">
+                                            <dictionary key="options">
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSValueTransformerName">FileSizeTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="OGz-T6-Tkl">
+                                    <rect key="frame" x="171" y="15" width="81" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Resource Size:" id="qKN-1d-4nk">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1vs-jO-7Iv">
+                                    <rect key="frame" x="254" y="15" width="220" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;SIZE>" usesSingleLineMode="YES" id="5fK-90-Mta">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="eGP-p6-98x" name="textColor" keyPath="selection.differentFileResourceSizes" id="9I9-w6-afW">
                                             <dictionary key="options">
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSValueTransformerName">DifferenceTransformer</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.resourceSize" id="H39-iy-TUF">
+                                            <dictionary key="options">
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Ghr-lT-rNH">
-                                    <rect key="frame" x="252" y="58" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="69" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;CREATED>" usesSingleLineMode="YES" id="JY6-pZ-GGN">
                                         <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="Xi4-1l-9Kf"/>
@@ -1036,7 +1104,7 @@
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8L9-Zi-PkE">
-                                    <rect key="frame" x="252" y="38" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="51" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;MODIFIED>" usesSingleLineMode="YES" id="0wX-zF-t9X">
                                         <dateFormatter key="formatter" dateStyle="medium" timeStyle="medium" id="agP-nr-Upc"/>
@@ -1061,7 +1129,7 @@
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="L7S-FV-Kkd">
-                                    <rect key="frame" x="252" y="98" width="220" height="14"/>
+                                    <rect key="frame" x="254" y="105" width="220" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="&lt;GROUP>" usesSingleLineMode="YES" id="ENS-gJ-bcq">
                                         <font key="font" metaFont="smallSystem"/>
@@ -1077,16 +1145,16 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="tXE-LM-rFx">
-                                    <rect key="frame" x="170" y="118" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="123" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="User:" id="Rsy-O2-3Gw">
                                         <font key="font" metaFont="smallSystem"/>
@@ -1095,7 +1163,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="aeY-Gp-3uc">
-                                    <rect key="frame" x="170" y="98" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="105" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Group:" id="h3o-2V-B2h">
                                         <font key="font" metaFont="smallSystem"/>
@@ -1104,7 +1172,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jsA-Hf-x1K">
-                                    <rect key="frame" x="170" y="58" width="80" height="14"/>
+                                    <rect key="frame" x="172" y="69" width="80" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Created:" id="TKy-ce-KJ9">
                                         <font key="font" metaFont="smallSystem"/>

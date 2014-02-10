@@ -46,7 +46,8 @@
 @property(nonatomic, readonly) BOOL differentUserID;
 @property(nonatomic, readonly) BOOL differentCreationDates;
 @property(nonatomic, readonly) BOOL differentModificationsDates;
-@property(nonatomic, readonly) BOOL differentFileSizes;
+@property(nonatomic, readonly) BOOL differentFileDataSizes;
+@property(nonatomic, readonly) BOOL differentFileResourceSizes;
 @end
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
