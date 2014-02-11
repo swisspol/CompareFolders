@@ -54,9 +54,10 @@
 @private
   NSString* _leftPath;
   NSString* _rightPath;
-  NSMutableArray* _rows;
+  NSArray* _rows;
   BOOL _purchasing;
 }
+@property(nonatomic, getter = isComparing) BOOL comparing;
 @property(nonatomic, getter = isReady) BOOL ready;
 @property(nonatomic, assign) IBOutlet NSWindow* mainWindow;
 @property(nonatomic, assign) IBOutlet NSTableView* tableView;
