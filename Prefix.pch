@@ -1,4 +1,3 @@
-//  This file is part of the Compare Folders application for iOS.
 //  Copyright (C) 2014 Pierre-Olivier Latour <info@pol-online.net>
 //
 //  This program is free software: you can redistribute it and/or modify
