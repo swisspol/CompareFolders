@@ -185,27 +185,31 @@ static NSColor* _rowColors[6];
       CFAbsoluteTime time = CFAbsoluteTimeGetCurrent();
 #endif
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        DirectoryItem* leftRoot = [[DirectoryItem alloc] initWithPath:_leftPath];
-        DirectoryItem* rightRoot = [[DirectoryItem alloc] initWithPath:_rightPath];
-        NSMutableArray* rows = nil;
-        if (leftRoot && rightRoot) {
-          rows = [[NSMutableArray alloc] init];
-          [leftRoot compareDirectory:rightRoot options:options withBlock:^(ComparisonResult result, Item* item, Item* otherItem) {
-            Row* row = [[Row alloc] init];
-            row.result = result;
-            row.leftItem = item;
-            row.rightItem = otherItem;
-            [rows addObject:row];
-          }];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
+        @autoreleasepool {
+          DirectoryItem* leftRoot = [[DirectoryItem alloc] initWithPath:_leftPath];
+          DirectoryItem* rightRoot = [[DirectoryItem alloc] initWithPath:_rightPath];
+          NSMutableArray* rows = nil;
+          if (leftRoot && rightRoot) {
+            rows = [[NSMutableArray alloc] init];
+            [leftRoot compareDirectory:rightRoot options:options withBlock:^(ComparisonResult result, Item* item, Item* otherItem) {
+              Row* row = [[Row alloc] init];
+              row.result = result;
+              row.leftItem = item;
+              row.rightItem = otherItem;
+              [rows addObject:row];
+            }];
+          }
+          dispatch_async(dispatch_get_main_queue(), ^{
+            @autoreleasepool {
 #ifndef NDEBUG
-          NSLog(@"Comparison done in %.3f seconds", CFAbsoluteTimeGetCurrent() - time);
+              NSLog(@"Comparison done in %.3f seconds", CFAbsoluteTimeGetCurrent() - time);
 #endif
-          self.comparing = NO;
-          _rows = rows;
-          [self _updateTableView];
-        });
+              self.comparing = NO;
+              _rows = rows;
+              [self _updateTableView];
+            }
+          });
+        }
       });
     } else {
       [self _updateTableView];
