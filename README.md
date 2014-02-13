@@ -1,7 +1,9 @@
 Overview
 ========
 
-TBD
+Folder comparison for the rest of us: simple, fast and accurate.
+
+See the complete product description at https://itunes.apple.com/us/app/compare-folders/id816042486?ls=1&mt=12.
 
 License
 =======
