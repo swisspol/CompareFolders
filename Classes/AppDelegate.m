@@ -15,6 +15,24 @@
 
 #import "AppDelegate.h"
 
+#define kUserDefaultKey_ChecksumFiles @"checksumFiles"
+
+#define kUserDefaultKey_FilterIdentical @"filterIdentical"
+#define kUserDefaultKey_FilterHidden @"filterHidden"
+#define kUserDefaultKey_FilterFiles @"filterFiles"
+#define kUserDefaultKey_FilterFolders @"filterFolders"
+#define kUserDefaultKey_FilterLinks @"filterLinks"
+#define kUserDefaultKey_FilterPermissions @"filterPermissions"
+#define kUserDefaultKey_FilterCreations @"filterCreations"
+#define kUserDefaultKey_FilterModifications @"filterModifications"
+
+#ifndef NDEBUG
+#define kUserDefaultKey_LeftBookmark @"leftBookmark"
+#define kUserDefaultKey_RightBookmark @"rightBookmark"
+#endif
+
+#define kInAppProductIdentifier @"compare_folders_advanced"
+
 static NSColor* _rowColors[6];
 
 @implementation TableView
@@ -175,7 +193,8 @@ static NSColor* _rowColors[6];
     self.ready = YES;
     
     ComparisonOptions options = 0;
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]
+        && [[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
       options |= kComparisonOption_FileContent;
     }
     if (force) {
@@ -265,11 +284,73 @@ static NSColor* _rowColors[6];
 #endif
   [self _compareFolders:YES];
   
+  [[InAppStore sharedStore] setDelegate:self];
+  
+  if (![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultKey_ChecksumFiles];
+  }
+  
   [_mainWindow makeKeyAndOrderFront:nil];
 }
 
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)application {
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication*)sender {
+  if ([[InAppStore sharedStore] isBusy]) {
+    return NSTerminateCancel;
+  }
+  return NSTerminateNow;
+}
+
+- (BOOL)windowShouldClose:(id)sender {
+  [NSApp terminate:nil];
+  return NO;
+}
+
+- (BOOL)validateMenuItem:(NSMenuItem*)menuItem {
+  if ((menuItem.action == @selector(purchaseFileChecksums:)) || (menuItem.action == @selector(restorePurchases:))) {
+    return ![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier] && ![[InAppStore sharedStore] isBusy];
+  }
   return YES;
+}
+
+- (void)inAppStore:(InAppStore*)store didPurchaseProductWithIdentifier:(NSString*)identifier {
+  NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_PURCHASE_TITLE", nil)
+                                   defaultButton:NSLocalizedString(@"ALERT_PURCHASE_DEFAULT_BUTTON", nil)
+                                 alternateButton:nil
+                                     otherButton:nil
+                       informativeTextWithFormat:NSLocalizedString(@"ALERT_PURCHASE_MESSAGE", nil)];
+  [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+}
+
+- (void)inAppStore:(InAppStore*)store didRestoreProductWithIdentifier:(NSString*)identifier {
+  [NSApp activateIgnoringOtherApps:YES];
+  NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_RESTORE_TITLE", nil)
+                                   defaultButton:NSLocalizedString(@"ALERT_RESTORE_DEFAULT_BUTTON", nil)
+                                 alternateButton:nil
+                                     otherButton:nil
+                       informativeTextWithFormat:NSLocalizedString(@"ALERT_RESTORE_MESSAGE", nil)];
+  [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+}
+
+- (void)_reportIAPError:(NSError*)error {
+  [NSApp activateIgnoringOtherApps:YES];
+  NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_IAP_FAILED_TITLE", nil)
+                                   defaultButton:NSLocalizedString(@"ALERT_IAP_FAILED_BUTTON", nil)
+                                 alternateButton:nil
+                                     otherButton:nil
+                       informativeTextWithFormat:NSLocalizedString(@"ALERT_IAP_FAILED_MESSAGE", nil), error.localizedDescription];
+  [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+}
+
+- (void)inAppStore:(InAppStore*)store didFailFindingProductWithIdentifier:(NSString*)identifier {
+  [self _reportIAPError:nil];
+}
+
+- (void)inAppStore:(InAppStore*)store didFailPurchasingProductWithIdentifier:(NSString*)identifier error:(NSError*)error {
+  [self _reportIAPError:error];
+}
+
+- (void)inAppStore:(InAppStore*)store didFailRestoreWithError:(NSError*)error {
+  [self _reportIAPError:error];
 }
 
 - (BOOL)panel:(id)sender shouldEnableURL:(NSURL*)url {
@@ -296,20 +377,41 @@ static NSColor* _rowColors[6];
   }
 }
 
-- (IBAction)selectLeft:(id)sender {
+- (IBAction)selectLeftFolder:(id)sender {
   [self _selectFolder:NO];
 }
 
-- (IBAction)selectRight:(id)sender {
+- (IBAction)selectRightFolder:(id)sender {
   [self _selectFolder:YES];
-}
-
-- (IBAction)updateFilters:(id)sender {
-  [self _compareFolders:NO];
 }
 
 - (IBAction)updateComparison:(id)sender {
   [self _compareFolders:YES];
+}
+
+- (void)_purchaseAlertDidEnd:(NSAlert*)alert returnCode:(NSInteger)returnCode contextInfo:(void*)contextInfo {
+  if (returnCode == NSAlertDefaultReturn) {
+    [self purchaseFileChecksums:nil];
+  }
+}
+
+- (IBAction)toggleFileChecksums:(id)sender {
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]
+      && ![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kUserDefaultKey_ChecksumFiles];
+    NSAlert* alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"ALERT_LIMITED_TITLE", nil)]
+                                     defaultButton:NSLocalizedString(@"ALERT_LIMITED_DEFAULT_BUTTON", nil)
+                                   alternateButton:NSLocalizedString(@"ALERT_LIMITED_ALTERNATE_BUTTON", nil)
+                                       otherButton:nil
+                         informativeTextWithFormat:NSLocalizedString(@"ALERT_LIMITED_MESSAGE", nil)];
+    [alert beginSheetModalForWindow:_mainWindow modalDelegate:self didEndSelector:@selector(_purchaseAlertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+  } else {
+    [self _compareFolders:YES];
+  }
+}
+
+- (IBAction)updateFilters:(id)sender {
+  [self _compareFolders:NO];
 }
 
 - (void)_revealItem:(BOOL)isRight {
@@ -326,6 +428,21 @@ static NSColor* _rowColors[6];
 
 - (IBAction)revealRight:(id)sender {
   [self _revealItem:YES];
+}
+
+- (IBAction)purchaseFileChecksums:(id)sender {
+  if (![[InAppStore sharedStore] purchaseProductWithIdentifier:kInAppProductIdentifier]) {
+    NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_UNAVAILABLE_TITLE", nil)
+                                     defaultButton:NSLocalizedString(@"ALERT_UNAVAILABLE_DEFAULT_BUTTON", nil)
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:NSLocalizedString(@"ALERT_UNAVAILABLE_MESSAGE", nil)];
+    [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+  }
+}
+
+- (IBAction)restorePurchases:(id)sender {
+  [[InAppStore sharedStore] restorePurchases];
 }
 
 @end

@@ -2,3 +2,24 @@
 "FILE_SIZE_KB" = "%@ bytes (%@ KB)";
 "FILE_SIZE_MB" = "%@ bytes (%@ MB)";
 "FILE_SIZE_GB" = "%@ bytes (%@ GB)";
+
+"ALERT_LIMITED_TITLE" = "Advanced feature not available!";
+"ALERT_LIMITED_DEFAULT_BUTTON" = "Purchase Now";
+"ALERT_LIMITED_ALTERNATE_BUTTON" = "Cancel";
+"ALERT_LIMITED_MESSAGE" = "Comparing the contents of files using checksums requires a one-time purchase of Compare Folders Advanced.\n\nClick \"Purchase Now\" to buy Compare Folders Advanced as an In-App Purchase from the App Store.";
+
+"ALERT_UNAVAILABLE_TITLE" = "In-App Purchases not available!";
+"ALERT_UNAVAILABLE_DEFAULT_BUTTON" = "OK";
+"ALERT_UNAVAILABLE_MESSAGE" = "Make sure your computer is connected to the Internet and App Store users are allowed to make payments.";
+
+"ALERT_PURCHASE_TITLE" = "Compare Folders Advanced successfully purchased!";
+"ALERT_PURCHASE_DEFAULT_BUTTON" = "Done";
+"ALERT_PURCHASE_MESSAGE" = "Your can now compare the contents of files using checksums. Thanks for supporting the development of Compare Folders!";
+
+"ALERT_RESTORE_TITLE" = "Compare Folders Advanced successfully restored!";
+"ALERT_RESTORE_DEFAULT_BUTTON" = "Done";
+"ALERT_RESTORE_MESSAGE" = "Your can now compare the contents of files using checksums. Thanks for supporting the development of Compare Folders!";
+
+"ALERT_IAP_FAILED_TITLE" = "In-App Purchase error!";
+"ALERT_IAP_FAILED_BUTTON" = "OK";
+"ALERT_IAP_FAILED_MESSAGE" = "There was a problem communicating with the App Store. Please try again later.\n\n%@";

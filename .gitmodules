@@ -1,3 +1,6 @@
 [submodule "DirectoryScanner"]
 	path = DirectoryScanner
 	url = https://github.com/swisspol/DirectoryScanner.git
+[submodule "InAppStore"]
+	path = InAppStore
+	url = https://github.com/swisspol/InAppStore.git

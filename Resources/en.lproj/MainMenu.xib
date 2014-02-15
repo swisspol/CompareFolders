@@ -62,12 +62,12 @@
                         <items>
                             <menuItem title="Select Left Folder…" keyEquivalent="l" id="jub-QI-u8R">
                                 <connections>
-                                    <action selector="selectLeft:" target="494" id="gdZ-dS-Nbd"/>
+                                    <action selector="selectLeftFolder:" target="494" id="gkC-5N-fUX"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Select Right Folder…" keyEquivalent="r" id="dS4-NC-Coc">
                                 <connections>
-                                    <action selector="selectRight:" target="494" id="60j-gT-ZSr"/>
+                                    <action selector="selectRightFolder:" target="494" id="kQg-K1-8JA"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="IWV-ap-sTD"/>
@@ -118,6 +118,25 @@
                             <menuItem title="Select All" keyEquivalent="a" id="1526">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="1573"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Store" id="ow8-jf-KUD">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Store" systemMenu="font" id="VZx-Oo-q8V">
+                        <items>
+                            <menuItem title="Purchase File Checksums…" id="ZwX-y7-VJk">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="purchaseFileChecksums:" target="494" id="Vtb-zc-TEN"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Restore Purchases…" tag="2" id="qUm-K4-P9F">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="restorePurchases:" target="494" id="fhs-Ez-nV1"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -259,17 +278,17 @@
                                     </tableColumns>
                                     <connections>
                                         <binding destination="eGP-p6-98x" name="content" keyPath="arrangedObjects" id="5zV-m4-NNs"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="v0x-a7-a1l">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="v0x-a7-a1l" id="TyA-II-l5l">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="v0x-a7-a1l">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="5zV-m4-NNs" id="zBY-rj-IcB"/>
@@ -307,7 +326,7 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="selectRight:" target="494" id="DQz-m6-RIf"/>
+                                        <action selector="selectRightFolder:" target="494" id="D2m-1c-5Eb"/>
                                         <binding destination="494" name="enabled" keyPath="comparing" id="SYA-Gw-KJ2">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
@@ -323,7 +342,7 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="selectLeft:" target="494" id="bdA-Cs-5m0"/>
+                                        <action selector="selectLeftFolder:" target="494" id="3jG-2p-p8P"/>
                                         <binding destination="494" name="enabled" keyPath="comparing" id="AuC-O5-0YW">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
@@ -339,18 +358,18 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="updateComparison:" target="494" id="Lw2-Rr-gJd"/>
+                                        <action selector="updateComparison:" target="494" id="Hoe-bz-8mx"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="rzC-tu-rrz">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="rzC-tu-rrz" id="PhL-o9-Bix">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="rzC-tu-rrz">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -363,7 +382,7 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="updateComparison:" target="494" id="jSV-0r-hZk"/>
+                                        <action selector="toggleFileChecksums:" target="494" id="TaU-B7-0Qc"/>
                                         <binding destination="494" name="enabled" keyPath="comparing" id="29J-Tm-z8J">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
@@ -416,17 +435,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="JD0-Ce-wL3"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="Cux-g9-OBs">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="Cux-g9-OBs" id="9sC-kp-Sy5">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="Cux-g9-OBs">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterIdentical" id="KdL-wl-LBg">
@@ -447,17 +466,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="pVc-lN-ZcZ"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="aDS-ma-DXH">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="aDS-ma-DXH" id="rCf-mO-vgW">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="aDS-ma-DXH">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterHidden" id="PBX-16-Rqp">
@@ -478,17 +497,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="JDX-2y-V7x"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="OWc-dU-QeQ">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="OWc-dU-QeQ" id="z6s-1O-AZz">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="OWc-dU-QeQ">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterPermissions" id="Hql-ER-KLq">
@@ -509,17 +528,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="zbu-Nb-doO"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="dUg-RX-18P">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="dUg-RX-18P" id="Xsg-qY-H1Z">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="dUg-RX-18P">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterCreations" id="JDU-Vd-7Xe">
@@ -540,17 +559,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="p0J-pH-Lzl"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="AUt-Bs-txE">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="AUt-Bs-txE" id="TZC-Xq-lLP">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="AUt-Bs-txE">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterModifications" id="uJb-gR-KH4">
@@ -571,17 +590,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="Bt1-gm-vzo"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="sUf-6q-Zhu">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="sUf-6q-Zhu" id="5fC-TP-jjZ">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="sUf-6q-Zhu">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterLinks" id="KxF-fc-nPY">
@@ -602,14 +621,6 @@
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </searchFieldCell>
                                     <connections>
-                                        <binding destination="494" name="enabled2" keyPath="ready" previousBinding="T8T-Aa-pXO" id="vhB-d1-0YP">
-                                            <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
-                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="494" name="enabled" keyPath="comparing" id="T8T-Aa-pXO">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
@@ -619,6 +630,14 @@
                                             <dictionary key="options">
                                                 <string key="NSDisplayName">predicate</string>
                                                 <string key="NSPredicateFormat">(leftItem.relativePath contains[cd] $value) OR (rightItem.relativePath contains[cd] $value)</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="494" name="enabled2" keyPath="ready" previousBinding="T8T-Aa-pXO" id="vhB-d1-0YP">
+                                            <dictionary key="options">
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -632,17 +651,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="HdH-rX-mhb"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="gVn-2w-sJf">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="gVn-2w-sJf" id="8jC-Rg-GdX">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="gVn-2w-sJf">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFiles" id="Fyc-GP-Vrx">
@@ -663,17 +682,17 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="updateFilters:" target="494" id="jhm-i9-wFt"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="w9D-0U-6l3">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="w9D-0U-6l3" id="yuc-4K-Tgj">
                                             <dictionary key="options">
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="w9D-0U-6l3">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFolders" id="KRL-0A-6NY">
@@ -739,9 +758,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -790,9 +809,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -824,9 +843,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -896,9 +915,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.dataSize" id="VcG-n3-PIm">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -930,9 +949,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.resourceSize" id="ML7-Bo-j5s">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1044,9 +1063,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1158,9 +1177,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1183,9 +1202,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.dataSize" id="9Zv-rO-vHv">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1217,9 +1236,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.resourceSize" id="H39-iy-TUF">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1292,9 +1311,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1334,6 +1353,9 @@
                     </box>
                 </subviews>
             </view>
+            <connections>
+                <outlet property="delegate" destination="494" id="D2E-65-BKf"/>
+            </connections>
         </window>
         <arrayController objectClassName="Row" editable="NO" avoidsEmptySelection="NO" id="eGP-p6-98x"/>
         <userDefaultsController representsSharedInstance="YES" id="EJU-cJ-Le9"/>

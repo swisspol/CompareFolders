@@ -16,22 +16,7 @@
 #import <AppKit/AppKit.h>
 
 #import "DirectoryScanner.h"
-
-#define kUserDefaultKey_ChecksumFiles @"checksumFiles"
-
-#define kUserDefaultKey_FilterIdentical @"filterIdentical"
-#define kUserDefaultKey_FilterHidden @"filterHidden"
-#define kUserDefaultKey_FilterFiles @"filterFiles"
-#define kUserDefaultKey_FilterFolders @"filterFolders"
-#define kUserDefaultKey_FilterLinks @"filterLinks"
-#define kUserDefaultKey_FilterPermissions @"filterPermissions"
-#define kUserDefaultKey_FilterCreations @"filterCreations"
-#define kUserDefaultKey_FilterModifications @"filterModifications"
-
-#ifndef NDEBUG
-#define kUserDefaultKey_LeftBookmark @"leftBookmark"
-#define kUserDefaultKey_RightBookmark @"rightBookmark"
-#endif
+#import "InAppStore.h"
 
 @interface TableView : NSTableView
 @end
@@ -49,7 +34,7 @@
 @property(nonatomic, readonly) BOOL differentFileResourceSizes;
 @end
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSOpenSavePanelDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate, NSOpenSavePanelDelegate, InAppStoreDelegate> {
 @private
   NSString* _leftPath;
   NSString* _rightPath;
@@ -61,10 +46,13 @@
 @property(nonatomic, assign) IBOutlet NSWindow* mainWindow;
 @property(nonatomic, assign) IBOutlet NSTableView* tableView;
 @property(nonatomic, assign) IBOutlet NSArrayController* arrayController;
-- (IBAction)selectLeft:(id)sender;
-- (IBAction)selectRight:(id)sender;
-- (IBAction)updateFilters:(id)sender;
+- (IBAction)selectLeftFolder:(id)sender;
+- (IBAction)selectRightFolder:(id)sender;
 - (IBAction)updateComparison:(id)sender;
+- (IBAction)toggleFileChecksums:(id)sender;
+- (IBAction)updateFilters:(id)sender;
 - (IBAction)revealLeft:(id)sender;
 - (IBAction)revealRight:(id)sender;
+- (IBAction)purchaseFileChecksums:(id)sender;
+- (IBAction)restorePurchases:(id)sender;
 @end

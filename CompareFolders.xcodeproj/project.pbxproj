@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		E200E17F158C1FD90078EAF8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E22CE76C18A49AEA008A0C72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22CE76B18A49AEA008A0C72 /* StoreKit.framework */; };
+		E279087918AF410C00B752E1 /* InAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E279087718AF410C00B752E1 /* InAppStore.m */; };
+		E279087A18AF410C00B752E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E279087818AF410C00B752E1 /* main.m */; };
+		E279087C18AF41AA00B752E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E279087B18AF41AA00B752E1 /* Security.framework */; };
+		E279087E18AF41AF00B752E1 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E279087D18AF41AF00B752E1 /* IOKit.framework */; };
+		E279088018AF41BA00B752E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E279087F18AF41BA00B752E1 /* SystemConfiguration.framework */; };
 		E289ED1A18A4BB8100A9D28D /* DirectoryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E289ED1918A4BB8100A9D28D /* DirectoryScanner.m */; };
 		E296D7E518A56F890091AAF3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E296D7E118A56F890091AAF3 /* Localizable.strings */; };
 		E296D7E618A56F890091AAF3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E296D7E318A56F890091AAF3 /* MainMenu.xib */; };
@@ -20,7 +25,6 @@
 		E2A4A88C18A5F8130068C98E /* Link.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88A18A5F8130068C98E /* Link.png */; };
 		E2A4A88D18A5F8130068C98E /* Link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88B18A5F8130068C98E /* Link@2x.png */; };
 		E2E12C731343C96000B48700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E12C721343C96000B48700 /* AppDelegate.m */; };
-		E2E12CC61343CBB100B48700 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D09A521343C4D90096A4CC /* main.m */; };
 		E2FE559D1836FD3C00617532 /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = E2FE559C1836FD3C00617532 /* Icon.iconset */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,12 @@
 		8D1107320486CEB800E47090 /* Compare Folders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compare Folders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E22CE76A18A49ACB008A0C72 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		E22CE76B18A49AEA008A0C72 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E279087618AF410C00B752E1 /* InAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppStore.h; sourceTree = "<group>"; };
+		E279087718AF410C00B752E1 /* InAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppStore.m; sourceTree = "<group>"; };
+		E279087818AF410C00B752E1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E279087B18AF41AA00B752E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E279087D18AF41AF00B752E1 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		E279087F18AF41BA00B752E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E289ED1818A4BB8100A9D28D /* DirectoryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryScanner.h; sourceTree = "<group>"; };
 		E289ED1918A4BB8100A9D28D /* DirectoryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryScanner.m; sourceTree = "<group>"; };
 		E296D7E218A56F890091AAF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -42,7 +52,6 @@
 		E2A4A88A18A5F8130068C98E /* Link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Link.png; sourceTree = "<group>"; };
 		E2A4A88B18A5F8130068C98E /* Link@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Link@2x.png"; sourceTree = "<group>"; };
 		E2D09A4E1343C4B60096A4CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2D09A521343C4D90096A4CC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2D09A531343C4D90096A4CC /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		E2E12C711343C96000B48700 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E2E12C721343C96000B48700 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,7 +64,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E200E17F158C1FD90078EAF8 /* Cocoa.framework in Frameworks */,
+				E279088018AF41BA00B752E1 /* SystemConfiguration.framework in Frameworks */,
 				E22CE76C18A49AEA008A0C72 /* StoreKit.framework in Frameworks */,
+				E279087C18AF41AA00B752E1 /* Security.framework in Frameworks */,
+				E279087E18AF41AF00B752E1 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +88,9 @@
 				E22CE76A18A49ACB008A0C72 /* Entitlements.entitlements */,
 				E2D09A531343C4D90096A4CC /* Prefix.pch */,
 				E2D09A4E1343C4B60096A4CC /* Info.plist */,
-				E2D09A521343C4D90096A4CC /* main.m */,
 				E2E12C701343C96000B48700 /* Classes */,
 				E289ED1718A4BB8100A9D28D /* DirectoryScanner */,
+				E279087518AF410C00B752E1 /* InAppStore */,
 				E2E12D011343CDCD00B48700 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks and Libraries */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -90,9 +102,23 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				E279087F18AF41BA00B752E1 /* SystemConfiguration.framework */,
 				E22CE76B18A49AEA008A0C72 /* StoreKit.framework */,
+				E279087B18AF41AA00B752E1 /* Security.framework */,
+				E279087D18AF41AF00B752E1 /* IOKit.framework */,
 			);
 			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		E279087518AF410C00B752E1 /* InAppStore */ = {
+			isa = PBXGroup;
+			children = (
+				E279087618AF410C00B752E1 /* InAppStore.h */,
+				E279087718AF410C00B752E1 /* InAppStore.m */,
+				E279087818AF410C00B752E1 /* main.m */,
+			);
+			name = InAppStore;
+			path = InAppStore/InAppStore;
 			sourceTree = "<group>";
 		};
 		E289ED1718A4BB8100A9D28D /* DirectoryScanner */ = {
@@ -221,7 +247,8 @@
 				E2E12C731343C96000B48700 /* AppDelegate.m in Sources */,
 				E296D7E918A591C00091AAF3 /* ValueTransformers.m in Sources */,
 				E289ED1A18A4BB8100A9D28D /* DirectoryScanner.m in Sources */,
-				E2E12CC61343CBB100B48700 /* main.m in Sources */,
+				E279087A18AF410C00B752E1 /* main.m in Sources */,
+				E279087918AF410C00B752E1 /* InAppStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,10 +277,17 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_ID = "net.pol-online.compare-folders";
+				BUNDLE_VERSION = 1010;
+				BUNDLE_VERSION_STRING = 1.0.1;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
+					"__BUNDLE_ID__=\\\"$(BUNDLE_ID)\\\"",
+					"__BUNDLE_VERSION__=\\\"$(BUNDLE_VERSION_STRING)\\\"",
+				);
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = "Compare Folders";
 			};
@@ -262,10 +296,17 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_ID = "net.pol-online.compare-folders";
+				BUNDLE_VERSION = 1010;
+				BUNDLE_VERSION_STRING = 1.0.1;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
+					"__BUNDLE_ID__=\\\"$(BUNDLE_ID)\\\"",
+					"__BUNDLE_VERSION__=\\\"$(BUNDLE_VERSION_STRING)\\\"",
+				);
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = "Compare Folders";
 			};
