@@ -205,26 +205,21 @@ static NSColor* _rowColors[6];
 #endif
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         @autoreleasepool {
-          DirectoryItem* leftRoot = [[DirectoryItem alloc] initWithPath:_leftPath];
-          DirectoryItem* rightRoot = [[DirectoryItem alloc] initWithPath:_rightPath];
-          NSMutableArray* rows = nil;
-          if (leftRoot && rightRoot) {
-            rows = [[NSMutableArray alloc] init];
-            [leftRoot compareDirectory:rightRoot options:options withBlock:^(ComparisonResult result, Item* item, Item* otherItem) {
-              Row* row = [[Row alloc] init];
-              row.result = result;
-              row.leftItem = item;
-              row.rightItem = otherItem;
-              [rows addObject:row];
-            }];
-          }
+          NSMutableArray* rows = [[NSMutableArray alloc] init];
+          BOOL success = [[DirectoryScanner sharedScanner] compareOldDirectoryAtPath:_leftPath withNewDirectoryAtPath:_rightPath options:options excludeBlock:NULL resultBlock:^(ComparisonResult result, Item* item, Item* otherItem, BOOL* stop) {
+            Row* row = [[Row alloc] init];
+            row.result = result;
+            row.leftItem = item;
+            row.rightItem = otherItem;
+            [rows addObject:row];
+          }];
           dispatch_async(dispatch_get_main_queue(), ^{
             @autoreleasepool {
 #ifndef NDEBUG
               NSLog(@"Comparison done in %.3f seconds", CFAbsoluteTimeGetCurrent() - time);
 #endif
               self.comparing = NO;
-              _rows = rows;
+              _rows = success ? rows : nil;
               [self _updateTableView];
             }
           });
