@@ -284,7 +284,7 @@ static NSColor* _rowColors[6];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultKey_ChecksumFiles];
   }
   
-#ifndef NDEBUG
+#ifdef NDEBUG
   [Crashlytics startWithAPIKey:@"936a419a4a141683e2eb17db02a13b72ee02b362"];
 #endif
   
