@@ -168,6 +168,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				E29FCAA818AFF72A000BEA92 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -239,6 +240,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E29FCAA818AFF72A000BEA92 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" == \"Debug\" ]; then\n  echo \"Skipping Crashlytics in Debug configuration\"\nelse\n  ./Crashlytics.framework/run \"936a419a4a141683e2eb17db02a13b72ee02b362\" \"914e112a501318b6a55d3214bae28bdb52e7e0cc8ed727ec0917fe9cc61c70fd\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -282,6 +301,7 @@
 				BUNDLE_VERSION_STRING = 1.0.1;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -289,6 +309,10 @@
 					"__BUNDLE_VERSION__=\\\"$(BUNDLE_VERSION_STRING)\\\"",
 				);
 				INFOPLIST_FILE = Info.plist;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Crashlytics,
+				);
 				PRODUCT_NAME = "Compare Folders";
 			};
 			name = Debug;
@@ -301,6 +325,7 @@
 				BUNDLE_VERSION_STRING = 1.0.1;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -308,6 +333,10 @@
 					"__BUNDLE_VERSION__=\\\"$(BUNDLE_VERSION_STRING)\\\"",
 				);
 				INFOPLIST_FILE = Info.plist;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Crashlytics,
+				);
 				PRODUCT_NAME = "Compare Folders";
 			};
 			name = Release;
@@ -319,6 +348,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;

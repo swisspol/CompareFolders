@@ -13,6 +13,8 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#import <Crashlytics/Crashlytics.h>
+
 #import "AppDelegate.h"
 
 #define kUserDefaultKey_ChecksumFiles @"checksumFiles"
@@ -281,6 +283,10 @@ static NSColor* _rowColors[6];
   if (![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultKey_ChecksumFiles];
   }
+  
+#ifndef NDEBUG
+  [Crashlytics startWithAPIKey:@"936a419a4a141683e2eb17db02a13b72ee02b362"];
+#endif
   
   [_mainWindow makeKeyAndOrderFront:nil];
 }
