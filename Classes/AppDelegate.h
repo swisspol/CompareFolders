@@ -36,19 +36,21 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate, NSOpenSavePanelDelegate, InAppStoreDelegate> {
 @private
-  NSString* _leftPath;
-  NSString* _rightPath;
   NSArray* _rows;
   BOOL _purchasing;
+  BOOL _stopComparison;
 }
-@property(nonatomic, getter = isComparing) BOOL comparing;
-@property(nonatomic, getter = isReady) BOOL ready;
 @property(nonatomic, assign) IBOutlet NSWindow* mainWindow;
 @property(nonatomic, assign) IBOutlet NSTableView* tableView;
 @property(nonatomic, assign) IBOutlet NSArrayController* arrayController;
+@property(nonatomic, copy) NSString* leftPath;
+@property(nonatomic, copy) NSString* rightPath;
+@property(nonatomic, getter = isComparing) BOOL comparing;
+@property(nonatomic, getter = isReady) BOOL ready;
 - (IBAction)selectLeftFolder:(id)sender;
 - (IBAction)selectRightFolder:(id)sender;
 - (IBAction)updateComparison:(id)sender;
+- (IBAction)stopComparison:(id)sender;
 - (IBAction)toggleFileChecksums:(id)sender;
 - (IBAction)updateFilters:(id)sender;
 - (IBAction)revealLeft:(id)sender;

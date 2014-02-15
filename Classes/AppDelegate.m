@@ -126,109 +126,104 @@ static NSColor* _rowColors[6];
 }
 
 - (void)_updateTableView {
-  if (_rows) {
-    BOOL filterIdentical = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterIdentical];
-    BOOL filterHidden = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterHidden];
-    BOOL filterFiles = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFiles];
-    BOOL filterFolders = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFolders];
-    BOOL filterLinks = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterLinks];
-    BOOL filterPermissions = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterPermissions];
-    BOOL filterCreations = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterCreations];
-    BOOL filterModifications = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterModifications];
-    if (filterHidden || filterIdentical || filterFiles || filterFolders || filterLinks || filterPermissions || filterCreations || filterModifications) {
-      NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:_rows.count];
-      for (Row* row in _rows) {
-        ComparisonResult result = row.result;
-        Item* leftItem = row.leftItem;
-        Item* rightItem = row.rightItem;
-        if (filterHidden && ([leftItem.name hasPrefix:@"."] || [rightItem.name hasPrefix:@"."])) {
-          continue;
-        }
-        if (filterIdentical && !result) {
-          continue;
-        }
-        if (filterFiles && (leftItem.isFile || rightItem.isFile)) {
-          continue;
-        }
-        if (filterFolders && (leftItem.isDirectory || rightItem.isDirectory)) {
-          continue;
-        }
-        if (filterLinks && (leftItem.isSymLink || rightItem.isSymLink)) {
-          continue;
-        }
-        if (result & kComparisonResult_ModifiedMask) {
-          ComparisonResult mask = 0;
-          if (filterPermissions) {
-            mask |= kComparisonResult_Modified_Permissions | kComparisonResult_Modified_GroupID | kComparisonResult_Modified_UserID;
-          }
-          if (filterCreations) {
-            mask |= kComparisonResult_Modified_CreationDate;
-          }
-          if (filterModifications && (leftItem.isDirectory || rightItem.isDirectory)) {
-            mask |= kComparisonResult_Modified_ModificationDate;
-          }
-          if (mask && (result & mask) && !(result & ~mask)) {
-            continue;
-          }
-        }
-        [array addObject:row];
+  BOOL filterIdentical = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterIdentical];
+  BOOL filterHidden = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterHidden];
+  BOOL filterFiles = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFiles];
+  BOOL filterFolders = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterFolders];
+  BOOL filterLinks = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterLinks];
+  BOOL filterPermissions = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterPermissions];
+  BOOL filterCreations = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterCreations];
+  BOOL filterModifications = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_FilterModifications];
+  if (filterHidden || filterIdentical || filterFiles || filterFolders || filterLinks || filterPermissions || filterCreations || filterModifications) {
+    NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:_rows.count];
+    for (Row* row in _rows) {
+      ComparisonResult result = row.result;
+      Item* leftItem = row.leftItem;
+      Item* rightItem = row.rightItem;
+      if (filterHidden && ([leftItem.name hasPrefix:@"."] || [rightItem.name hasPrefix:@"."])) {
+        continue;
       }
-      [_arrayController setContent:array];
-    } else {
-      [_arrayController setContent:_rows];
+      if (filterIdentical && !result) {
+        continue;
+      }
+      if (filterFiles && (leftItem.isFile || rightItem.isFile)) {
+        continue;
+      }
+      if (filterFolders && (leftItem.isDirectory || rightItem.isDirectory)) {
+        continue;
+      }
+      if (filterLinks && (leftItem.isSymLink || rightItem.isSymLink)) {
+        continue;
+      }
+      if (result & kComparisonResult_ModifiedMask) {
+        ComparisonResult mask = 0;
+        if (filterPermissions) {
+          mask |= kComparisonResult_Modified_Permissions | kComparisonResult_Modified_GroupID | kComparisonResult_Modified_UserID;
+        }
+        if (filterCreations) {
+          mask |= kComparisonResult_Modified_CreationDate;
+        }
+        if (filterModifications && (leftItem.isDirectory || rightItem.isDirectory)) {
+          mask |= kComparisonResult_Modified_ModificationDate;
+        }
+        if (mask && (result & mask) && !(result & ~mask)) {
+          continue;
+        }
+      }
+      [array addObject:row];
     }
+    [_arrayController setContent:array];
+  } else {
+    [_arrayController setContent:_rows];
   }
 }
 
-- (void)_compareFolders:(BOOL)force {
-  if (_leftPath) {
-    [(NSTableHeaderCell*)[[_tableView tableColumnWithIdentifier:@"leftPath"] headerCell] setStringValue:_leftPath];
-    [_tableView.headerView setNeedsDisplay:YES];
+- (void)_compareFolders {
+  [_arrayController setContent:nil];
+  _rows = nil;
+  
+  _stopComparison = NO;
+  self.comparing = YES;
+  ComparisonOptions options = 0;
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]
+      && [[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
+    options |= kComparisonOption_FileContent;
   }
-  if (_rightPath) {
-    [(NSTableHeaderCell*)[[_tableView tableColumnWithIdentifier:@"rightPath"] headerCell] setStringValue:_rightPath];
-    [_tableView.headerView setNeedsDisplay:YES];
-  }
-  if (_leftPath && _rightPath) {
-    self.ready = YES;
-    
-    ComparisonOptions options = 0;
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]
-        && [[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
-      options |= kComparisonOption_FileContent;
-    }
-    if (force) {
-      [_tableView deselectAll:nil];
-      self.comparing = YES;
 #ifndef NDEBUG
-      CFAbsoluteTime time = CFAbsoluteTimeGetCurrent();
+  CFAbsoluteTime time = CFAbsoluteTimeGetCurrent();
 #endif
-      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    @autoreleasepool {
+      NSMutableArray* rows = [[NSMutableArray alloc] init];
+      BOOL success = [[DirectoryScanner sharedScanner] compareOldDirectoryAtPath:_leftPath withNewDirectoryAtPath:_rightPath options:options excludeBlock:^BOOL(DirectoryItem* directory) {
+        return _stopComparison;
+      } resultBlock:^(ComparisonResult result, Item* item, Item* otherItem, BOOL* stop) {
+        Row* row = [[Row alloc] init];
+        row.result = result;
+        row.leftItem = item;
+        row.rightItem = otherItem;
+        [rows addObject:row];
+        *stop = _stopComparison;
+      }];
+      dispatch_async(dispatch_get_main_queue(), ^{
         @autoreleasepool {
-          NSMutableArray* rows = [[NSMutableArray alloc] init];
-          BOOL success = [[DirectoryScanner sharedScanner] compareOldDirectoryAtPath:_leftPath withNewDirectoryAtPath:_rightPath options:options excludeBlock:NULL resultBlock:^(ComparisonResult result, Item* item, Item* otherItem, BOOL* stop) {
-            Row* row = [[Row alloc] init];
-            row.result = result;
-            row.leftItem = item;
-            row.rightItem = otherItem;
-            [rows addObject:row];
-          }];
-          dispatch_async(dispatch_get_main_queue(), ^{
-            @autoreleasepool {
 #ifndef NDEBUG
-              NSLog(@"Comparison done in %.3f seconds", CFAbsoluteTimeGetCurrent() - time);
+          if (success) {
+            NSLog(@"Comparison done in %.3f seconds", CFAbsoluteTimeGetCurrent() - time);
+          } else {
+            NSLog(@"Comparison failed!");
+          }
 #endif
-              self.comparing = NO;
-              _rows = success ? rows : nil;
-              [self _updateTableView];
-            }
-          });
+          self.comparing = NO;
+          self.ready = success;
+          if (success) {
+            _rows = rows;
+            [self _updateTableView];
+          }
         }
       });
-    } else {
-      [self _updateTableView];
     }
-  }
+  });
 }
 
 #ifndef NDEBUG
@@ -274,10 +269,12 @@ static NSColor* _rowColors[6];
 
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
 #ifndef NDEBUG
-  _leftPath = [self _loadBookmark:kUserDefaultKey_LeftBookmark];
-  _rightPath = [self _loadBookmark:kUserDefaultKey_RightBookmark];
+  self.leftPath = [self _loadBookmark:kUserDefaultKey_LeftBookmark];
+  self.rightPath = [self _loadBookmark:kUserDefaultKey_RightBookmark];
 #endif
-  [self _compareFolders:YES];
+  if (_leftPath && _rightPath) {
+    [self _compareFolders];
+  }
   
   [[InAppStore sharedStore] setDelegate:self];
   
@@ -361,14 +358,16 @@ static NSColor* _rowColors[6];
   if ([openPanel runModal] == NSFileHandlingPanelOKButton) {
     NSURL* url = [openPanel URL];
     if (isRight) {
-      _rightPath = url.path;
+      self.rightPath = url.path;
     } else {
-      _leftPath = url.path;
+      self.leftPath = url.path;
     }
 #ifndef NDEBUG
     [self _saveBookmark:(isRight ? kUserDefaultKey_RightBookmark : kUserDefaultKey_LeftBookmark) withURL:url];
 #endif
-    [self _compareFolders:YES];
+    if (_leftPath && _rightPath) {
+      [self _compareFolders];
+    }
   }
 }
 
@@ -381,7 +380,11 @@ static NSColor* _rowColors[6];
 }
 
 - (IBAction)updateComparison:(id)sender {
-  [self _compareFolders:YES];
+  [self _compareFolders];
+}
+
+- (IBAction)stopComparison:(id)sender {
+  _stopComparison = YES;
 }
 
 - (void)_purchaseAlertDidEnd:(NSAlert*)alert returnCode:(NSInteger)returnCode contextInfo:(void*)contextInfo {
@@ -400,13 +403,13 @@ static NSColor* _rowColors[6];
                                        otherButton:nil
                          informativeTextWithFormat:NSLocalizedString(@"ALERT_LIMITED_MESSAGE", nil)];
     [alert beginSheetModalForWindow:_mainWindow modalDelegate:self didEndSelector:@selector(_purchaseAlertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
-  } else {
-    [self _compareFolders:YES];
+  } else if (_leftPath && _rightPath) {
+    [self _compareFolders];
   }
 }
 
 - (IBAction)updateFilters:(id)sender {
-  [self _compareFolders:NO];
+  [self _updateTableView];
 }
 
 - (void)_revealItem:(BOOL)isRight {

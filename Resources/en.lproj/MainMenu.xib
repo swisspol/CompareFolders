@@ -220,7 +220,7 @@
                                             </connections>
                                         </tableColumn>
                                         <tableColumn identifier="leftPath" editable="NO" width="472" minWidth="100" maxWidth="10000" id="T2R-JR-qgQ">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Please select a left folder">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="&lt;PATH>">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -235,6 +235,11 @@
                                                 <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.leftItem.relativePath" id="Ovp-HH-1Y8">
                                                     <dictionary key="options">
                                                         <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="494" name="headerTitle" keyPath="leftPath" id="hBC-Tk-gto">
+                                                    <dictionary key="options">
+                                                        <string key="NSNullPlaceholder">Please select a left folder</string>
                                                     </dictionary>
                                                 </binding>
                                             </connections>
@@ -256,7 +261,7 @@
                                             </connections>
                                         </tableColumn>
                                         <tableColumn identifier="rightPath" editable="NO" width="472" minWidth="100" maxWidth="10000" id="m3L-jq-Bpi">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Please select a right folder">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="&lt;PATH>">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -271,6 +276,11 @@
                                                 <binding destination="eGP-p6-98x" name="value" keyPath="arrangedObjects.rightItem.relativePath" id="17C-ra-2mD">
                                                     <dictionary key="options">
                                                         <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="494" name="headerTitle" keyPath="rightPath" id="W0W-kL-Cp0">
+                                                    <dictionary key="options">
+                                                        <string key="NSNullPlaceholder">Please select a right folder</string>
                                                     </dictionary>
                                                 </binding>
                                             </connections>
@@ -364,12 +374,22 @@
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="494" name="enabled2" keyPath="ready" previousBinding="rzC-tu-rrz" id="PhL-o9-Bix">
+                                        <binding destination="494" name="enabled2" keyPath="leftPath" previousBinding="rzC-tu-rrz" id="UPX-in-eN0">
                                             <dictionary key="options">
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
+                                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="494" name="enabled3" keyPath="rightPath" previousBinding="UPX-in-eN0" id="wTl-Cb-96s">
+                                            <dictionary key="options">
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -408,12 +428,24 @@
                                     </textFieldCell>
                                 </textField>
                                 <progressIndicator maxValue="100" indeterminate="YES" controlSize="small" style="bar" id="fIq-O3-Jiw">
-                                    <rect key="frame" x="18" y="15" width="168" height="12"/>
+                                    <rect key="frame" x="18" y="15" width="148" height="12"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <connections>
                                         <binding destination="494" name="animate" keyPath="comparing" id="yeY-i2-Ud3"/>
                                     </connections>
                                 </progressIndicator>
+                                <button id="F5C-3D-4Nw">
+                                    <rect key="frame" x="174" y="15" width="12" height="12"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="X4W-80-6NF">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="stopComparison:" target="494" id="OzL-zo-ArB"/>
+                                        <binding destination="494" name="enabled" keyPath="comparing" id="OAU-rJ-Oi5"/>
+                                    </connections>
+                                </button>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -758,9 +790,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -809,9 +841,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -843,9 +875,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -915,9 +947,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.dataSize" id="VcG-n3-PIm">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -949,9 +981,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.resourceSize" id="ML7-Bo-j5s">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1063,9 +1095,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1177,9 +1209,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1202,9 +1234,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.dataSize" id="9Zv-rO-vHv">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1236,9 +1268,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.resourceSize" id="H39-iy-TUF">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1311,9 +1343,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1362,5 +1394,6 @@
     </objects>
     <resources>
         <image name="NSFollowLinkFreestandingTemplate" width="10" height="10"/>
+        <image name="NSStopProgressFreestandingTemplate" width="12" height="12"/>
     </resources>
 </document>
