@@ -24,6 +24,8 @@
 		E2A4A88918A5F2580068C98E /* Folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88718A5F2580068C98E /* Folder@2x.png */; };
 		E2A4A88C18A5F8130068C98E /* Link.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88A18A5F8130068C98E /* Link.png */; };
 		E2A4A88D18A5F8130068C98E /* Link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88B18A5F8130068C98E /* Link@2x.png */; };
+		E2C2446E18B154B0003682FB /* Base64.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C2446A18B154B0003682FB /* Base64.c */; };
+		E2C2446F18B154B0003682FB /* MixpanelTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C2446D18B154B0003682FB /* MixpanelTracker.m */; };
 		E2E12C731343C96000B48700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E12C721343C96000B48700 /* AppDelegate.m */; };
 		E2FE559D1836FD3C00617532 /* Icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = E2FE559C1836FD3C00617532 /* Icon.iconset */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,10 @@
 		E2A4A88718A5F2580068C98E /* Folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder@2x.png"; sourceTree = "<group>"; };
 		E2A4A88A18A5F8130068C98E /* Link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Link.png; sourceTree = "<group>"; };
 		E2A4A88B18A5F8130068C98E /* Link@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Link@2x.png"; sourceTree = "<group>"; };
+		E2C2446A18B154B0003682FB /* Base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64.c; sourceTree = "<group>"; };
+		E2C2446B18B154B0003682FB /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		E2C2446C18B154B0003682FB /* MixpanelTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixpanelTracker.h; sourceTree = "<group>"; };
+		E2C2446D18B154B0003682FB /* MixpanelTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixpanelTracker.m; sourceTree = "<group>"; };
 		E2D09A4E1343C4B60096A4CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2D09A531343C4D90096A4CC /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		E2E12C711343C96000B48700 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 				E2E12C701343C96000B48700 /* Classes */,
 				E289ED1718A4BB8100A9D28D /* DirectoryScanner */,
 				E279087518AF410C00B752E1 /* InAppStore */,
+				E2C2446918B154B0003682FB /* MixpanelTracker */,
 				E2E12D011343CDCD00B48700 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks and Libraries */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -129,6 +136,18 @@
 			);
 			name = DirectoryScanner;
 			path = DirectoryScanner/DirectoryScanner;
+			sourceTree = "<group>";
+		};
+		E2C2446918B154B0003682FB /* MixpanelTracker */ = {
+			isa = PBXGroup;
+			children = (
+				E2C2446A18B154B0003682FB /* Base64.c */,
+				E2C2446B18B154B0003682FB /* Base64.h */,
+				E2C2446C18B154B0003682FB /* MixpanelTracker.h */,
+				E2C2446D18B154B0003682FB /* MixpanelTracker.m */,
+			);
+			name = MixpanelTracker;
+			path = MixpanelTracker/MixpanelTracker;
 			sourceTree = "<group>";
 		};
 		E2E12C701343C96000B48700 /* Classes */ = {
@@ -263,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C2446F18B154B0003682FB /* MixpanelTracker.m in Sources */,
 				E2E12C731343C96000B48700 /* AppDelegate.m in Sources */,
 				E296D7E918A591C00091AAF3 /* ValueTransformers.m in Sources */,
+				E2C2446E18B154B0003682FB /* Base64.c in Sources */,
 				E289ED1A18A4BB8100A9D28D /* DirectoryScanner.m in Sources */,
 				E279087A18AF410C00B752E1 /* main.m in Sources */,
 				E279087918AF410C00B752E1 /* InAppStore.m in Sources */,

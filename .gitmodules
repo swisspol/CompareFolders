@@ -4,3 +4,6 @@
 [submodule "InAppStore"]
 	path = InAppStore
 	url = https://github.com/swisspol/InAppStore.git
+[submodule "MixpanelTracker"]
+	path = MixpanelTracker
+	url = https://github.com/swisspol/MixpanelTracker.git
