@@ -282,7 +282,11 @@ static NSColor* _rowColors[6];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultKey_ChecksumFiles];
   }
   
+#ifdef NDEBUG
+  [MixpanelTracker startWithToken:@"6a93f5dabaad1f4bae603ed292a20674"];
+#else
   [MixpanelTracker startWithToken:@"1a0d2fe7f8c808d476be60a2f646b647"];
+#endif
   
 #ifndef NDEBUG
   self.leftPath = [self _loadBookmark:kUserDefaultKey_LeftBookmark];
