@@ -292,7 +292,7 @@ static NSColor* _rowColors[6];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication*)sender {
-  if ([[InAppStore sharedStore] isBusy]) {
+  if ([[InAppStore sharedStore] isPurchasing] || [[InAppStore sharedStore] isRestoring]) {
     return NSTerminateCancel;
   }
   return NSTerminateNow;
@@ -305,28 +305,32 @@ static NSColor* _rowColors[6];
 
 - (BOOL)validateMenuItem:(NSMenuItem*)menuItem {
   if ((menuItem.action == @selector(purchaseFileChecksums:)) || (menuItem.action == @selector(restorePurchases:))) {
-    return ![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier] && ![[InAppStore sharedStore] isBusy];
+    return ![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier] && ![[InAppStore sharedStore] isPurchasing] && ![[InAppStore sharedStore] isRestoring];
   }
   return YES;
 }
 
 - (void)inAppStore:(InAppStore*)store didPurchaseProductWithIdentifier:(NSString*)identifier {
-  NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_PURCHASE_TITLE", nil)
-                                   defaultButton:NSLocalizedString(@"ALERT_PURCHASE_DEFAULT_BUTTON", nil)
-                                 alternateButton:nil
-                                     otherButton:nil
-                       informativeTextWithFormat:NSLocalizedString(@"ALERT_PURCHASE_MESSAGE", nil)];
-  [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+  if ([[InAppStore sharedStore] isPurchasing]) {
+    NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_PURCHASE_TITLE", nil)
+                                     defaultButton:NSLocalizedString(@"ALERT_PURCHASE_DEFAULT_BUTTON", nil)
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:NSLocalizedString(@"ALERT_PURCHASE_MESSAGE", nil)];
+    [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+  }
 }
 
 - (void)inAppStore:(InAppStore*)store didRestoreProductWithIdentifier:(NSString*)identifier {
-  [NSApp activateIgnoringOtherApps:YES];
-  NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_RESTORE_TITLE", nil)
-                                   defaultButton:NSLocalizedString(@"ALERT_RESTORE_DEFAULT_BUTTON", nil)
-                                 alternateButton:nil
-                                     otherButton:nil
-                       informativeTextWithFormat:NSLocalizedString(@"ALERT_RESTORE_MESSAGE", nil)];
-  [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+  if ([[InAppStore sharedStore] isRestoring]) {
+    [NSApp activateIgnoringOtherApps:YES];
+    NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_RESTORE_TITLE", nil)
+                                     defaultButton:NSLocalizedString(@"ALERT_RESTORE_DEFAULT_BUTTON", nil)
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:NSLocalizedString(@"ALERT_RESTORE_MESSAGE", nil)];
+    [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+  }
 }
 
 - (void)_reportIAPError:(NSError*)error {
