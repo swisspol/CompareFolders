@@ -55,7 +55,7 @@
 - (IBAction)updateFilters:(id)sender;
 - (IBAction)revealLeft:(id)sender;
 - (IBAction)revealRight:(id)sender;
-- (IBAction)purchaseFileChecksums:(id)sender;
+- (IBAction)purchaseFeature:(id)sender;
 - (IBAction)restorePurchases:(id)sender;
 - (IBAction)learnMore:(id)sender;
 @end

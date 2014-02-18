@@ -130,7 +130,7 @@
                             <menuItem title="Purchase File Checksums Feature…" id="ZwX-y7-VJk">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="purchaseFileChecksums:" target="494" id="Vtb-zc-TEN"/>
+                                    <action selector="purchaseFeature:" target="494" id="Udb-bu-ViD"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Restore Purchases…" tag="2" id="qUm-K4-P9F">
@@ -377,19 +377,19 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="leftPath" previousBinding="rzC-tu-rrz" id="UPX-in-eN0">
                                             <dictionary key="options">
-                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="494" name="enabled3" keyPath="rightPath" previousBinding="UPX-in-eN0" id="wTl-Cb-96s">
                                             <dictionary key="options">
-                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
                                         </binding>
@@ -439,7 +439,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="roundRect" title="Learn More…" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f3G-fd-CYB">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="controlContent"/>
+                                                            <font key="font" metaFont="cellTitle"/>
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="learnMore:" target="494" id="yVk-mm-c4o"/>
@@ -835,9 +835,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -886,9 +886,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -920,9 +920,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -992,9 +992,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.dataSize" id="VcG-n3-PIm">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1026,9 +1026,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.resourceSize" id="ML7-Bo-j5s">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1140,9 +1140,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1254,9 +1254,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1279,9 +1279,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.dataSize" id="9Zv-rO-vHv">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1313,9 +1313,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.resourceSize" id="H39-iy-TUF">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1388,9 +1388,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>

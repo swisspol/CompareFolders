@@ -315,7 +315,7 @@ static NSColor* _rowColors[6];
 }
 
 - (BOOL)validateMenuItem:(NSMenuItem*)menuItem {
-  if ((menuItem.action == @selector(purchaseFileChecksums:)) || (menuItem.action == @selector(restorePurchases:))) {
+  if ((menuItem.action == @selector(purchaseFeature:)) || (menuItem.action == @selector(restorePurchases:))) {
     return ![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier] && ![[InAppStore sharedStore] isPurchasing] && ![[InAppStore sharedStore] isRestoring];
   }
   return YES;
@@ -454,7 +454,7 @@ static NSColor* _rowColors[6];
   [self _revealItem:YES];
 }
 
-- (IBAction)purchaseFileChecksums:(id)sender {
+- (IBAction)purchaseFeature:(id)sender {
   if ([[InAppStore sharedStore] purchaseProductWithIdentifier:kInAppProductIdentifier]) {
     MIXPANEL_TRACK_EVENT(@"Start Purchase", nil);
   } else {
@@ -475,7 +475,7 @@ static NSColor* _rowColors[6];
 - (void)_purchaseAlertDidEnd:(NSAlert*)alert returnCode:(NSInteger)returnCode contextInfo:(void*)contextInfo {
   MIXPANEL_TRACK_EVENT(@"Learn Purchase", @{@"Choice": [NSNumber numberWithInteger:returnCode]});
   if (returnCode == NSAlertDefaultReturn) {
-    [self purchaseFileChecksums:nil];
+    [self purchaseFeature:nil];
   }
 }
 
