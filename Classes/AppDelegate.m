@@ -229,6 +229,7 @@ static NSColor* _rowColors[6];
             [self _updateTableView];
           }
           if (errors.count && !_stopComparison) {
+            MIXPANEL_TRACK_EVENT(@"Report Errors", nil);
             [_errorController setContent:errors];
             [NSApp beginSheet:_errorWindow modalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
           }
@@ -432,7 +433,10 @@ static NSColor* _rowColors[6];
 }
 
 - (IBAction)stopComparison:(id)sender {
-  _stopComparison = YES;
+  if (_stopComparison == NO) {
+    MIXPANEL_TRACK_EVENT(@"Stop Comparison", nil);
+    _stopComparison = YES;
+  }
 }
 
 - (IBAction)toggleFileChecksums:(id)sender {
