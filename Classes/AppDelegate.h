@@ -43,6 +43,8 @@
 @property(nonatomic, assign) IBOutlet NSTableView* tableView;
 @property(nonatomic, assign) IBOutlet NSArrayController* arrayController;
 @property(nonatomic, assign) IBOutlet NSTabView* tabView;
+@property(nonatomic, assign) IBOutlet NSWindow* errorWindow;
+@property(nonatomic, assign) IBOutlet NSArrayController* errorController;
 @property(nonatomic, copy) NSString* leftPath;
 @property(nonatomic, copy) NSString* rightPath;
 @property(nonatomic, getter = isComparing) BOOL comparing;
@@ -58,4 +60,5 @@
 - (IBAction)purchaseFeature:(id)sender;
 - (IBAction)restorePurchases:(id)sender;
 - (IBAction)learnMore:(id)sender;
+- (IBAction)dismissErrors:(id)sender;
 @end

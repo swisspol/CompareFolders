@@ -199,6 +199,7 @@ static NSColor* _rowColors[6];
 #endif
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     @autoreleasepool {
+      NSMutableArray* errors = [[NSMutableArray alloc] init];
       NSMutableArray* rows = [[NSMutableArray alloc] init];
       BOOL success = [[DirectoryScanner sharedScanner] compareOldDirectoryAtPath:_leftPath withNewDirectoryAtPath:_rightPath options:options excludeBlock:^BOOL(DirectoryItem* directory) {
         return _stopComparison;
@@ -209,6 +210,8 @@ static NSColor* _rowColors[6];
         row.rightItem = otherItem;
         [rows addObject:row];
         *stop = _stopComparison;
+      } errorBlock:^(NSError* error) {
+        [errors addObject:error];
       }];
       dispatch_async(dispatch_get_main_queue(), ^{
         @autoreleasepool {
@@ -224,6 +227,10 @@ static NSColor* _rowColors[6];
           if (success) {
             _rows = rows;
             [self _updateTableView];
+          }
+          if (errors.count && !_stopComparison) {
+            [_errorController setContent:errors];
+            [NSApp beginSheet:_errorWindow modalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
           }
         }
       });
@@ -486,6 +493,12 @@ static NSColor* _rowColors[6];
                                      otherButton:nil
                        informativeTextWithFormat:NSLocalizedString(@"ALERT_LEARN_MESSAGE", nil)];
   [alert beginSheetModalForWindow:_mainWindow modalDelegate:self didEndSelector:@selector(_purchaseAlertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
+}
+
+- (IBAction)dismissErrors:(id)sender {
+  [NSApp endSheet:_errorWindow];
+  [_errorWindow orderOut:nil];
+  [_errorController setContent:nil];
 }
 
 @end

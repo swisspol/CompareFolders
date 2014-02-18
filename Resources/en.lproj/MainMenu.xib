@@ -172,6 +172,8 @@
         <customObject id="494" userLabel="AppDelegate" customClass="AppDelegate">
             <connections>
                 <outlet property="arrayController" destination="eGP-p6-98x" id="XNz-Xm-4V5"/>
+                <outlet property="errorController" destination="oZq-tL-oz6" id="7d0-m9-z4G"/>
+                <outlet property="errorWindow" destination="CSD-Eu-yAA" id="sfy-RE-34R"/>
                 <outlet property="mainWindow" destination="1604" id="1606"/>
                 <outlet property="tabView" destination="s2V-Te-mlI" id="XrC-Qv-lRW"/>
                 <outlet property="tableView" destination="o3s-wI-Uws" id="buI-Uf-SCa"/>
@@ -189,7 +191,7 @@
                     <userLayoutGuide location="500" affinity="minX"/>
                 </userGuides>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="7mp-nI-gxs">
                         <rect key="frame" x="-1" y="207" width="1002" height="235"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="dNO-vd-uOL">
@@ -310,7 +312,7 @@
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hPn-eT-4bZ">
-                            <rect key="frame" x="1" y="308" width="1000" height="16"/>
+                            <rect key="frame" x="-100" y="-100" width="1000" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="OGw-lL-6xK">
@@ -377,19 +379,19 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="leftPath" previousBinding="rzC-tu-rrz" id="UPX-in-eN0">
                                             <dictionary key="options">
-                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="494" name="enabled3" keyPath="rightPath" previousBinding="UPX-in-eN0" id="wTl-Cb-96s">
                                             <dictionary key="options">
-                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
                                         </binding>
@@ -835,9 +837,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -886,9 +888,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -920,9 +922,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -992,9 +994,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.dataSize" id="VcG-n3-PIm">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1026,9 +1028,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.resourceSize" id="ML7-Bo-j5s">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1140,9 +1142,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1254,9 +1256,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1279,9 +1281,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.dataSize" id="9Zv-rO-vHv">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1313,9 +1315,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.resourceSize" id="H39-iy-TUF">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1388,9 +1390,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1435,7 +1437,150 @@
             </connections>
         </window>
         <arrayController objectClassName="Row" editable="NO" avoidsEmptySelection="NO" id="eGP-p6-98x"/>
+        <arrayController objectClassName="NSError" editable="NO" preservesSelection="NO" selectsInsertedObjects="NO" avoidsEmptySelection="NO" clearsFilterPredicateOnInsertion="NO" id="oZq-tL-oz6" userLabel="Error Controller"/>
         <userDefaultsController representsSharedInstance="YES" id="EJU-cJ-Le9"/>
+        <window title="Errors" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="errorWindow" animationBehavior="default" id="CSD-Eu-yAA" userLabel="Error Window">
+            <windowStyleMask key="styleMask" titled="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="283" y="305" width="900" height="400"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <value key="minSize" type="size" width="900" height="300"/>
+            <view key="contentView" id="0dm-8w-umF">
+                <rect key="frame" x="0.0" y="0.0" width="900" height="400"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" id="OPo-JS-jbS">
+                        <rect key="frame" x="786" y="13" width="100" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="E09-eH-54x">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="dismissErrors:" target="494" id="khF-WD-fpA"/>
+                        </connections>
+                    </button>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="16" horizontalPageScroll="10" verticalLineScroll="16" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="rdH-WP-lyw">
+                        <rect key="frame" x="-1" y="61" width="902" height="282"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="C10-KO-Muk">
+                            <rect key="frame" x="1" y="17" width="900" height="264"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="14" headerView="E2b-lI-OA3" id="PFr-l8-m3V">
+                                    <rect key="frame" x="0.0" y="0.0" width="900" height="264"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <size key="intercellSpacing" width="3" height="2"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <tableViewGridLines key="gridStyleMask" vertical="YES"/>
+                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableColumns>
+                                        <tableColumn editable="NO" width="491" minWidth="10" maxWidth="10000" id="m60-x8-81d">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Path">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" refusesFirstResponder="YES" allowsUndo="NO" alignment="left" title="Text Cell" id="8uo-7j-ffB">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                            <connections>
+                                                <binding destination="oZq-tL-oz6" name="value" keyPath="arrangedObjects.userInfo.NSFilePath" id="Cpr-f2-HUL">
+                                                    <dictionary key="options">
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                        <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                        <tableColumn editable="NO" width="200" minWidth="10" maxWidth="10000" id="4MU-6l-0hD">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Error">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingTail" selectable="YES" refusesFirstResponder="YES" allowsUndo="NO" alignment="left" title="Text Cell" id="OlZ-i7-jn8">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="oZq-tL-oz6" name="value" keyPath="arrangedObjects.localizedDescription" id="jAN-d1-oCC">
+                                                    <dictionary key="options">
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                        <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                        <tableColumn editable="NO" width="200" minWidth="10" maxWidth="10000" id="67a-qp-UBo">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Reason">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingTail" selectable="YES" refusesFirstResponder="YES" allowsUndo="NO" alignment="left" title="Text Cell" id="eho-9W-cu7">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="oZq-tL-oz6" name="value" keyPath="arrangedObjects.localizedFailureReason" id="UuA-hs-XiA">
+                                                    <dictionary key="options">
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                        <bool key="NSConditionallySetsEditable" value="YES"/>
+                                                        <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tableColumn>
+                                    </tableColumns>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jij-Pc-H3M">
+                            <rect key="frame" x="-100" y="-100" width="795" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="NgF-E7-FU1">
+                            <rect key="frame" x="224" y="17" width="15" height="102"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <tableHeaderView key="headerView" id="E2b-lI-OA3">
+                            <rect key="frame" x="0.0" y="0.0" width="900" height="17"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </tableHeaderView>
+                    </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="de4-D6-4bf">
+                        <rect key="frame" x="18" y="363" width="560" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Some errors happened while comparing the left and right folders:" id="XKf-sV-62h">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="rC3-cj-M28">
+                        <rect key="frame" x="18" y="22" width="491" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You can try comparing the folders again to see if the errors persist." id="rka-aq-bDs">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+        </window>
     </objects>
     <resources>
         <image name="NSFollowLinkFreestandingTemplate" width="10" height="10"/>
