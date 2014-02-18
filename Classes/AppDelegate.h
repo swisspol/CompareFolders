@@ -37,7 +37,6 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate, NSOpenSavePanelDelegate, InAppStoreDelegate> {
 @private
   NSArray* _rows;
-  BOOL _purchasing;
   BOOL _stopComparison;
 }
 @property(nonatomic, assign) IBOutlet NSWindow* mainWindow;
