@@ -42,6 +42,7 @@
 @property(nonatomic, assign) IBOutlet NSWindow* mainWindow;
 @property(nonatomic, assign) IBOutlet NSTableView* tableView;
 @property(nonatomic, assign) IBOutlet NSArrayController* arrayController;
+@property(nonatomic, assign) IBOutlet NSTabView* tabView;
 @property(nonatomic, copy) NSString* leftPath;
 @property(nonatomic, copy) NSString* rightPath;
 @property(nonatomic, getter = isComparing) BOOL comparing;
@@ -56,4 +57,5 @@
 - (IBAction)revealRight:(id)sender;
 - (IBAction)purchaseFileChecksums:(id)sender;
 - (IBAction)restorePurchases:(id)sender;
+- (IBAction)learnMore:(id)sender;
 @end

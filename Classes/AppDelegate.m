@@ -35,7 +35,7 @@
 #define kUserDefaultKey_RightBookmark @"rightBookmark"
 #endif
 
-#define kInAppProductIdentifier @"compare_folders_advanced"
+#define kInAppProductIdentifier @"compare_folders_file_checksums"
 
 static NSColor* _rowColors[6];
 
@@ -278,7 +278,10 @@ static NSColor* _rowColors[6];
 #endif
   
   [[InAppStore sharedStore] setDelegate:self];
-  if (![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
+  if ([[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
+    [_tabView selectTabViewItemAtIndex:1];
+  } else {
+    [_tabView selectTabViewItemAtIndex:0];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultKey_ChecksumFiles];
   }
   
@@ -325,6 +328,7 @@ static NSColor* _rowColors[6];
 - (void)inAppStore:(InAppStore*)store didPurchaseProductWithIdentifier:(NSString*)identifier {
   MIXPANEL_TRACK_EVENT(@"Finish Purchase", nil);
   MIXPANEL_TRACK_PURCHASE([[NSUserDefaults standardUserDefaults] floatForKey:kUserDefaultKey_ProductPrice], nil);
+  [_tabView selectTabViewItemAtIndex:1];
   if ([[InAppStore sharedStore] isPurchasing]) {
     NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_PURCHASE_TITLE", nil)
                                      defaultButton:NSLocalizedString(@"ALERT_PURCHASE_DEFAULT_BUTTON", nil)
@@ -341,14 +345,17 @@ static NSColor* _rowColors[6];
 
 - (void)inAppStore:(InAppStore*)store didRestoreProductWithIdentifier:(NSString*)identifier {
   MIXPANEL_TRACK_EVENT(@"Finish Restore", nil);
-  if ([[InAppStore sharedStore] isRestoring]) {
-    [NSApp activateIgnoringOtherApps:YES];
-    NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_RESTORE_TITLE", nil)
-                                     defaultButton:NSLocalizedString(@"ALERT_RESTORE_DEFAULT_BUTTON", nil)
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:NSLocalizedString(@"ALERT_RESTORE_MESSAGE", nil)];
-    [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+  if ([identifier isEqualToString:kInAppProductIdentifier]) {
+    [_tabView selectTabViewItemAtIndex:1];
+    if ([[InAppStore sharedStore] isRestoring]) {
+      [NSApp activateIgnoringOtherApps:YES];
+      NSAlert* alert = [NSAlert alertWithMessageText:NSLocalizedString(@"ALERT_RESTORE_TITLE", nil)
+                                       defaultButton:NSLocalizedString(@"ALERT_RESTORE_DEFAULT_BUTTON", nil)
+                                     alternateButton:nil
+                                         otherButton:nil
+                           informativeTextWithFormat:NSLocalizedString(@"ALERT_RESTORE_MESSAGE", nil)];
+      [alert beginSheetModalForWindow:_mainWindow modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
+    }
   }
 }
 
@@ -421,24 +428,8 @@ static NSColor* _rowColors[6];
   _stopComparison = YES;
 }
 
-- (void)_purchaseAlertDidEnd:(NSAlert*)alert returnCode:(NSInteger)returnCode contextInfo:(void*)contextInfo {
-  MIXPANEL_TRACK_EVENT(@"Prompt Purchase", @{@"Choice": [NSNumber numberWithInteger:returnCode]});
-  if (returnCode == NSAlertDefaultReturn) {
-    [self purchaseFileChecksums:nil];
-  }
-}
-
 - (IBAction)toggleFileChecksums:(id)sender {
-  if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]
-      && ![[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kUserDefaultKey_ChecksumFiles];
-    NSAlert* alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"ALERT_LIMITED_TITLE", nil)]
-                                     defaultButton:NSLocalizedString(@"ALERT_LIMITED_DEFAULT_BUTTON", nil)
-                                   alternateButton:NSLocalizedString(@"ALERT_LIMITED_ALTERNATE_BUTTON", nil)
-                                       otherButton:nil
-                         informativeTextWithFormat:NSLocalizedString(@"ALERT_LIMITED_MESSAGE", nil)];
-    [alert beginSheetModalForWindow:_mainWindow modalDelegate:self didEndSelector:@selector(_purchaseAlertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
-  } else if (_leftPath && _rightPath) {
+  if (_leftPath && _rightPath) {
     [self _compareFolders];
   }
 }
@@ -479,6 +470,22 @@ static NSColor* _rowColors[6];
 - (IBAction)restorePurchases:(id)sender {
   MIXPANEL_TRACK_EVENT(@"Restore Purchase", nil);
   [[InAppStore sharedStore] restorePurchases];
+}
+
+- (void)_purchaseAlertDidEnd:(NSAlert*)alert returnCode:(NSInteger)returnCode contextInfo:(void*)contextInfo {
+  MIXPANEL_TRACK_EVENT(@"Learn Purchase", @{@"Choice": [NSNumber numberWithInteger:returnCode]});
+  if (returnCode == NSAlertDefaultReturn) {
+    [self purchaseFileChecksums:nil];
+  }
+}
+
+- (IBAction)learnMore:(id)sender {
+  NSAlert* alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:NSLocalizedString(@"ALERT_LEARN_TITLE", nil)]
+                                   defaultButton:NSLocalizedString(@"ALERT_LEARN_DEFAULT_BUTTON", nil)
+                                 alternateButton:NSLocalizedString(@"ALERT_LEARN_ALTERNATE_BUTTON", nil)
+                                     otherButton:nil
+                       informativeTextWithFormat:NSLocalizedString(@"ALERT_LEARN_MESSAGE", nil)];
+  [alert beginSheetModalForWindow:_mainWindow modalDelegate:self didEndSelector:@selector(_purchaseAlertDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
 
 @end

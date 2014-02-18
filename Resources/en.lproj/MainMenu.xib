@@ -127,7 +127,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Store" systemMenu="font" id="VZx-Oo-q8V">
                         <items>
-                            <menuItem title="Purchase Advanced…" id="ZwX-y7-VJk">
+                            <menuItem title="Purchase File Checksums Feature…" id="ZwX-y7-VJk">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="purchaseFileChecksums:" target="494" id="Vtb-zc-TEN"/>
@@ -173,6 +173,7 @@
             <connections>
                 <outlet property="arrayController" destination="eGP-p6-98x" id="XNz-Xm-4V5"/>
                 <outlet property="mainWindow" destination="1604" id="1606"/>
+                <outlet property="tabView" destination="s2V-Te-mlI" id="XrC-Qv-lRW"/>
                 <outlet property="tableView" destination="o3s-wI-Uws" id="buI-Uf-SCa"/>
             </connections>
         </customObject>
@@ -376,57 +377,24 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="leftPath" previousBinding="rzC-tu-rrz" id="UPX-in-eN0">
                                             <dictionary key="options">
-                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
                                         </binding>
                                         <binding destination="494" name="enabled3" keyPath="rightPath" previousBinding="UPX-in-eN0" id="wTl-Cb-96s">
                                             <dictionary key="options">
-                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
                                 </button>
-                                <button id="QFy-SP-QLP">
-                                    <rect key="frame" x="202" y="105" width="170" height="18"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Checksum file contents" bezelStyle="regularSquare" imagePosition="left" inset="2" id="dHH-eN-UNC">
-                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="toggleFileChecksums:" target="494" id="TaU-B7-0Qc"/>
-                                        <binding destination="494" name="enabled" keyPath="comparing" id="29J-Tm-z8J">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                            </dictionary>
-                                        </binding>
-                                        <binding destination="EJU-cJ-Le9" name="value" keyPath="values.checksumFiles" id="p6a-GU-ta6">
-                                            <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
-                                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </button>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="DcM-XO-Bsj">
-                                    <rect key="frame" x="220" y="15" width="152" height="84"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" controlSize="small" allowsUndo="NO" sendsActionOnEndEditing="YES" id="9hA-Wt-bpG">
-                                        <font key="font" metaFont="smallSystem"/>
-                                        <string key="title">Using checksums to compare file contents is guaranteed to detect modifications but is quite slower than using file size and last modification date</string>
-                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                </textField>
                                 <progressIndicator maxValue="100" indeterminate="YES" controlSize="small" style="bar" id="fIq-O3-Jiw">
                                     <rect key="frame" x="18" y="15" width="148" height="12"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -446,6 +414,83 @@
                                         <binding destination="494" name="enabled" keyPath="comparing" id="OAU-rJ-Oi5"/>
                                     </connections>
                                 </button>
+                                <tabView drawsBackground="NO" type="noTabsNoBorder" id="s2V-Te-mlI">
+                                    <rect key="frame" x="199" y="9" width="170" height="120"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <tabViewItems>
+                                        <tabViewItem label="Tab" identifier="1" id="Tbr-Pn-S9D">
+                                            <view key="view" id="KxS-df-h8L">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="DcM-XO-Bsj">
+                                                        <rect key="frame" x="13" y="31" width="149" height="84"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" controlSize="small" allowsUndo="NO" sendsActionOnEndEditing="YES" id="9hA-Wt-bpG">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <string key="title">Files are considered identical if their sizes and last modification dates are the same. Use the "File Checksums" feature to compare their contents.</string>
+                                                            <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button verticalHuggingPriority="750" id="Fhh-X9-w6f">
+                                                        <rect key="frame" x="13" y="2" width="148" height="19"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="roundRect" title="Learn More…" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f3G-fd-CYB">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="controlContent"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="learnMore:" target="494" id="yVk-mm-c4o"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                        </tabViewItem>
+                                        <tabViewItem label="View" identifier="2" id="RMT-HF-e7V">
+                                            <view key="view" id="LdG-33-25v">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="07r-IK-yl2">
+                                                        <rect key="frame" x="18" y="6" width="152" height="84"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" controlSize="small" allowsUndo="NO" sendsActionOnEndEditing="YES" id="zw3-gV-18i">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <string key="title">Using checksums to compare file contents is guaranteed to detect modifications but is quite slower than using file size and last modification date.</string>
+                                                            <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button id="QFy-SP-QLP">
+                                                        <rect key="frame" x="0.0" y="96" width="170" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Checksum file contents" bezelStyle="regularSquare" imagePosition="left" inset="2" id="dHH-eN-UNC">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="toggleFileChecksums:" target="494" id="TaU-B7-0Qc"/>
+                                                            <binding destination="494" name="enabled" keyPath="comparing" id="29J-Tm-z8J">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                            <binding destination="EJU-cJ-Le9" name="value" keyPath="values.checksumFiles" id="p6a-GU-ta6">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                        </tabViewItem>
+                                    </tabViewItems>
+                                </tabView>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -790,9 +835,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -841,9 +886,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -875,9 +920,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -947,9 +992,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.dataSize" id="VcG-n3-PIm">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -981,9 +1026,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.resourceSize" id="ML7-Bo-j5s">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1095,9 +1140,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1209,9 +1254,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1234,9 +1279,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.dataSize" id="9Zv-rO-vHv">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1268,9 +1313,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.resourceSize" id="H39-iy-TUF">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1343,9 +1388,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                             <dictionary key="options">
-                                                <string key="NSNullPlaceholder">N/A</string>
-                                                <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                                <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>

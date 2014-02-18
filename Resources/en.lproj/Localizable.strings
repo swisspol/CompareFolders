@@ -3,20 +3,20 @@
 "FILE_SIZE_MB" = "%@ bytes (%@ MB)";
 "FILE_SIZE_GB" = "%@ bytes (%@ GB)";
 
-"ALERT_LIMITED_TITLE" = "Advanced feature not available!";
-"ALERT_LIMITED_DEFAULT_BUTTON" = "Purchase Now";
-"ALERT_LIMITED_ALTERNATE_BUTTON" = "Cancel";
-"ALERT_LIMITED_MESSAGE" = "Comparing the contents of files using checksums requires a one-time purchase of Compare Folders Advanced.\n\nClick \"Purchase Now\" to buy Compare Folders Advanced as an In-App Purchase from the App Store.";
+"ALERT_LEARN_TITLE" = "About File Checksums feature";
+"ALERT_LEARN_DEFAULT_BUTTON" = "Purchase Now";
+"ALERT_LEARN_ALTERNATE_BUTTON" = "Later";
+"ALERT_LEARN_MESSAGE" = "By default Compare Folders detects if two files are identical using their sizes and last modification dates. This is a fast and commonly used method, sufficient for most users.\n\nFor advanced users who want to ensure with 100%% accuracy that two files are identical or not, Compare Folders can compare the actual contents of the files byte per byte using checksums.\n\nClick \"Purchase Now\" to buy the File Checkums feature as an In-App Purchase from the App Store.";
 
 "ALERT_UNAVAILABLE_TITLE" = "In-App Purchases not available!";
 "ALERT_UNAVAILABLE_DEFAULT_BUTTON" = "OK";
 "ALERT_UNAVAILABLE_MESSAGE" = "Make sure your computer is connected to the Internet and App Store users are allowed to make payments.";
 
-"ALERT_PURCHASE_TITLE" = "Compare Folders Advanced successfully purchased!";
+"ALERT_PURCHASE_TITLE" = "File Checksums feature successfully purchased!";
 "ALERT_PURCHASE_DEFAULT_BUTTON" = "Done";
 "ALERT_PURCHASE_MESSAGE" = "Your can now compare the contents of files using checksums. Thanks for supporting the development of Compare Folders!";
 
-"ALERT_RESTORE_TITLE" = "Compare Folders Advanced successfully restored!";
+"ALERT_RESTORE_TITLE" = "File Checksums feature successfully restored!";
 "ALERT_RESTORE_DEFAULT_BUTTON" = "Done";
 "ALERT_RESTORE_MESSAGE" = "Your can now compare the contents of files using checksums. Thanks for supporting the development of Compare Folders!";
 
