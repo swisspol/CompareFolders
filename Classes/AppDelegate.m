@@ -183,15 +183,15 @@ static NSColor* _rowColors[6];
 }
 
 - (void)_compareFolders {
-  MIXPANEL_TRACK_EVENT(@"Compare Folders", nil);
+  BOOL checksumFiles = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles];
+  MIXPANEL_TRACK_EVENT(@"Compare Folders", @{@"Checksum Files": [NSNumber numberWithBool:checksumFiles]});
   [_arrayController setContent:nil];
   _rows = nil;
   
   _stopComparison = NO;
   self.comparing = YES;
   ComparisonOptions options = 0;
-  if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles]
-      && [[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
+  if (checksumFiles && [[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
     options |= kComparisonOption_FileContent;
   }
 #ifndef NDEBUG
