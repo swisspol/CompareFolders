@@ -421,10 +421,12 @@ static NSColor* _rowColors[6];
 }
 
 - (IBAction)selectLeftFolder:(id)sender {
+  MIXPANEL_TRACK_EVENT(@"Select Left", nil);
   [self _selectFolder:NO];
 }
 
 - (IBAction)selectRightFolder:(id)sender {
+  MIXPANEL_TRACK_EVENT(@"Select Right", nil);
   [self _selectFolder:YES];
 }
 
