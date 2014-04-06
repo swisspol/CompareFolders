@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -298,10 +298,10 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="v0x-a7-a1l" id="TyA-II-l5l">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="5zV-m4-NNs" id="zBY-rj-IcB"/>
@@ -380,8 +380,8 @@
                                         <binding destination="494" name="enabled2" keyPath="leftPath" previousBinding="rzC-tu-rrz" id="UPX-in-eN0">
                                             <dictionary key="options">
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
@@ -389,8 +389,8 @@
                                         <binding destination="494" name="enabled3" keyPath="rightPath" previousBinding="UPX-in-eN0" id="wTl-Cb-96s">
                                             <dictionary key="options">
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                             </dictionary>
@@ -481,9 +481,9 @@
                                                             </binding>
                                                             <binding destination="EJU-cJ-Le9" name="value" keyPath="values.checksumFiles" id="p6a-GU-ta6">
                                                                 <dictionary key="options">
-                                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                                     <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                                    <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                                 </dictionary>
                                                             </binding>
                                                         </connections>
@@ -521,17 +521,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="Cux-g9-OBs" id="9sC-kp-Sy5">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterIdentical" id="KdL-wl-LBg">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -552,17 +552,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="aDS-ma-DXH" id="rCf-mO-vgW">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterHidden" id="PBX-16-Rqp">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -583,17 +583,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="OWc-dU-QeQ" id="z6s-1O-AZz">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterPermissions" id="Hql-ER-KLq">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -614,17 +614,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="dUg-RX-18P" id="Xsg-qY-H1Z">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterCreations" id="JDU-Vd-7Xe">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -632,7 +632,7 @@
                                 <button id="K6Y-XU-X2s">
                                     <rect key="frame" x="16" y="12" width="370" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Exclude folders with only modification date differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="99n-YV-JS6">
+                                    <buttonCell key="cell" type="check" title="Exclude items with only modification date differences" bezelStyle="regularSquare" imagePosition="left" inset="2" id="99n-YV-JS6">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -645,17 +645,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="AUt-Bs-txE" id="TZC-Xq-lLP">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterModifications" id="uJb-gR-KH4">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -676,17 +676,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="sUf-6q-Zhu" id="5fC-TP-jjZ">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterLinks" id="KxF-fc-nPY">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -713,10 +713,10 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="T8T-Aa-pXO" id="vhB-d1-0YP">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -737,17 +737,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="gVn-2w-sJf" id="8jC-Rg-GdX">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFiles" id="Fyc-GP-Vrx">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -768,17 +768,17 @@
                                         </binding>
                                         <binding destination="494" name="enabled2" keyPath="ready" previousBinding="w9D-0U-6l3" id="yuc-4K-Tgj">
                                             <dictionary key="options">
-                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                <integer key="NSNullPlaceholder" value="-1"/>
                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                <integer key="NSNullPlaceholder" value="-1"/>
                                             </dictionary>
                                         </binding>
                                         <binding destination="EJU-cJ-Le9" name="value" keyPath="values.filterFolders" id="KRL-0A-6NY">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
                                                 <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -837,9 +837,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.posixPermissions" id="0LT-9S-cGb">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -859,8 +859,8 @@
                                                 <connections>
                                                     <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.absolutePath" id="6qn-bs-3KB">
                                                         <dictionary key="options">
-                                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                             <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                             <string key="NSValueTransformerName">PathIconTransformer</string>
                                                         </dictionary>
                                                     </binding>
@@ -888,9 +888,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.groupID" id="YiS-Fx-QFe">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -922,9 +922,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.userID" id="reA-QK-see">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -952,9 +952,9 @@
                                     <connections>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.absolutePath" id="3O1-Us-u20">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -994,9 +994,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.dataSize" id="VcG-n3-PIm">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1028,9 +1028,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.resourceSize" id="ML7-Bo-j5s">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1054,9 +1054,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.creationDate" id="ZNm-VS-WdA">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -1079,9 +1079,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.leftItem.modificationDate" id="GcW-ZB-jFT">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -1142,9 +1142,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.userID" id="iud-7y-UOA">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">UserIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1197,9 +1197,9 @@
                                     <connections>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.absolutePath" id="1SN-0S-dWw">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -1227,8 +1227,8 @@
                                                 <connections>
                                                     <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.absolutePath" id="uOJ-ir-Jfr">
                                                         <dictionary key="options">
-                                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                             <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                            <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                             <string key="NSValueTransformerName">PathIconTransformer</string>
                                                         </dictionary>
                                                     </binding>
@@ -1256,9 +1256,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.posixPermissions" id="cen-Kh-IFs">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">PermissionsTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1281,9 +1281,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.dataSize" id="9Zv-rO-vHv">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1315,9 +1315,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.resourceSize" id="H39-iy-TUF">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">FileSizeTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1341,9 +1341,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.creationDate" id="9Qf-4m-M66">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -1366,9 +1366,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.modificationDate" id="iGU-Sy-Mpi">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
-                                                <string key="NSNullPlaceholder">N/A</string>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
+                                                <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -1390,9 +1390,9 @@
                                         </binding>
                                         <binding destination="eGP-p6-98x" name="value" keyPath="selection.rightItem.groupID" id="5hI-J6-vW9">
                                             <dictionary key="options">
-                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSNotApplicablePlaceholder">N/A</string>
                                                 <string key="NSNullPlaceholder">N/A</string>
+                                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                 <string key="NSValueTransformerName">GroupIDTransformer</string>
                                             </dictionary>
                                         </binding>
@@ -1493,9 +1493,9 @@ DQ
                                             <connections>
                                                 <binding destination="oZq-tL-oz6" name="value" keyPath="arrangedObjects.userInfo.NSFilePath" id="Cpr-f2-HUL">
                                                     <dictionary key="options">
-                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                         <bool key="NSConditionallySetsEditable" value="YES"/>
                                                         <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                     </dictionary>
                                                 </binding>
                                             </connections>
@@ -1514,9 +1514,9 @@ DQ
                                             <connections>
                                                 <binding destination="oZq-tL-oz6" name="value" keyPath="arrangedObjects.localizedDescription" id="jAN-d1-oCC">
                                                     <dictionary key="options">
-                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                         <bool key="NSConditionallySetsEditable" value="YES"/>
                                                         <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                     </dictionary>
                                                 </binding>
                                             </connections>
@@ -1535,9 +1535,9 @@ DQ
                                             <connections>
                                                 <binding destination="oZq-tL-oz6" name="value" keyPath="arrangedObjects.localizedFailureReason" id="UuA-hs-XiA">
                                                     <dictionary key="options">
-                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                         <bool key="NSConditionallySetsEditable" value="YES"/>
                                                         <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                                     </dictionary>
                                                 </binding>
                                             </connections>
@@ -1551,7 +1551,7 @@ DQ
                             <rect key="frame" x="-100" y="-100" width="795" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="NgF-E7-FU1">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="NgF-E7-FU1">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>

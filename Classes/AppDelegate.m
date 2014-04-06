@@ -167,7 +167,7 @@ static NSColor* _rowColors[6];
         if (filterCreations) {
           mask |= kComparisonResult_Modified_CreationDate;
         }
-        if (filterModifications && (leftItem.isDirectory || rightItem.isDirectory)) {
+        if (filterModifications) {
           mask |= kComparisonResult_Modified_ModificationDate;
         }
         if (mask && (result & mask) && !(result & ~mask)) {
