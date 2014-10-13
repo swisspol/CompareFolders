@@ -24,6 +24,17 @@
 		E2A4A88918A5F2580068C98E /* Folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88718A5F2580068C98E /* Folder@2x.png */; };
 		E2A4A88C18A5F8130068C98E /* Link.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88A18A5F8130068C98E /* Link.png */; };
 		E2A4A88D18A5F8130068C98E /* Link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2A4A88B18A5F8130068C98E /* Link@2x.png */; };
+		E2A5365D19EBA2BE00C19F8B /* XLASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5364419EBA2BE00C19F8B /* XLASLLogger.m */; };
+		E2A5365E19EBA2BE00C19F8B /* XLCallbackLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5364619EBA2BE00C19F8B /* XLCallbackLogger.m */; };
+		E2A5365F19EBA2BE00C19F8B /* XLFacility.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5364819EBA2BE00C19F8B /* XLFacility.m */; };
+		E2A5366019EBA2BE00C19F8B /* XLFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5364B19EBA2BE00C19F8B /* XLFileLogger.m */; };
+		E2A5366119EBA2BE00C19F8B /* XLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5364D19EBA2BE00C19F8B /* XLLogger.m */; };
+		E2A5366219EBA2BE00C19F8B /* XLLogRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5364F19EBA2BE00C19F8B /* XLLogRecord.m */; };
+		E2A5366319EBA2BE00C19F8B /* XLStandardLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5365219EBA2BE00C19F8B /* XLStandardLogger.m */; };
+		E2A5366419EBA2BE00C19F8B /* XLDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5365519EBA2BE00C19F8B /* XLDatabaseLogger.m */; };
+		E2A5366519EBA2BE00C19F8B /* XLHTTPServerLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5365719EBA2BE00C19F8B /* XLHTTPServerLogger.m */; };
+		E2A5366619EBA2BE00C19F8B /* XLTelnetServerLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A5365919EBA2BE00C19F8B /* XLTelnetServerLogger.m */; };
+		E2A5366919EBA2DA00C19F8B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A5366819EBA2DA00C19F8B /* libsqlite3.dylib */; };
 		E2C2446E18B154B0003682FB /* Base64.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C2446A18B154B0003682FB /* Base64.c */; };
 		E2C2446F18B154B0003682FB /* MixpanelTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C2446D18B154B0003682FB /* MixpanelTracker.m */; };
 		E2E12C731343C96000B48700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E12C721343C96000B48700 /* AppDelegate.m */; };
@@ -53,6 +64,29 @@
 		E2A4A88718A5F2580068C98E /* Folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Folder@2x.png"; sourceTree = "<group>"; };
 		E2A4A88A18A5F8130068C98E /* Link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Link.png; sourceTree = "<group>"; };
 		E2A4A88B18A5F8130068C98E /* Link@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Link@2x.png"; sourceTree = "<group>"; };
+		E2A5364319EBA2BE00C19F8B /* XLASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLASLLogger.h; sourceTree = "<group>"; };
+		E2A5364419EBA2BE00C19F8B /* XLASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLASLLogger.m; sourceTree = "<group>"; };
+		E2A5364519EBA2BE00C19F8B /* XLCallbackLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCallbackLogger.h; sourceTree = "<group>"; };
+		E2A5364619EBA2BE00C19F8B /* XLCallbackLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCallbackLogger.m; sourceTree = "<group>"; };
+		E2A5364719EBA2BE00C19F8B /* XLFacility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFacility.h; sourceTree = "<group>"; };
+		E2A5364819EBA2BE00C19F8B /* XLFacility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFacility.m; sourceTree = "<group>"; };
+		E2A5364919EBA2BE00C19F8B /* XLFacilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFacilityMacros.h; sourceTree = "<group>"; };
+		E2A5364A19EBA2BE00C19F8B /* XLFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFileLogger.h; sourceTree = "<group>"; };
+		E2A5364B19EBA2BE00C19F8B /* XLFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFileLogger.m; sourceTree = "<group>"; };
+		E2A5364C19EBA2BE00C19F8B /* XLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLLogger.h; sourceTree = "<group>"; };
+		E2A5364D19EBA2BE00C19F8B /* XLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLLogger.m; sourceTree = "<group>"; };
+		E2A5364E19EBA2BE00C19F8B /* XLLogRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLLogRecord.h; sourceTree = "<group>"; };
+		E2A5364F19EBA2BE00C19F8B /* XLLogRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLLogRecord.m; sourceTree = "<group>"; };
+		E2A5365019EBA2BE00C19F8B /* XLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPrivate.h; sourceTree = "<group>"; };
+		E2A5365119EBA2BE00C19F8B /* XLStandardLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLStandardLogger.h; sourceTree = "<group>"; };
+		E2A5365219EBA2BE00C19F8B /* XLStandardLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLStandardLogger.m; sourceTree = "<group>"; };
+		E2A5365419EBA2BE00C19F8B /* XLDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDatabaseLogger.h; sourceTree = "<group>"; };
+		E2A5365519EBA2BE00C19F8B /* XLDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDatabaseLogger.m; sourceTree = "<group>"; };
+		E2A5365619EBA2BE00C19F8B /* XLHTTPServerLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLHTTPServerLogger.h; sourceTree = "<group>"; };
+		E2A5365719EBA2BE00C19F8B /* XLHTTPServerLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLHTTPServerLogger.m; sourceTree = "<group>"; };
+		E2A5365819EBA2BE00C19F8B /* XLTelnetServerLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLTelnetServerLogger.h; sourceTree = "<group>"; };
+		E2A5365919EBA2BE00C19F8B /* XLTelnetServerLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLTelnetServerLogger.m; sourceTree = "<group>"; };
+		E2A5366819EBA2DA00C19F8B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E2C2446A18B154B0003682FB /* Base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64.c; sourceTree = "<group>"; };
 		E2C2446B18B154B0003682FB /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		E2C2446C18B154B0003682FB /* MixpanelTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixpanelTracker.h; sourceTree = "<group>"; };
@@ -69,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A5366919EBA2DA00C19F8B /* libsqlite3.dylib in Frameworks */,
 				E200E17F158C1FD90078EAF8 /* Cocoa.framework in Frameworks */,
 				E279088018AF41BA00B752E1 /* SystemConfiguration.framework in Frameworks */,
 				E22CE76C18A49AEA008A0C72 /* StoreKit.framework in Frameworks */,
@@ -98,6 +133,7 @@
 				E289ED1718A4BB8100A9D28D /* DirectoryScanner */,
 				E279087518AF410C00B752E1 /* InAppStore */,
 				E2C2446918B154B0003682FB /* MixpanelTracker */,
+				E2A5364119EBA2BE00C19F8B /* XLFacility */,
 				E2E12D011343CDCD00B48700 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks and Libraries */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -113,6 +149,7 @@
 				E22CE76B18A49AEA008A0C72 /* StoreKit.framework */,
 				E279087B18AF41AA00B752E1 /* Security.framework */,
 				E279087D18AF41AF00B752E1 /* IOKit.framework */,
+				E2A5366819EBA2DA00C19F8B /* libsqlite3.dylib */,
 			);
 			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -136,6 +173,52 @@
 			);
 			name = DirectoryScanner;
 			path = DirectoryScanner/DirectoryScanner;
+			sourceTree = "<group>";
+		};
+		E2A5364119EBA2BE00C19F8B /* XLFacility */ = {
+			isa = PBXGroup;
+			children = (
+				E2A5364219EBA2BE00C19F8B /* Core */,
+				E2A5365319EBA2BE00C19F8B /* Extensions */,
+			);
+			name = XLFacility;
+			path = XLFacility/XLFacility;
+			sourceTree = "<group>";
+		};
+		E2A5364219EBA2BE00C19F8B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E2A5364319EBA2BE00C19F8B /* XLASLLogger.h */,
+				E2A5364419EBA2BE00C19F8B /* XLASLLogger.m */,
+				E2A5364519EBA2BE00C19F8B /* XLCallbackLogger.h */,
+				E2A5364619EBA2BE00C19F8B /* XLCallbackLogger.m */,
+				E2A5364719EBA2BE00C19F8B /* XLFacility.h */,
+				E2A5364819EBA2BE00C19F8B /* XLFacility.m */,
+				E2A5364919EBA2BE00C19F8B /* XLFacilityMacros.h */,
+				E2A5364A19EBA2BE00C19F8B /* XLFileLogger.h */,
+				E2A5364B19EBA2BE00C19F8B /* XLFileLogger.m */,
+				E2A5364C19EBA2BE00C19F8B /* XLLogger.h */,
+				E2A5364D19EBA2BE00C19F8B /* XLLogger.m */,
+				E2A5364E19EBA2BE00C19F8B /* XLLogRecord.h */,
+				E2A5364F19EBA2BE00C19F8B /* XLLogRecord.m */,
+				E2A5365019EBA2BE00C19F8B /* XLPrivate.h */,
+				E2A5365119EBA2BE00C19F8B /* XLStandardLogger.h */,
+				E2A5365219EBA2BE00C19F8B /* XLStandardLogger.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E2A5365319EBA2BE00C19F8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2A5365419EBA2BE00C19F8B /* XLDatabaseLogger.h */,
+				E2A5365519EBA2BE00C19F8B /* XLDatabaseLogger.m */,
+				E2A5365619EBA2BE00C19F8B /* XLHTTPServerLogger.h */,
+				E2A5365719EBA2BE00C19F8B /* XLHTTPServerLogger.m */,
+				E2A5365819EBA2BE00C19F8B /* XLTelnetServerLogger.h */,
+				E2A5365919EBA2BE00C19F8B /* XLTelnetServerLogger.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E2C2446918B154B0003682FB /* MixpanelTracker */ = {
@@ -283,10 +366,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C2446F18B154B0003682FB /* MixpanelTracker.m in Sources */,
+				E2A5366119EBA2BE00C19F8B /* XLLogger.m in Sources */,
 				E2E12C731343C96000B48700 /* AppDelegate.m in Sources */,
+				E2A5366219EBA2BE00C19F8B /* XLLogRecord.m in Sources */,
+				E2A5365F19EBA2BE00C19F8B /* XLFacility.m in Sources */,
+				E2A5365E19EBA2BE00C19F8B /* XLCallbackLogger.m in Sources */,
 				E296D7E918A591C00091AAF3 /* ValueTransformers.m in Sources */,
 				E2C2446E18B154B0003682FB /* Base64.c in Sources */,
+				E2A5366319EBA2BE00C19F8B /* XLStandardLogger.m in Sources */,
+				E2A5366019EBA2BE00C19F8B /* XLFileLogger.m in Sources */,
+				E2A5366519EBA2BE00C19F8B /* XLHTTPServerLogger.m in Sources */,
+				E2A5366619EBA2BE00C19F8B /* XLTelnetServerLogger.m in Sources */,
+				E2A5365D19EBA2BE00C19F8B /* XLASLLogger.m in Sources */,
 				E289ED1A18A4BB8100A9D28D /* DirectoryScanner.m in Sources */,
+				E2A5366419EBA2BE00C19F8B /* XLDatabaseLogger.m in Sources */,
 				E279087A18AF410C00B752E1 /* main.m in Sources */,
 				E279087918AF410C00B752E1 /* InAppStore.m in Sources */,
 			);
@@ -389,10 +482,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					NDEBUG,
-					NS_BLOCK_ASSERTIONS,
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = NS_BLOCK_ASSERTIONS;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;

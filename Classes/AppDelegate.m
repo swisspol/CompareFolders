@@ -30,7 +30,7 @@
 #define kUserDefaultKey_FilterCreations @"filterCreations"
 #define kUserDefaultKey_FilterModifications @"filterModifications"
 
-#ifndef NDEBUG
+#if DEBUG
 #define kUserDefaultKey_LeftBookmark @"leftBookmark"
 #define kUserDefaultKey_RightBookmark @"rightBookmark"
 #endif
@@ -194,7 +194,7 @@ static NSColor* _rowColors[6];
   if (checksumFiles && [[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
     options |= kComparisonOption_FileContent;
   }
-#ifndef NDEBUG
+#if DEBUG
   CFAbsoluteTime time = CFAbsoluteTimeGetCurrent();
 #endif
   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -215,13 +215,11 @@ static NSColor* _rowColors[6];
       }];
       dispatch_async(dispatch_get_main_queue(), ^{
         @autoreleasepool {
-#ifndef NDEBUG
           if (success) {
-            NSLog(@"Comparison done in %.3f seconds", CFAbsoluteTimeGetCurrent() - time);
+            XLOG_DEBUG(@"Comparison done in %.3f seconds", CFAbsoluteTimeGetCurrent() - time);
           } else {
-            NSLog(@"Comparison failed!");
+            XLOG_DEBUG(@"Comparison failed!");
           }
-#endif
           self.comparing = NO;
           self.ready = success;
           if (success) {
@@ -239,7 +237,7 @@ static NSColor* _rowColors[6];
   });
 }
 
-#ifndef NDEBUG
+#if DEBUG
 
 - (BOOL)_saveBookmark:(NSString*)defaultKey withURL:(NSURL*)url {
   NSError* error = nil;
@@ -248,7 +246,7 @@ static NSColor* _rowColors[6];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:defaultKey];
     return YES;
   }
-  NSLog(@"Failed saving bookmark: %@", error);
+  XLOG_ERROR(@"Failed saving bookmark: %@", error);
   return NO;
 }
 
@@ -268,10 +266,10 @@ static NSColor* _rowColors[6];
         return url.path;
 #endif
       } else {
-        NSLog(@"Failed accessing bookmark");
+        XLOG_ERROR(@"Failed accessing bookmark");
       }
     } else {
-      NSLog(@"Failed resolving bookmark: %@", error);
+      XLOG_ERROR(@"Failed resolving bookmark: %@", error);
     }
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:defaultKey];
   }
@@ -281,7 +279,7 @@ static NSColor* _rowColors[6];
 #endif
 
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
-#ifdef NDEBUG
+#if !DEBUG
   [Crashlytics startWithAPIKey:@"936a419a4a141683e2eb17db02a13b72ee02b362"];
 #endif
   
@@ -293,13 +291,13 @@ static NSColor* _rowColors[6];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultKey_ChecksumFiles];
   }
   
-#ifdef NDEBUG
+#if !DEBUG
   [MixpanelTracker startWithToken:@"6a93f5dabaad1f4bae603ed292a20674"];
 #else
   [MixpanelTracker startWithToken:@"1a0d2fe7f8c808d476be60a2f646b647"];
 #endif
   
-#ifndef NDEBUG
+#if DEBUG
   self.leftPath = [self _loadBookmark:kUserDefaultKey_LeftBookmark];
   self.rightPath = [self _loadBookmark:kUserDefaultKey_RightBookmark];
   if (_leftPath && _rightPath) {
@@ -411,7 +409,7 @@ static NSColor* _rowColors[6];
     } else {
       self.leftPath = url.path;
     }
-#ifndef NDEBUG
+#if DEBUG
     [self _saveBookmark:(isRight ? kUserDefaultKey_RightBookmark : kUserDefaultKey_LeftBookmark) withURL:url];
 #endif
     if (_leftPath && _rightPath) {
