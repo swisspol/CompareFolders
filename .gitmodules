@@ -7,3 +7,6 @@
 [submodule "MixpanelTracker"]
 	path = MixpanelTracker
 	url = https://github.com/swisspol/MixpanelTracker.git
+[submodule "XLFacility"]
+	path = XLFacility
+	url = https://github.com/swisspol/XLFacility.git

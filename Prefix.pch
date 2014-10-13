@@ -16,3 +16,8 @@
 #ifdef __OBJC__
 #import <Cocoa/Cocoa.h>
 #endif
+
+#ifdef __OBJC__
+#import "XLFacilityMacros.h"
+#define NSLog(...) XLOG_INFO(__VA_ARGS__)
+#endif
