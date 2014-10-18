@@ -17,6 +17,9 @@
 
 #import "AppDelegate.h"
 #import "MixpanelTracker.h"
+#if DEBUG
+#import "XLAppKitOverlayLogger.h"
+#endif
 
 #define kUserDefaultKey_ChecksumFiles @"checksumFiles"
 #define kUserDefaultKey_ProductPrice @"productPrice"
@@ -279,6 +282,10 @@ static NSColor* _rowColors[6];
 #endif
 
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
+#if DEBUG
+  [XLSharedFacility addLogger:[XLAppKitOverlayLogger sharedLogger]];
+#endif
+  
 #if !DEBUG
   [Crashlytics startWithAPIKey:@"936a419a4a141683e2eb17db02a13b72ee02b362"];
 #endif
