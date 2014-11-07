@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw2.github.com/swisspol/CompareFolders/master/Resources/Icon.iconset/icon_512x512.png">
+<img src="https://raw.github.com/swisspol/CompareFolders/master/Resources/Icon.iconset/icon_512x512.png">
 </p>
 
 Overview
