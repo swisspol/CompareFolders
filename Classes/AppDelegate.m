@@ -460,7 +460,7 @@ static NSColor* _rowColors[6];
   Row* row = _arrayController.selectedObjects.firstObject;
   NSString* path = (isRight ? row.rightItem.absolutePath : row.leftItem.absolutePath);
   if (path) {
-    [[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:nil];
+    [[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
   }
 }
 
