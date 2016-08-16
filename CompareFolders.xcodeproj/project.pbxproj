@@ -407,8 +407,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_ID = "net.pol-online.compare-folders";
-				BUNDLE_VERSION = 1140;
-				BUNDLE_VERSION_STRING = 1.1.4;
+				BUNDLE_VERSION = 1150;
+				BUNDLE_VERSION_STRING = 1.1.5;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
@@ -431,8 +431,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_ID = "net.pol-online.compare-folders";
-				BUNDLE_VERSION = 1140;
-				BUNDLE_VERSION_STRING = 1.1.4;
+				BUNDLE_VERSION = 1150;
+				BUNDLE_VERSION_STRING = 1.1.5;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
