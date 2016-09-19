@@ -267,7 +267,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
 						DevelopmentTeam = 88W3E55T4B;
@@ -388,6 +388,7 @@
 				BUNDLE_VERSION_STRING = 1.1.6;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = 88W3E55T4B;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
@@ -401,6 +402,7 @@
 					Crashlytics,
 				);
 				PRODUCT_NAME = "Compare Folders";
+				PROVISIONING_PROFILE_SPECIFIER = "Compare Folders Development";
 			};
 			name = Debug;
 		};
@@ -412,7 +414,8 @@
 				BUNDLE_VERSION = 1160;
 				BUNDLE_VERSION_STRING = 1.1.6;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				DEVELOPMENT_TEAM = 88W3E55T4B;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
@@ -426,6 +429,7 @@
 					Crashlytics,
 				);
 				PRODUCT_NAME = "Compare Folders";
+				PROVISIONING_PROFILE_SPECIFIER = "Compare Folders Distribution";
 			};
 			name = Release;
 		};
