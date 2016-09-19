@@ -10,3 +10,6 @@
 [submodule "XLFacility"]
 	path = XLFacility
 	url = https://github.com/swisspol/XLFacility.git
+[submodule "GARawTracker"]
+	path = GARawTracker
+	url = https://github.com/swisspol/GARawTracker.git

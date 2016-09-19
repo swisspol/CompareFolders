@@ -10,6 +10,7 @@
 		E200E17F158C1FD90078EAF8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E222CE541D63742A00A1E982 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E222CE531D63742A00A1E982 /* Media.xcassets */; };
 		E22CE76C18A49AEA008A0C72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22CE76B18A49AEA008A0C72 /* StoreKit.framework */; };
+		E25ADC011D90498700CD0CCA /* GARawTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E25ADC001D90498700CD0CCA /* GARawTracker.m */; };
 		E279087918AF410C00B752E1 /* InAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E279087718AF410C00B752E1 /* InAppStore.m */; };
 		E279087A18AF410C00B752E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E279087818AF410C00B752E1 /* main.m */; };
 		E279087C18AF41AA00B752E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E279087B18AF41AA00B752E1 /* Security.framework */; };
@@ -20,8 +21,6 @@
 		E296D7E618A56F890091AAF3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E296D7E318A56F890091AAF3 /* MainMenu.xib */; };
 		E296D7E918A591C00091AAF3 /* ValueTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = E296D7E818A591C00091AAF3 /* ValueTransformers.m */; };
 		E2A5366919EBA2DA00C19F8B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A5366819EBA2DA00C19F8B /* libsqlite3.dylib */; };
-		E2C2446E18B154B0003682FB /* Base64.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C2446A18B154B0003682FB /* Base64.c */; };
-		E2C2446F18B154B0003682FB /* MixpanelTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C2446D18B154B0003682FB /* MixpanelTracker.m */; };
 		E2C73DFD19F2045600BEC354 /* XLASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C73DD219F2045600BEC354 /* XLASLLogger.m */; };
 		E2C73DFE19F2045600BEC354 /* XLCallbackLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C73DD419F2045600BEC354 /* XLCallbackLogger.m */; };
 		E2C73DFF19F2045600BEC354 /* XLFacility.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C73DD619F2045600BEC354 /* XLFacility.m */; };
@@ -40,6 +39,8 @@
 		E222CE531D63742A00A1E982 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		E22CE76A18A49ACB008A0C72 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		E22CE76B18A49AEA008A0C72 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E25ADBFF1D90498700CD0CCA /* GARawTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GARawTracker.h; sourceTree = "<group>"; };
+		E25ADC001D90498700CD0CCA /* GARawTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GARawTracker.m; sourceTree = "<group>"; };
 		E279087618AF410C00B752E1 /* InAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppStore.h; sourceTree = "<group>"; };
 		E279087718AF410C00B752E1 /* InAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppStore.m; sourceTree = "<group>"; };
 		E279087818AF410C00B752E1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,10 +54,6 @@
 		E296D7E718A591C00091AAF3 /* ValueTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueTransformers.h; sourceTree = "<group>"; };
 		E296D7E818A591C00091AAF3 /* ValueTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueTransformers.m; sourceTree = "<group>"; };
 		E2A5366819EBA2DA00C19F8B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		E2C2446A18B154B0003682FB /* Base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64.c; sourceTree = "<group>"; };
-		E2C2446B18B154B0003682FB /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		E2C2446C18B154B0003682FB /* MixpanelTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixpanelTracker.h; sourceTree = "<group>"; };
-		E2C2446D18B154B0003682FB /* MixpanelTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixpanelTracker.m; sourceTree = "<group>"; };
 		E2C73DD119F2045600BEC354 /* XLASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLASLLogger.h; sourceTree = "<group>"; };
 		E2C73DD219F2045600BEC354 /* XLASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLASLLogger.m; sourceTree = "<group>"; };
 		E2C73DD319F2045600BEC354 /* XLCallbackLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCallbackLogger.h; sourceTree = "<group>"; };
@@ -117,8 +114,8 @@
 				E2D09A4E1343C4B60096A4CC /* Info.plist */,
 				E2E12C701343C96000B48700 /* Classes */,
 				E289ED1718A4BB8100A9D28D /* DirectoryScanner */,
+				E25ADBFE1D90498700CD0CCA /* GARawTracker */,
 				E279087518AF410C00B752E1 /* InAppStore */,
-				E2C2446918B154B0003682FB /* MixpanelTracker */,
 				E2C73DCF19F2045600BEC354 /* XLFacility */,
 				E2E12D011343CDCD00B48700 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks and Libraries */,
@@ -140,6 +137,16 @@
 			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
+		E25ADBFE1D90498700CD0CCA /* GARawTracker */ = {
+			isa = PBXGroup;
+			children = (
+				E25ADBFF1D90498700CD0CCA /* GARawTracker.h */,
+				E25ADC001D90498700CD0CCA /* GARawTracker.m */,
+			);
+			name = GARawTracker;
+			path = GARawTracker/GARawTracker;
+			sourceTree = "<group>";
+		};
 		E279087518AF410C00B752E1 /* InAppStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,18 +166,6 @@
 			);
 			name = DirectoryScanner;
 			path = DirectoryScanner/DirectoryScanner;
-			sourceTree = "<group>";
-		};
-		E2C2446918B154B0003682FB /* MixpanelTracker */ = {
-			isa = PBXGroup;
-			children = (
-				E2C2446A18B154B0003682FB /* Base64.c */,
-				E2C2446B18B154B0003682FB /* Base64.h */,
-				E2C2446C18B154B0003682FB /* MixpanelTracker.h */,
-				E2C2446D18B154B0003682FB /* MixpanelTracker.m */,
-			);
-			name = MixpanelTracker;
-			path = MixpanelTracker/MixpanelTracker;
 			sourceTree = "<group>";
 		};
 		E2C73DCF19F2045600BEC354 /* XLFacility */ = {
@@ -320,7 +315,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C73E0219F2045600BEC354 /* XLLogger.m in Sources */,
-				E2C2446F18B154B0003682FB /* MixpanelTracker.m in Sources */,
 				E2E12C731343C96000B48700 /* AppDelegate.m in Sources */,
 				E2C73DFF19F2045600BEC354 /* XLFacility.m in Sources */,
 				E2C73DFE19F2045600BEC354 /* XLCallbackLogger.m in Sources */,
@@ -328,9 +322,9 @@
 				E2C73E0119F2045600BEC354 /* XLFunctions.m in Sources */,
 				E2C73E0419F2045600BEC354 /* XLStandardLogger.m in Sources */,
 				E2C73E0E19F2045600BEC354 /* XLAppKitOverlayLogger.m in Sources */,
-				E2C2446E18B154B0003682FB /* Base64.c in Sources */,
 				E2C73E0019F2045600BEC354 /* XLFileLogger.m in Sources */,
 				E2C73E0319F2045600BEC354 /* XLLogRecord.m in Sources */,
+				E25ADC011D90498700CD0CCA /* GARawTracker.m in Sources */,
 				E2C73DFD19F2045600BEC354 /* XLASLLogger.m in Sources */,
 				E289ED1A18A4BB8100A9D28D /* DirectoryScanner.m in Sources */,
 				E279087A18AF410C00B752E1 /* main.m in Sources */,
