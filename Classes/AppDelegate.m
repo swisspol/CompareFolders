@@ -13,8 +13,6 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#import <Crashlytics/Crashlytics.h>
-
 #import "AppDelegate.h"
 #import "MixpanelTracker.h"
 #if DEBUG
@@ -284,10 +282,6 @@ static NSColor* _rowColors[6];
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
 #if DEBUG
   [XLSharedFacility addLogger:[XLAppKitOverlayLogger sharedLogger]];
-#endif
-  
-#if !DEBUG
-  [Crashlytics startWithAPIKey:@"936a419a4a141683e2eb17db02a13b72ee02b362"];
 #endif
   
   [[InAppStore sharedStore] setDelegate:self];
