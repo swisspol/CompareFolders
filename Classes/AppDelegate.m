@@ -277,11 +277,15 @@ static NSColor* _rowColors[6];
 
 #endif
 
-- (void)applicationDidFinishLaunching:(NSNotification*)notification {
+- (void)applicationWillFinishLaunching:(NSNotification*)notification {
 #if DEBUG
   [XLSharedFacility addLogger:[XLAppKitOverlayLogger sharedLogger]];
 #endif
-  
+
+  [[GARawTracker sharedTracker] startWithTrackingID:@"UA-84346976-1"];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification*)notification {
   [[InAppStore sharedStore] setDelegate:self];
   if ([[InAppStore sharedStore] hasPurchasedProductWithIdentifier:kInAppProductIdentifier]) {
     [_tabView selectTabViewItemAtIndex:1];
@@ -289,8 +293,6 @@ static NSColor* _rowColors[6];
     [_tabView selectTabViewItemAtIndex:0];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaultKey_ChecksumFiles];
   }
-
-  [[GARawTracker sharedTracker] startWithTrackingID:@"UA-84346976-1"];
 
 #if DEBUG
   self.leftPath = [self _loadBookmark:kUserDefaultKey_LeftBookmark];
