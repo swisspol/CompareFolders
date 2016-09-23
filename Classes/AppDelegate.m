@@ -184,7 +184,6 @@ static NSColor* _rowColors[6];
 
 - (void)_compareFolders {
   BOOL checksumFiles = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles];
-  [[GARawTracker sharedTracker] sendEventWithCategory:@"application" action:@"compare" label:nil value:nil completionBlock:NULL];
   [_arrayController setContent:nil];
   _rows = nil;
   
