@@ -5,7 +5,7 @@ for DIRECTORY in *; do
     if [ -e "$DIRECTORY/.git" ]; then
       echo "Updating $DIRECTORY..."
       pushd "$DIRECTORY"
-      git fetch
+      git checkout master
       git pull
       popd
     fi
