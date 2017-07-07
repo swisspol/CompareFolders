@@ -102,18 +102,18 @@ static NSColor* _rowColors[6];
 
 + (void)initialize {
   NSDictionary* defaults = @{
-                             kUserDefaultKey_ChecksumFiles: @NO,
-                             kUserDefaultKey_FilterIdentical: @NO,
-                             kUserDefaultKey_FilterHidden: @NO,
-                             kUserDefaultKey_FilterFiles: @NO,
-                             kUserDefaultKey_FilterFolders: @NO,
-                             kUserDefaultKey_FilterLinks: @NO,
-                             kUserDefaultKey_FilterPermissions: @NO,
-                             kUserDefaultKey_FilterCreations: @NO,
-                             kUserDefaultKey_FilterModifications: @NO
-                             };
+    kUserDefaultKey_ChecksumFiles : @NO,
+    kUserDefaultKey_FilterIdentical : @NO,
+    kUserDefaultKey_FilterHidden : @NO,
+    kUserDefaultKey_FilterFiles : @NO,
+    kUserDefaultKey_FilterFolders : @NO,
+    kUserDefaultKey_FilterLinks : @NO,
+    kUserDefaultKey_FilterPermissions : @NO,
+    kUserDefaultKey_FilterCreations : @NO,
+    kUserDefaultKey_FilterModifications : @NO
+  };
   [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-  
+
   _rowColors[0] = [NSColor colorWithDeviceHue:0.1 saturation:0.2 brightness:1.0 alpha:1.0];  // Light orange
   _rowColors[1] = [NSColor colorWithDeviceHue:0.1 saturation:0.3 brightness:1.0 alpha:1.0];  // Dark orange
   _rowColors[2] = [NSColor colorWithDeviceHue:1.0 saturation:0.2 brightness:1.0 alpha:1.0];  // Light red
@@ -186,7 +186,7 @@ static NSColor* _rowColors[6];
   BOOL checksumFiles = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKey_ChecksumFiles];
   [_arrayController setContent:nil];
   _rows = nil;
-  
+
   _stopComparison = NO;
   self.comparing = YES;
   ComparisonOptions options = 0;
@@ -200,18 +200,23 @@ static NSColor* _rowColors[6];
     @autoreleasepool {
       NSMutableArray* errors = [[NSMutableArray alloc] init];
       NSMutableArray* rows = [[NSMutableArray alloc] init];
-      BOOL success = [[DirectoryScanner sharedScanner] compareOldDirectoryAtPath:_leftPath withNewDirectoryAtPath:_rightPath options:options excludeBlock:^BOOL(DirectoryItem* directory) {
-        return _stopComparison;
-      } resultBlock:^(ComparisonResult result, Item* item, Item* otherItem, BOOL* stop) {
-        Row* row = [[Row alloc] init];
-        row.result = result;
-        row.leftItem = item;
-        row.rightItem = otherItem;
-        [rows addObject:row];
-        *stop = _stopComparison;
-      } errorBlock:^(NSError* error) {
-        [errors addObject:error];
-      }];
+      BOOL success = [[DirectoryScanner sharedScanner] compareOldDirectoryAtPath:_leftPath
+          withNewDirectoryAtPath:_rightPath
+          options:options
+          excludeBlock:^BOOL(DirectoryItem* directory) {
+            return _stopComparison;
+          }
+          resultBlock:^(ComparisonResult result, Item* item, Item* otherItem, BOOL* stop) {
+            Row* row = [[Row alloc] init];
+            row.result = result;
+            row.leftItem = item;
+            row.rightItem = otherItem;
+            [rows addObject:row];
+            *stop = _stopComparison;
+          }
+          errorBlock:^(NSError* error) {
+            [errors addObject:error];
+          }];
       dispatch_async(dispatch_get_main_queue(), ^{
         @autoreleasepool {
           if (success) {
@@ -300,7 +305,7 @@ static NSColor* _rowColors[6];
     [self _compareFolders];
   }
 #endif
-  
+
   [_mainWindow makeKeyAndOrderFront:nil];
 }
 
@@ -394,7 +399,7 @@ static NSColor* _rowColors[6];
       self.leftPath = url.path;
     }
 #if DEBUG
-    [self _saveBookmark:(isRight ? kUserDefaultKey_RightBookmark : kUserDefaultKey_LeftBookmark) withURL:url];
+    [self _saveBookmark:(isRight ? kUserDefaultKey_RightBookmark : kUserDefaultKey_LeftBookmark)withURL:url];
 #endif
     if (_leftPath && _rightPath) {
       [self _compareFolders];

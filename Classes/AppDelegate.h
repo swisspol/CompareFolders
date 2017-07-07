@@ -47,8 +47,8 @@
 @property(nonatomic, assign) IBOutlet NSArrayController* errorController;
 @property(nonatomic, copy) NSString* leftPath;
 @property(nonatomic, copy) NSString* rightPath;
-@property(nonatomic, getter = isComparing) BOOL comparing;
-@property(nonatomic, getter = isReady) BOOL ready;
+@property(nonatomic, getter=isComparing) BOOL comparing;
+@property(nonatomic, getter=isReady) BOOL ready;
 - (IBAction)selectLeftFolder:(id)sender;
 - (IBAction)selectRightFolder:(id)sender;
 - (IBAction)updateComparison:(id)sender;
