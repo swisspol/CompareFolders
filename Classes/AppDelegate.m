@@ -144,7 +144,7 @@ static NSColor* _rowColors[6];
       ComparisonResult result = row.result;
       Item* leftItem = row.leftItem;
       Item* rightItem = row.rightItem;
-      if (filterHidden && ([leftItem.name hasPrefix:@"."] || [rightItem.name hasPrefix:@"."])) {
+      if (filterHidden && ([leftItem.absolutePath containsString:@"/."] || [rightItem.absolutePath containsString:@"/."])) {
         continue;
       }
       if (filterIdentical && !result) {
