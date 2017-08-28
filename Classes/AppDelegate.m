@@ -144,7 +144,7 @@ static NSColor* _rowColors[6];
       ComparisonResult result = row.result;
       Item* leftItem = row.leftItem;
       Item* rightItem = row.rightItem;
-      if (filterHidden && ([leftItem.absolutePath containsString:@"/."] || [rightItem.absolutePath containsString:@"/."])) {
+      if (filterHidden && (([leftItem.absolutePath rangeOfString:@"/."].location != NSNotFound) || ([rightItem.absolutePath rangeOfString:@"/."].location != NSNotFound))) {
         continue;
       }
       if (filterIdentical && !result) {
