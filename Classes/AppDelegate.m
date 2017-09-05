@@ -39,6 +39,15 @@
 
 static NSColor* _rowColors[6];
 
+@implementation NSString (CompareFolders)
+
+// -[NString containsString:] is only available in 10.10+
+- (BOOL)safeContainsString:(NSString*)string {
+  return [self rangeOfString:string options:0].location != NSNotFound;
+}
+
+@end
+
 @implementation TableView
 
 - (void)drawRow:(NSInteger)index clipRect:(NSRect)clipRect {
@@ -144,7 +153,7 @@ static NSColor* _rowColors[6];
       ComparisonResult result = row.result;
       Item* leftItem = row.leftItem;
       Item* rightItem = row.rightItem;
-      if (filterHidden && (([leftItem.absolutePath rangeOfString:@"/."].location != NSNotFound) || ([rightItem.absolutePath rangeOfString:@"/."].location != NSNotFound))) {
+      if (filterHidden && ([leftItem.absolutePath safeContainsString:@"/."] || [rightItem.absolutePath safeContainsString:@"/."])) {
         continue;
       }
       if (filterIdentical && !result) {
